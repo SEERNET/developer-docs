@@ -1,0 +1,23 @@
+{
+  "docs": {
+    "Get Started": [
+      "introduction",
+      "quick-start",
+      "authentication",
+      "errors",
+      "concepts"
+    ],
+    "Generic Audio Analysis": [
+      "audio-denoising-api",
+      "speaker-diairization-api",
+      "paralinguistic-feature-extraction-api",
+      "emotion-recognition-api",
+      "realtime-emotion-recognition-api",
+      "speaker-enrollment-api",
+      "speaker-identification-api",
+      "realtime-speaker-identification-api"
+    ],
+    "Custom Audio Analysis": ["depression-prediction-api"],
+    "Generic Text Analysis": ["text-emotion-recognition-api"]
+  }
+}
