@@ -1,0 +1,133 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Realtime Speaker Identification Api · DeepAffects</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Identify speakers from the audio file in realtime"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Realtime Speaker Identification Api · DeepAffects"/><meta property="og:type" content="website"/><meta property="og:url" content="https://deepaffects.com/index.html"/><meta property="og:description" content="Identify speakers from the audio file in realtime"/><meta property="og:image" content="https://deepaffects.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://deepaffects.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/deepaffects-logo.png" alt="DeepAffects"/><h2 class="headerTitleWithLogo">DeepAffects</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/introduction.html" target="_self">Docs</a></li><li class=""><a href="/en/help.html" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Generic Audio Analysis</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Get Started</h3><ul><li class="navListItem"><a class="navItem" href="/docs/introduction.html">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/quick-start.html">Quickstart Guide</a></li><li class="navListItem"><a class="navItem" href="/docs/authentication.html">Authentication</a></li><li class="navListItem"><a class="navItem" href="/docs/errors.html">Errors</a></li><li class="navListItem"><a class="navItem" href="/docs/concepts.html">Concepts</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Generic Audio Analysis</h3><ul><li class="navListItem"><a class="navItem" href="/docs/audio-denoising-api.html">Audio Denoising Api</a></li><li class="navListItem"><a class="navItem" href="/docs/speaker-diairization-api.html">Speaker Diarization Api</a></li><li class="navListItem"><a class="navItem" href="/docs/paralinguistic-feature-extraction-api.html">Paralinguistic Feature Extraction Api</a></li><li class="navListItem"><a class="navItem" href="/docs/emotion-recognition-api.html">Emotion Recognition Api</a></li><li class="navListItem"><a class="navItem" href="/docs/realtime-emotion-recognition-api.html">Realtime Emotion Recognition Api</a></li><li class="navListItem"><a class="navItem" href="/docs/speaker-enrollment-api.html">Speaker Enrollment Api</a></li><li class="navListItem"><a class="navItem" href="/docs/speaker-identification-api.html">Speaker Identification Api</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/realtime-speaker-identification-api.html">Realtime Speaker Identification Api</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Custom Audio Analysis</h3><ul><li class="navListItem"><a class="navItem" href="/docs/depression-prediction-api.html">Depression Prediction Api</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Generic Text Analysis</h3><ul><li class="navListItem"><a class="navItem" href="/docs/text-emotion-recognition-api.html">Text Emotion Recognition Api</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Realtime Speaker Identification Api</h1></header><article><div><span><p>Identify speakers from the audio file in realtime</p>
+<h3><a class="anchor" aria-hidden="true" id="grpc-call"></a><a href="#grpc-call" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Grpc Call</h3>
+<p><code>client.IdentifySpeaker( chunk_generator(), TIMEOUT_SECONDS, metadata=metadata)</code></p>
+<h3><a class="anchor" aria-hidden="true" id="sample-code"></a><a href="#sample-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample Code</h3>
+<h3><a class="anchor" aria-hidden="true" id="python"></a><a href="#python" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Python</h3>
+<pre><code class="hljs css languages- python"><span class="hljs-keyword">from</span> deepaffects.realtime.util <span class="hljs-keyword">import</span> chunk_generator_from_file, chunk_generator_from_url, get_deepaffects_client
+
+TIMEOUT_SECONDS = <span class="hljs-number">2000</span>
+apikey = <span class="hljs-string">"YOUR_API_KEY"</span>
+<span class="hljs-comment"># Set file_path as local file path or audio stream or youtube url</span>
+file_path = <span class="hljs-string">"FILE_PATH"</span>
+
+<span class="hljs-comment"># Set is_youtube_url True while streaming from youtube url</span>
+is_youtube_url = <span class="hljs-keyword">False</span>
+languageCode = <span class="hljs-string">"en-Us"</span>
+sampleRate = <span class="hljs-string">"16000"</span>
+encoding = <span class="hljs-string">"wav"</span>
+speakerIds = <span class="hljs-string">"list of speakerIds to be identified seperated by ','"</span>
+
+<span class="hljs-comment"># DeepAffects realtime Api client</span>
+client = get_deepaffects_client()
+
+metadata = [
+    (<span class="hljs-string">'apikey'</span>, apikey),
+    (<span class="hljs-string">'speakerids'</span>, speakerIds),
+    (<span class="hljs-string">'encoding'</span>, encoding),
+    (<span class="hljs-string">'samplerate'</span>, sampleRate),
+    (<span class="hljs-string">'languagecode'</span>, languageCode)
+]
+
+<span class="hljs-string">"""Generator Function
+
+chunk_generator_from_file is the Sample implementation for generator funcion which reads audio from a file and splits it into
+base64 encoded audio segment of more than 3 sec
+and yields SegmentChunk object using segment_chunk
+"""</span>
+
+<span class="hljs-comment"># from deepaffects.realtime.types import segment_chunk</span>
+<span class="hljs-comment"># segment_chunk(Args)</span>
+
+<span class="hljs-string">"""segment_chunk.
+
+Args:
+    encoding : Audio Encoding,
+    languageCode: language code ,
+    sampleRate: sample rate of audio ,
+    content: base64 encoded audio,
+    segmentOffset: offset of the segment in complete audio stream
+"""</span>
+
+<span class="hljs-comment"># Call client api function with generator and metadata</span>
+
+responses = client.IdentifySpeaker(
+    <span class="hljs-comment"># Use chunk_generator_from_file generator to stream from local file</span>
+    chunk_generator_from_file(file_path),
+    <span class="hljs-comment"># Use chunk_generator_from_url generator to stream from remote url or youtube with is_youtube_url set to true</span>
+    <span class="hljs-comment"># chunk_generator_from_url(file_path, is_youtube_url=is_youtube_url),</span>
+     TIMEOUT_SECONDS, metadata=metadata)
+
+
+<span class="hljs-comment"># responses is the iterator for all the response values</span>
+<span class="hljs-keyword">for</span> response <span class="hljs-keyword">in</span> responses:
+    print(<span class="hljs-string">"Received message"</span>,response)
+
+<span class="hljs-string">"""Response.
+    response = {
+        speakerId: speakerId identified in the segment,
+        start: start of the segment,
+        end: end of the segment
+    }
+"""</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="metadata-parameters"></a><a href="#metadata-parameters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Metadata Parameters</h3>
+<p>Metadata params are set once for an api call :</p>
+<table>
+<thead>
+<tr><th>Parameter</th><th>Type</th><th>Description</th><th>Notes</th></tr>
+</thead>
+<tbody>
+<tr><td>apikey</td><td>String</td><td>Apikey obtained from developer portsl</td><td>Required for authentication inside all requests</td></tr>
+<tr><td>encoding</td><td>String</td><td>Encoding of audio file like MP3, WAV etc.</td></tr>
+<tr><td>sampleRate</td><td>Number</td><td>Sample rate of the audio file.</td></tr>
+<tr><td>languageCode</td><td>String</td><td>Language spoken in the audio file.</td><td>[default to 'en-US']</td></tr>
+<tr><td>speakerIds</td><td>String</td><td>list of speakerIds to identify seperated by ','.</td><td></td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="segment-parameters"></a><a href="#segment-parameters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Segment Parameters</h3>
+<table>
+<thead>
+<tr><th>Parameter</th><th>Type</th><th>Description</th><th>Notes</th></tr>
+</thead>
+<tbody>
+<tr><td>content</td><td>String</td><td>base64 encoding of the audio segment.</td></tr>
+<tr><td>offset</td><td>Number</td><td>Segment offset from start of the audio.</td></tr>
+<tr><td>duration</td><td>Number</td><td>Duration of chunk</td><td>optional</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="output-response-stream"></a><a href="#output-response-stream" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Output Response Stream</h3>
+<p>Output is the iterator streaming response objects with fowllowing parameters:</p>
+<table>
+<thead>
+<tr><th>Parameter</th><th>Type</th><th>Description</th><th>Notes</th></tr>
+</thead>
+<tbody>
+<tr><td>speaker_id</td><td>String</td><td>speaker_id of the identified speaker.</td></tr>
+<tr><td>start</td><td>Float</td><td>Start of the audio segment.</td></tr>
+<tr><td>end</td><td>Float</td><td>end of the audio segment.</td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/speaker-identification-api.html">← Speaker Identification Api</a><a class="docs-next button" href="/docs/depression-prediction-api.html">Depression Predition Api →</a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/deepaffects-logo.png" alt="DeepAffects" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/deepaffects/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/deepaffects" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/developer-docs">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="developer-docs" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2018 DeepAffects</section></footer></div></body></html>
