@@ -89,16 +89,16 @@ Metadata params are set once for an api call :
 | Parameter    | Type   | Description                               | Notes                                           |
 | ------------ | ------ | ----------------------------------------- | ----------------------------------------------- |
 | apikey       | String | Apikey obtained from developer portsl     | Required for authentication inside all requests |
-| encoding     | String | Encoding of audio file like MP3, WAV etc. |
-| sampleRate   | Number | Sample rate of the audio file.            |
+| encoding     | String | Encoding of audio file like MP3, WAV etc. |                                                 |
+| sampleRate   | Number | Sample rate of the audio file.            |                                                 |
 | languageCode | String | Language spoken in the audio file.        | [default to &#39;en-US&#39;]                    |
 
 ### Segment Parameters
 
 | Parameter | Type   | Description                             | Notes    |
 | --------- | ------ | --------------------------------------- | -------- |
-| content   | String | base64 encoding of the audio segment.   |
-| offset    | Number | Segment offset from start of the audio. |
+| content   | String | base64 encoding of the audio segment.   |          |
+| offset    | Number | Segment offset from start of the audio. |          |
 | duration  | Number | Duration of chunk                       | optional |
 
 ### Output Response Stream
@@ -107,6 +107,6 @@ Output is the iterator streaming response objects with following parameters:
 
 | Parameter | Type   | Description                                     | Notes |
 | --------- | ------ | ----------------------------------------------- | ----- |
-| emotion   | String | Type of emotion like Happy, Sad, Surprised etc. |
-| start     | Float  | Start of the audio segment.                     |
-| end       | Float  | end of the audio segment.                       |
+| emotion   | String | Type of emotion like Happy, Sad, Surprised etc. |       |
+| start     | Float  | Start of the audio segment.                     |       |
+| end       | Float  | end of the audio segment.                       |       |

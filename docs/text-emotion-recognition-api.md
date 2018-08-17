@@ -80,7 +80,7 @@ except ApiException as e:
 
 | Parameter | Type   | Description | Notes |
 | --------- | ------ | ----------- | ----- |
-| content   | String | Text.       |
+| content   | String | Text.       |       |
 
 ### Query Parameters
 
@@ -94,5 +94,5 @@ Output is the list of emotion scores. The parameters in emotion scores are as fo
 
 | Parameter | Type   | Description                     | Notes |
 | --------- | ------ | ------------------------------- | ----- |
-| version   | String | API Version.                    |
-| response  | Object | Object with emotion and scores. |
+| version   | String | API Version.                    |       |
+| response  | Object | Object with emotion and scores. |       |
