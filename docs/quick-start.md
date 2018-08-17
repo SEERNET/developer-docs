@@ -20,9 +20,9 @@ Currently, deepaffects provides 2 audio based products:
 
 ## Choose your language
 
-For your convenience, DeepAffects has provided native language bindings in Python and NodeJs! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+For your convenience, DeepAffects has provided native language bindings in Python and NodeJs! You can get started with the help of sample code provided.
 
-Don't worry If the programming language you want to use DeepAffects with is not listed, the DeepAffects suite of emotion APIs can also be used directly through RESTful API calls, just use the shell tab on the right to check the equivalent cURL command for the API endpoint
+Don't worry If the programming language you want to use DeepAffects with is not listed, the DeepAffects suite of APIs can also be used directly through RESTful API calls With help of api endpoints and necessary params provided with the api details.
 
 ### Installation
 
