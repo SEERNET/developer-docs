@@ -28,6 +28,9 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diariz
 }
 ```
 
+> Enroll a user atleast thrice with 3 different audio, each about 10-12 seconds.
+> The more diverse the enrollment audio files, the better the accuracy for identification.
+
 ### Body Parameters
 
 | Parameter    | Type   | Description                               | Notes                        |
