@@ -14,7 +14,7 @@ const users = [
     caption: "User1",
     // You will need to prepend the image path with your baseUrl
     // if it is not '/', like: '/test-site/img/docusaurus.svg'.
-    image: "/img/deepaffects-logo.png",
+    image: "/img/deepaffects-logo-white-fill.png",
     infoLink: "https://www.deepaffects.com",
     pinned: true
   }
@@ -44,8 +44,8 @@ const siteConfig = {
   users,
 
   /* path to images for header/footer */
-  headerIcon: "img/deepaffects-logo.png",
-  footerIcon: "img/deepaffects-logo.png",
+  headerIcon: "img/deepaffects-logo-white-fill.png",
+  footerIcon: "",
   favicon: "img/favicon/favicon.ico",
 
   /* colors for website */
