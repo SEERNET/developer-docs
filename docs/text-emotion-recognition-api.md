@@ -51,6 +51,18 @@ curl -X POST "https://proxy.api.deepaffects.com/text/generic/api/latest/sync/tex
 }
 ```
 
+### Output
+
+```shell
+# Sync:
+
+{
+"version": "1.0.4",
+"response": {
+  "anticipation": 0.0, "joy": 0.0, "sadness": 0.0, "neutral": 1.0, "disgust": 0.0, "anger": 0.0, "surprise": 0.0, "fear": 0.0, "trust": 0.0}
+}
+```
+
 ### Python
 
 ```python

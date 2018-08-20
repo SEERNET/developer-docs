@@ -21,8 +21,11 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diariz
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US", "speakerId": "user1" }
 ```
 
+### Output
+
 ```shell
-# The above command returns output:
+# Sync:
+
 {
   "message": "Success"
 }

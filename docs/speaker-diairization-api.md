@@ -22,6 +22,32 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/diari
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US", "speakers": 2}
 ```
 
+### Output
+
+```shell
+# Sync:
+
+[{
+"speaker_id": "speaker1",
+"start": 0,
+"end": 1
+}]
+
+# Async:
+
+{
+"request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
+"api": "requested_api_name"
+}
+
+# Webhook:
+
+{
+"request_id": "unique_request_id_corresponding to async request_id",
+"response": "sync_response_object"
+}
+```
+
 ### Javascript
 
 ```javascript

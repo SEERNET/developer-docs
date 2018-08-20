@@ -41,20 +41,30 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariz
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US", speakerIds: ["user1"]}
 ```
 
+### Output
+
 ```shell
-# The above command returns output ( Async ):
+# Sync:
+
+[{
+"speaker_id": "speaker1",
+"start": 0,
+"end": 1
+}]
+
+# Async:
+
 {
-  "request_id": "request_id_example",
-  "api": "/audio/generic/api/v3/async/diarization/identify"
+"request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
+"api": "requested_api_name"
 }
-# The above command returns output ( Sync ):
-[
-  {
-  "speakerId": "user1",
-  "start": 0,
-  "end": 2
-  }
-]
+
+# Webhook:
+
+{
+"request_id": "unique_request_id_corresponding to async request_id",
+"response": "sync_response_object"
+}
 ```
 
 ### Body Parameters
