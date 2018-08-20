@@ -7,6 +7,8 @@ sidebar_label: Speaker Identification Api
 Speaker identification api tries to figure out "Who Speaks When" for already enrolled speakers.
 Splits audio clip into segments corresponding to a unique speaker and returns start and end of the segment
 
+> Enroll user using [Speaker Enrollment Api](./speaker-enrollment-api) before using identification api.
+
 ### POST Request
 
 ### Async
