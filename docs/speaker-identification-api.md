@@ -9,7 +9,8 @@ Splits audio clip into segments corresponding to a unique speaker and returns st
 
 ### POST Request
 
-###Async
+### Async
+
 V1 - `POST https://proxy.api.deepaffects.com/audio/generic/api/v1/async/diarization/identify`
 <br />
 V2 - `POST https://proxy.api.deepaffects.com/audio/generic/api/v2/async/diarization/identify`
@@ -17,7 +18,7 @@ V2 - `POST https://proxy.api.deepaffects.com/audio/generic/api/v2/async/diarizat
 V3 - `POST https://proxy.api.deepaffects.com/audio/generic/api/v3/async/diarization/identify`
 <br />
 
-###Sync
+### Sync
 
 V1 - `POST https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/identify`
 <br />

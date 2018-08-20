@@ -33,7 +33,3 @@ UserSecurity.apiKey = "<API_KEY>";
 ```
 
 > Make sure to replace `<API_KEY>` with `API Key` obtained from [developer portal](https://developers.deepaffects.com).
-
-<aside class="notice">
-You must replace <code>&lt;API_KEY&gt;</code> with your personal API key.
-</aside>
