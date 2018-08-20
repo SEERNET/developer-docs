@@ -34,7 +34,7 @@ class Footer extends React.Component {
             )}
           </a>
           <div>
-            <h5>Docs</h5>
+            <h5>Platform</h5>
             <a
               href={this.docUrl(
                 "developer-docs/docs.introduction.html",
@@ -42,6 +42,10 @@ class Footer extends React.Component {
               )}
             >
               Getting Started
+            </a>
+            <a href="https://developers.deepaffects.com">Developer Portal</a>
+            <a href="https://www.deepaffects.com/terms-of-services/">
+              Terms Of Service
             </a>
           </div>
           <div>
