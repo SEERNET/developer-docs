@@ -4,20 +4,24 @@ title: Speaker Identification Api
 sidebar_label: Speaker Identification Api
 ---
 
-This API tries to figure out "Who Speaks When" for already enrolled speakers.
+Speaker identification api tries to figure out "Who Speaks When" for already enrolled speakers.
 Splits audio clip into segments corresponding to a unique speaker and returns start and end of the segment
 
 ### POST Request
 
-V1 Async - `POST https://proxy.api.deepaffects.com/audio/generic/api/v1/async/diarization/identify`
+###Async
+V1 - `POST https://proxy.api.deepaffects.com/audio/generic/api/v1/async/diarization/identify`
 <br />
-V2 Async - `POST https://proxy.api.deepaffects.com/audio/generic/api/v2/async/diarization/identify`
+V2 - `POST https://proxy.api.deepaffects.com/audio/generic/api/v2/async/diarization/identify`
 <br />
-V3 Async - `POST https://proxy.api.deepaffects.com/audio/generic/api/v3/async/diarization/identify`
+V3 - `POST https://proxy.api.deepaffects.com/audio/generic/api/v3/async/diarization/identify`
 <br />
-V1 Sync - `POST https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/identify`
+
+###Sync
+
+V1 - `POST https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/identify`
 <br />
-V2 Sync - `POST https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/identify`
+V2 - `POST https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/identify`
 
 ### Choose Api Version
 

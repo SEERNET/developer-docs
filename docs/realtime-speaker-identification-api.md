@@ -4,7 +4,7 @@ title: Realtime Speaker Identification Api
 sidebar_label: Realtime Speaker Identification Api
 ---
 
-Identify speakers from the audio file in realtime
+Realtime speaker identification api identifies speakers from the audio file in realtime
 
 ### Grpc Call
 

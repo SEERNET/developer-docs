@@ -4,7 +4,7 @@ title: Emotion Recognition Api
 sidebar_label: Emotion Recognition Api
 ---
 
-Extract basic emotions from the audio file
+Emotion recognition api extract basic emotions from the audio file
 
 ### POST Request
 

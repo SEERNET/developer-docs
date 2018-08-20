@@ -4,7 +4,7 @@ title: Depression Predition Api
 sidebar_label: Depression Prediction Api
 ---
 
-Predict whether the audio clip contains a depressed person
+Depression prediction api predicts whether the audio clip contains a depressed person
 
 ### POST Request
 

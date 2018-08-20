@@ -4,7 +4,7 @@ title: Realtime Emotion Recognition Api
 sidebar_label: Realtime Emotion Recognition Api
 ---
 
-Extract basic emotions from the audio file in realtime
+Realtime emotion recognition api Extracts basic emotions from the audio file in realtime
 
 ### Grpc Call
 

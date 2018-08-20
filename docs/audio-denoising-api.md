@@ -4,7 +4,7 @@ title: Audio Denoising Api
 sidebar_label: Audio Denoising Api
 ---
 
-Removes noise from your audio signals and returns the denoised audio clip
+Audio denoising api removes noise from your audio signals and returns the denoised audio clip
 
 ### POST Request
 

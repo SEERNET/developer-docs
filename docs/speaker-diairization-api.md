@@ -4,7 +4,7 @@ title: Speaker Diarization Api
 sidebar_label: Speaker Diarization Api
 ---
 
-This API tries to figure out "Who Speaks When".
+Speaker diarization api tries to figure out "Who Speaks When".
 Splits audio clip into segments corresponding to a unique speaker
 
 ### POST Request

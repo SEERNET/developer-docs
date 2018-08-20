@@ -4,7 +4,7 @@ title: Text Emotion Recognition Api
 sidebar_label: Text Emotion Recognition Api
 ---
 
-Extract basic emotions from the text input
+Text emotion api extracts basic emotions from the text input
 
 ### POST Request
 

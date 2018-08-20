@@ -18,9 +18,7 @@ Our API returns standard HTTP success or error status codes. For errors, we will
 | 404         | Not found             | The resource does not exist.                |
 | 50X         | Internal Server Error | An error occurred with our API.             |
 
-## Error types
-
-> Example error response.
+## Example error response.
 
 ```javascript
 {
@@ -32,6 +30,8 @@ Our API returns standard HTTP success or error status codes. For errors, we will
   }
 }
 ```
+
+## Error types
 
 All errors are returned in the form of JSON with a type and optional message.
 

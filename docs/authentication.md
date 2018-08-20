@@ -4,7 +4,8 @@ title: Authentication
 sidebar_label: Authentication
 ---
 
-> To authorize, use this code:
+DeepAffects uses API keys to allow access to the API. You can register a new DeepAffects API key at our [developer portal](https://developers.deepaffects.com).
+DeepAffects expects for the API key to be included in all API requests to the server along with the base url
 
 ### Python
 
@@ -31,10 +32,7 @@ var UserSecurity = defaultClient.authentications["UserSecurity"];
 UserSecurity.apiKey = "<API_KEY>";
 ```
 
-> Make sure to replace `<API_KEY>` with `API Key`.
-
-DeepAffects uses API keys to allow access to the API. You can register a new DeepAffects API key at our [developer portal](https://developers.deepaffects.com).
-DeepAffects expects for the API key to be included in all API requests to the server along with the base url
+> Make sure to replace `<API_KEY>` with `API Key` obtained from [developer portal](https://developers.deepaffects.com).
 
 <aside class="notice">
 You must replace <code>&lt;API_KEY&gt;</code> with your personal API key.

@@ -4,6 +4,8 @@ title: Paralinguistic Feature Extraction Api
 sidebar_label: Paralinguistic Feature Extraction Api
 ---
 
+Paralingustic feature extraction api extracts features from audio file as explained in the next section
+
 ### POST Request
 
 `POST https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/featurize`
