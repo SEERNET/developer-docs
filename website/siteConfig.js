@@ -82,11 +82,11 @@ const siteConfig = {
 
   /* Open Graph and Twitter card images */
   ogImage: "img/docusaurus.png",
-  twitterImage: "img/docusaurus.png"
+  twitterImage: "img/docusaurus.png",
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
-  //   repoUrl: 'https://github.com/facebook/test-site',
+  repoUrl: "https://github.com/SEERNET/developer-docs"
 };
 
 module.exports = siteConfig;
