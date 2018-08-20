@@ -95,10 +95,24 @@ apiInstance.syncFeaturizeAudio(body, callback);
 webhook = <span class="hljs-string">"http://your/webhook/"</span>;
 apiInstance.asyncFeaturizeAudio(body, webhook, callback);
 </code></pre>
-<h3><a class="anchor" aria-hidden="true" id="shell-1"></a><a href="#shell-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Shell</h3>
-<pre><code class="hljs css languages- shell"><span class="hljs-meta">#</span><span class="bash"> The above <span class="hljs-built_in">command</span> returns output:</span>
+<h3><a class="anchor" aria-hidden="true" id="output"></a><a href="#output" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Output</h3>
+<pre><code class="hljs css languages- shell"><span class="hljs-meta">#</span><span class="bash"> Sync:</span>
 
 {"mfccs": [[0.1, 0.3, ..], [0.9, 0.2, ..], [0.1, 0.2, ..]], "zcr": [0.1, 0.2, ..], "energy": [0.3, 0.4, ..]}
+<span class="hljs-meta">
+#</span><span class="bash"> Async:</span>
+
+{
+"request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
+"api": "requested_api_name"
+}
+<span class="hljs-meta">
+#</span><span class="bash"> Webhook:</span>
+
+{
+"request_id": "unique_request_id_corresponding to async request_id",
+"response": "sync_response_object"
+}
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="body-parameters"></a><a href="#body-parameters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Body Parameters</h3>
 <table>
@@ -155,4 +169,14 @@ apiInstance.asyncFeaturizeAudio(body, webhook, callback);
 <tr><td>api</td><td>String</td><td>The api method which was called</td><td></td></tr>
 </tbody>
 </table>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/developer-docs/docs/speaker-diairization-api.html">← Speaker Diarization Api</a><a class="docs-next button" href="/developer-docs/docs/emotion-recognition-api.html">Emotion Recognition Api →</a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/developer-docs/" class="nav-home"></a><div><h5>Docs</h5><a href="/developer-docs/docs/en/developer-docs/docs.introduction.html">Getting Started</a></div><div><h5>Community</h5><a href="http://stackoverflow.com/questions/tagged/deepaffects/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://twitter.com/deepaffects" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/SEERNET/developer-docs">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="SEERNET/developer-docs" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2018 DeepAffects</section></footer></div></body></html>
+<h3><a class="anchor" aria-hidden="true" id="output-parameters-webhook"></a><a href="#output-parameters-webhook" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Output Parameters (Webhook)</h3>
+<table>
+<thead>
+<tr><th>Parameter</th><th>Type</th><th>Description</th><th>Notes</th></tr>
+</thead>
+<tbody>
+<tr><td>request_id</td><td>String</td><td>The request id</td><td>This defaults to the originally sent id or is generated by the api</td></tr>
+<tr><td>response</td><td>Object</td><td>Response object same as sync api response.</td><td></td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/developer-docs/docs/speaker-diairization-api.html">← Speaker Diarization Api</a><a class="docs-next button" href="/developer-docs/docs/emotion-recognition-api.html">Emotion Recognition Api →</a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/developer-docs/" class="nav-home"></a><div><h5>Platform</h5><a href="/developer-docs/docs/en/developer-docs/docs.introduction.html">Getting Started</a><a href="https://developers.deepaffects.com">Developer Portal</a><a href="https://www.deepaffects.com/terms-of-services/">Terms Of Service</a></div><div><h5>Community</h5><a href="http://stackoverflow.com/questions/tagged/deepaffects/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://twitter.com/deepaffects" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/SEERNET/developer-docs">GitHub</a><a class="github-button" href="https://github.com/SEERNET/developer-docs" data-icon="octicon-star" data-count-href="SEERNET/developer-docs" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2018 DeepAffects</section></footer></div></body></html>

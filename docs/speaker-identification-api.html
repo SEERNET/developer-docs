@@ -24,29 +24,25 @@
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Speaker Identification Api</h1></header><article><div><span><p>This API tries to figure out &quot;Who Speaks When&quot; for already enrolled speakers.
 Splits audio clip into segments corresponding to a unique speaker and returns start and end of the segment</p>
 <h3><a class="anchor" aria-hidden="true" id="post-request"></a><a href="#post-request" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>POST Request</h3>
-<h3><a class="anchor" aria-hidden="true" id="async"></a><a href="#async" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Async</h3>
-<table>
-<thead>
-<tr><th>Endpoint</th><th>Latency</th><th>Accuracy</th></tr>
-</thead>
-<tbody>
-<tr><td><code>POST https://proxy.api.deepaffects.com/audio/generic/api/v1/async/diarization/identify</code></td><td>Low</td><td>Good</td></tr>
-<tr><td><code>POST https://proxy.api.deepaffects.com/audio/generic/api/v2/async/diarization/identify</code></td><td>More</td><td>Better</td></tr>
-<tr><td><code>POST https://proxy.api.deepaffects.com/audio/generic/api/v3/async/diarization/identify</code></td><td>High</td><td>Best</td></tr>
-</tbody>
-</table>
-<h3><a class="anchor" aria-hidden="true" id="sync"></a><a href="#sync" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sync</h3>
-<table>
-<thead>
-<tr><th>Endpoint</th><th>Latency</th><th>Accuracy</th></tr>
-</thead>
-<tbody>
-<tr><td><code>POST https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/identify</code></td><td>Low</td><td>Good</td></tr>
-<tr><td><code>POST https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/identify</code></td><td>High</td><td>Best</td></tr>
-</tbody>
-</table>
+<p>V1 Async - <code>POST https://proxy.api.deepaffects.com/audio/generic/api/v1/async/diarization/identify</code>
+V2 Async - <code>POST https://proxy.api.deepaffects.com/audio/generic/api/v2/async/diarization/identify</code>
+V3 Async - <code>POST https://proxy.api.deepaffects.com/audio/generic/api/v3/async/diarization/identify</code>
+V1 Sync - <code>POST https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/identify</code>
+V2 Sync - <code>POST https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/identify</code></p>
 <h3><a class="anchor" aria-hidden="true" id="choose-api-version"></a><a href="#choose-api-version" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Choose Api Version</h3>
 <p>Each api version is optimized to provide optimal latency and accuracy for different usecases. Api version should be selected depending upon the trade-off betweeen accuracy and latency suitable for the required usecase.</p>
+<table>
+<thead>
+<tr><th>Api Version</th><th>Latency</th><th>Accuracy</th></tr>
+</thead>
+<tbody>
+<tr><td>V1 Async</td><td>Low</td><td>Good</td></tr>
+<tr><td>V2 Async</td><td>More</td><td>Better</td></tr>
+<tr><td>V3 Async</td><td>High</td><td>Best</td></tr>
+<tr><td>V1 Sync</td><td>Low</td><td>Good</td></tr>
+<tr><td>V2 Sync</td><td>High</td><td>Best</td></tr>
+</tbody>
+</table>
 <h3><a class="anchor" aria-hidden="true" id="sample-code"></a><a href="#sample-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample Code</h3>
 <h3><a class="anchor" aria-hidden="true" id="shell"></a><a href="#shell" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Shell</h3>
 <pre><code class="hljs css languages- shell">curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v3/async/diarization/identify?apikey=&lt;API_KEY&gt;&amp;webhook=&lt;WEBHOOK_URL&gt;&amp;request_id=&lt;REQUEST_ID&gt;" -H 'content-type: application/json' -d @data.json
@@ -56,19 +52,28 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariz
 #</span><span class="bash"> contents of data.json</span>
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US", speakerIds: ["user1"]}
 </code></pre>
-<pre><code class="hljs css languages- shell"><span class="hljs-meta">#</span><span class="bash"> The above <span class="hljs-built_in">command</span> returns output ( Async ):</span>
+<h3><a class="anchor" aria-hidden="true" id="output"></a><a href="#output" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Output</h3>
+<pre><code class="hljs css languages- shell"><span class="hljs-meta">#</span><span class="bash"> Sync:</span>
+
+[{
+"speaker_id": "speaker1",
+"start": 0,
+"end": 1
+}]
+<span class="hljs-meta">
+#</span><span class="bash"> Async:</span>
+
 {
-  "request_id": "request_id_example",
-  "api": "/audio/generic/api/v3/async/diarization/identify"
+"request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
+"api": "requested_api_name"
 }
-<span class="hljs-meta">#</span><span class="bash"> The above <span class="hljs-built_in">command</span> returns output ( Sync ):</span>
-[
-  {
-  "speakerId": "user1",
-  "start": 0,
-  "end": 2
-  }
-]
+<span class="hljs-meta">
+#</span><span class="bash"> Webhook:</span>
+
+{
+"request_id": "unique_request_id_corresponding to async request_id",
+"response": "sync_response_object"
+}
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="body-parameters"></a><a href="#body-parameters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Body Parameters</h3>
 <table>
@@ -125,4 +130,4 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariz
 <tr><td>end</td><td>Float</td><td>end of the audio segment.</td><td></td></tr>
 </tbody>
 </table>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/developer-docs/docs/speaker-enrollment-api.html">← Speaker Enrollment/Deletion Api</a><a class="docs-next button" href="/developer-docs/docs/realtime-speaker-identification-api.html">Realtime Speaker Identification Api →</a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/developer-docs/" class="nav-home"></a><div><h5>Docs</h5><a href="/developer-docs/docs/en/developer-docs/docs.introduction.html">Getting Started</a></div><div><h5>Community</h5><a href="http://stackoverflow.com/questions/tagged/deepaffects/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://twitter.com/deepaffects" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/SEERNET/developer-docs">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="SEERNET/developer-docs" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2018 DeepAffects</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/developer-docs/docs/speaker-enrollment-api.html">← Speaker Enrollment/Deletion Api</a><a class="docs-next button" href="/developer-docs/docs/realtime-speaker-identification-api.html">Realtime Speaker Identification Api →</a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/developer-docs/" class="nav-home"></a><div><h5>Platform</h5><a href="/developer-docs/docs/en/developer-docs/docs.introduction.html">Getting Started</a><a href="https://developers.deepaffects.com">Developer Portal</a><a href="https://www.deepaffects.com/terms-of-services/">Terms Of Service</a></div><div><h5>Community</h5><a href="http://stackoverflow.com/questions/tagged/deepaffects/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://twitter.com/deepaffects" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/SEERNET/developer-docs">GitHub</a><a class="github-button" href="https://github.com/SEERNET/developer-docs" data-icon="octicon-star" data-count-href="SEERNET/developer-docs" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2018 DeepAffects</section></footer></div></body></html>
