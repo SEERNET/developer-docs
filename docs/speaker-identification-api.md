@@ -9,24 +9,23 @@ Splits audio clip into segments corresponding to a unique speaker and returns st
 
 ### POST Request
 
-### Async
-
-| Endpoint                                                                                 | Latency | Accuracy |
-| ---------------------------------------------------------------------------------------- | ------- | -------- |
-| `POST https://proxy.api.deepaffects.com/audio/generic/api/v1/async/diarization/identify` | Low     | Good     |
-| `POST https://proxy.api.deepaffects.com/audio/generic/api/v2/async/diarization/identify` | More    | Better   |
-| `POST https://proxy.api.deepaffects.com/audio/generic/api/v3/async/diarization/identify` | High    | Best     |
-
-### Sync
-
-| Endpoint                                                                                | Latency | Accuracy |
-| --------------------------------------------------------------------------------------- | ------- | -------- |
-| `POST https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/identify` | Low     | Good     |
-| `POST https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/identify` | High    | Best     |
+V1 Async - `POST https://proxy.api.deepaffects.com/audio/generic/api/v1/async/diarization/identify`
+V2 Async - `POST https://proxy.api.deepaffects.com/audio/generic/api/v2/async/diarization/identify`
+V3 Async - `POST https://proxy.api.deepaffects.com/audio/generic/api/v3/async/diarization/identify`
+V1 Sync - `POST https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/identify`
+V2 Sync - `POST https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/identify`
 
 ### Choose Api Version
 
 Each api version is optimized to provide optimal latency and accuracy for different usecases. Api version should be selected depending upon the trade-off betweeen accuracy and latency suitable for the required usecase.
+
+| Api Version | Latency | Accuracy |
+| ----------- | ------- | -------- |
+| V1 Async    | Low     | Good     |
+| V2 Async    | More    | Better   |
+| V3 Async    | High    | Best     |
+| V1 Sync     | Low     | Good     |
+| V2 Sync     | High    | Best     |
 
 ### Sample Code
 
