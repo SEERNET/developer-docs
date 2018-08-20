@@ -11,20 +11,18 @@ Splits audio clip into segments corresponding to a unique speaker and returns st
 
 ### Async
 
-<br />
-`POST https://proxy.api.deepaffects.com/audio/generic/api/v1/async/diarization/identify` - Low latency, Good accuracy
-<br />
-`POST https://proxy.api.deepaffects.com/audio/generic/api/v2/async/diarization/identify` - More latency, Better accuracy
-<br />
-`POST https://proxy.api.deepaffects.com/audio/generic/api/v3/async/diarization/identify` -  High latency, Best accuracy
-<br />
+| Endpoint                                                                                 | Latency | Accuracy |
+| ---------------------------------------------------------------------------------------- | ------- | -------- |
+| `POST https://proxy.api.deepaffects.com/audio/generic/api/v1/async/diarization/identify` | Low     | Good     |
+| `POST https://proxy.api.deepaffects.com/audio/generic/api/v2/async/diarization/identify` | More    | Better   |
+| `POST https://proxy.api.deepaffects.com/audio/generic/api/v3/async/diarization/identify` | High    | Best     |
 
 ### Sync
 
-<br />
-`POST https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/identify` - Low latency, Good accuracy
-<br />
-`POST https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/identify` -  High latency, Best accuracy
+| Endpoint                                                                                | Latency | Accuracy |
+| --------------------------------------------------------------------------------------- | ------- | -------- |
+| `POST https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/identify` | Low     | Good     |
+| `POST https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/identify` | High    | Best     |
 
 ### Sample Code
 

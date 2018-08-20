@@ -28,10 +28,10 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diariz
 }
 ```
 
+For every successfull enrollment the response will containe message as "Success". Repeat the enrollment with different audios untill the status message changes to "Complete". Then proceed with speaker identification
+
 > Enroll a user atleast thrice with 3 different audio, each about 10-12 seconds.
 > The more diverse the enrollment audio files, the better the accuracy for identification.
-
-For every successfull enrollment the response will containe message as "Success". Repeat the enrollment with different audios untill the status message changes to "Complete". Then proceed with speaker identification
 
 ### Body Parameters
 
@@ -83,9 +83,9 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diariz
 
 ### Body Parameters
 
-| Parameter | Type   | Description                | Notes |
-| --------- | ------ | -------------------------- | ----- |
-| speakerId | String | speaker id tobe registered |       |
+| Parameter | Type   | Description                 | Notes |
+| --------- | ------ | --------------------------- | ----- |
+| speakerId | String | speaker id to be registered |       |
 
 ### Query Parameters
 
@@ -95,6 +95,6 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diariz
 
 ### Output Parameters (Sync)
 
-| Parameter | Type   | Description          | Notes |
-| --------- | ------ | -------------------- | ----- |
-| message   | String | Status of enrollment |       |
+| Parameter | Type   | Description    | Notes              |
+| --------- | ------ | -------------- | ------------------ |
+| message   | String | Request status | Success or Failure |
