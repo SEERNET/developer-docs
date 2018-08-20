@@ -30,11 +30,14 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/recog
 ```shell
 # Sync:
 
-[{
-"emotion": "joy",
-"start": 0,
-"end": 1
-}]
+{
+    "segments":
+        [{
+        "emotion": "joy",
+        "start": 0,
+        "end": 1
+    }]
+}
 
 # Async:
 
@@ -46,8 +49,15 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/recog
 # Webhook:
 
 {
-"request_id": "unique_request_id_corresponding to async request_id",
-"response": "sync_response_object"
+"request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
+"response": {
+    "segments":
+        [{
+        "emotion": "joy",
+        "start": 0,
+        "end": 1
+    }]
+}
 }
 ```
 

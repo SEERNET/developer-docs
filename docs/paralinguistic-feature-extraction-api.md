@@ -109,7 +109,10 @@ apiInstance.asyncFeaturizeAudio(body, webhook, callback);
 
 {
 "request_id": "unique_request_id_corresponding to async request_id",
-"response": "sync_response_object"
+"response": {
+    "mfccs": [[0.1, 0.3, ..], [0.9, 0.2, ..], [0.1, 0.2, ..]],
+    "zcr": [0.1, 0.2, ..],
+    "energy": [0.3, 0.4, ..]}
 }
 ```
 

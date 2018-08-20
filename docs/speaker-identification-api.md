@@ -10,9 +10,13 @@ Splits audio clip into segments corresponding to a unique speaker and returns st
 ### POST Request
 
 V1 Async - `POST https://proxy.api.deepaffects.com/audio/generic/api/v1/async/diarization/identify`
+<br />
 V2 Async - `POST https://proxy.api.deepaffects.com/audio/generic/api/v2/async/diarization/identify`
+<br />
 V3 Async - `POST https://proxy.api.deepaffects.com/audio/generic/api/v3/async/diarization/identify`
+<br />
 V1 Sync - `POST https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/identify`
+<br />
 V2 Sync - `POST https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/identify`
 
 ### Choose Api Version
@@ -45,11 +49,15 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariz
 ```shell
 # Sync:
 
-[{
-"speaker_id": "speaker1",
-"start": 0,
-"end": 1
-}]
+{
+    "segments":
+        [{
+            "speaker_id": "speaker1",
+            "start": 0,
+            "end": 1
+        }]
+}
+
 
 # Async:
 
@@ -61,8 +69,15 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariz
 # Webhook:
 
 {
-"request_id": "unique_request_id_corresponding to async request_id",
-"response": "sync_response_object"
+"request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
+"response": {
+    "segments":
+        [{
+            "speaker_id": "speaker1",
+            "start": 0,
+            "end": 1
+        }]
+}
 }
 ```
 
