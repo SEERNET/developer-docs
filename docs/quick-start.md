@@ -6,9 +6,9 @@ sidebar_label: Quickstart Guide
 
 ## Setting up
 
-1.  First time users: If you want to use DeepAffects's public API, you must have a free account and API key. To create an account and receive <ACCESS_TOKEN> register at our [developer portal](https://developers.deepaffects.com/). Once registered, an API Key will be auto-generated for you. Use this API Key in place of <ACCESS_TOKEN> in the examples below.
+1.  First time users: If you want to use DeepAffects's public API, you must have a free account and API key. To create an account and receive <API_KEY> register at our [developer portal](https://developers.deepaffects.com/). Once registered, an API Key will be auto-generated for you. Use this API Key in place of <API_KEY> in the examples below.
 
-2.  Returning users: If you already have an account, you can always retrieve <ACCESS_TOKEN> and manage your API usage on your DeepAffects [dashboard](https://developers.deepaffects.com) after logging in.
+2.  Returning users: If you already have an account, you can always retrieve <API_KEY> and manage your API usage on your DeepAffects [dashboard](https://developers.deepaffects.com) after logging in.
 
 ## Choose API Product
 

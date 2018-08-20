@@ -20,9 +20,9 @@ There are two stages in the audio feature extraction methodology:
 ### Shell
 
 ```shell
-curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/featurize?apikey=<ACCESS_TOKEN>" -H 'content-type: application/json' -d @data.json
+curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/featurize?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
 
-curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/async/featurize?apikey=<ACCESS_TOKEN>&webhook=<Your webhook url>&request_id=abcd-1234" -H 'content-type: application/json' -d @data.json
+curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/async/featurize?apikey=<API_KEY>&webhook=<Your webhook url>&request_id=abcd-1234" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US"}
@@ -36,7 +36,7 @@ from deepaffects.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: UserSecurity
-deepaffects.configuration.api_key['apikey'] = '<ACCESS_TOKEN>'
+deepaffects.configuration.api_key['apikey'] = '<API_KEY>'
 
 # create an instance of the API class
 api_instance = deepaffects.FeaturizeApi()
@@ -69,7 +69,7 @@ var defaultClient = DeepAffects.ApiClient.instance;
 
 // Configure API key authorization: UserSecurity
 var UserSecurity = defaultClient.authentications["UserSecurity"];
-UserSecurity.apiKey = "<ACCESS_TOKEN>";
+UserSecurity.apiKey = "<API_KEY>";
 
 var apiInstance = new DeepAffects.FeaturizeApi();
 

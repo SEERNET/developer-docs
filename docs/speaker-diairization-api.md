@@ -16,7 +16,7 @@ Splits audio clip into segments corresponding to a unique speaker
 ### Shell
 
 ```shell
-curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/diarize?apikey=<ACCESS_TOKEN>&webhook=<WEBHOOK_URL>&request_id=<REQUEST_ID>" -H 'content-type: application/json' -d @data.json
+curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/diarize?apikey=<API_KEY>&webhook=<WEBHOOK_URL>&request_id=<REQUEST_ID>" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US", "speakers": 2}
@@ -30,7 +30,7 @@ var defaultClient = DeepAffects.ApiClient.instance;
 
 // Configure API key authorization: UserSecurity
 var UserSecurity = defaultClient.authentications["UserSecurity"];
-UserSecurity.apiKey = "<ACCESS_TOKEN>";
+UserSecurity.apiKey = "<API_KEY>";
 
 var apiInstance = new DeepAffects.DiarizeApiV2();
 
@@ -57,7 +57,7 @@ from deepaffects.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: UserSecurity
-deepaffects.configuration.api_key['apikey'] = '<ACCESS_TOKEN>'
+deepaffects.configuration.api_key['apikey'] = '<API_KEY>'
 
 # create an instance of the API class
 api_instance = deepaffects.DiarizeApiV2()

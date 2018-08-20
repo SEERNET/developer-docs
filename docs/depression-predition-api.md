@@ -25,9 +25,9 @@ Predict whether the audio clip contains a depressed person
 ### Shell
 
 ```shell
-curl -X POST "https://proxy.api.deepaffects.com/audio/custom/ellipsis/api/v1/sync/is_depressed?apikey=<ACCESS_TOKEN>" -H 'content-type: application/json' -d @data.json
+curl -X POST "https://proxy.api.deepaffects.com/audio/custom/ellipsis/api/v1/sync/is_depressed?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
 
-curl -X POST "https://proxy.api.deepaffects.com/audio/custom/ellipsis/api/v1/async/is_depressed?apikey=<ACCESS_TOKEN>&webhook=<Your webhook url>&request_id=abcd-1234" -H 'content-type: application/json' -d @data.json
+curl -X POST "https://proxy.api.deepaffects.com/audio/custom/ellipsis/api/v1/async/is_depressed?apikey=<API_KEY>&webhook=<Your webhook url>&request_id=abcd-1234" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US"}
@@ -41,7 +41,7 @@ var defaultClient = DeepAffects.ApiClient.instance;
 
 // Configure API key authorization: UserSecurity
 var UserSecurity = defaultClient.authentications["UserSecurity"];
-UserSecurity.apiKey = "<ACCESS_TOKEN>";
+UserSecurity.apiKey = "<API_KEY>";
 
 var apiInstance = new DeepAffects.EllipsisApi();
 
@@ -73,7 +73,7 @@ from deepaffects.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: UserSecurity
-deepaffects.configuration.api_key = '<ACCESS_TOKEN>'
+deepaffects.configuration.api_key = '<API_KEY>'
 
 # create an instance of the API class
 api_instance = deepaffects.EllipsisApi()

@@ -42,7 +42,7 @@ apiInstance.syncRecogniseTextEmotion(body, callback);
 ### Shell
 
 ```shell
-curl -X POST "https://proxy.api.deepaffects.com/text/generic/api/latest/sync/text_recognise_emotion?apikey=<ACCESS_TOKEN>" -H 'content-type: application/json' -d @data.json
+curl -X POST "https://proxy.api.deepaffects.com/text/generic/api/latest/sync/text_recognise_emotion?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
 
 
 # contents of data.json
@@ -60,7 +60,7 @@ from deepaffects.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: UserSecurity
-deepaffects.configuration.api_key['apikey'] = '<ACCESS_TOKEN>'
+deepaffects.configuration.api_key['apikey'] = '<API_KEY>'
 
 # create an instance of the API class
 api_instance = deepaffects.EmotionApi()

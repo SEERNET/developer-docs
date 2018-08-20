@@ -17,9 +17,9 @@ Extract basic emotions from the audio file
 ### Shell
 
 ```shell
-curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/recognise_emotion?apikey=<ACCESS_TOKEN>" -H 'content-type: application/json' -d @data.json
+curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/recognise_emotion?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
 
-curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/recognise_emotion?apikey=<ACCESS_TOKEN>&webhook=<Your webhook url>&request_id=abcd-1234" -H 'content-type: application/json' -d @data.json
+curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/recognise_emotion?apikey=<API_KEY>&webhook=<Your webhook url>&request_id=abcd-1234" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US"}

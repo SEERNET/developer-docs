@@ -15,7 +15,7 @@ This API enrolls user for speaker identification api
 ### Sample Code
 
 ```shell
-curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/enroll?apikey=<ACCESS_TOKEN>" -H 'content-type: application/json' -d @data.json
+curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/enroll?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US", "speakerId": "user1" }
@@ -66,7 +66,7 @@ This API deletes speaker enrollment for the user
 ### Shell
 
 ```shell
-curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/delete?apikey=<ACCESS_TOKEN>" -H 'content-type: application/json' -d @data.json
+curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/delete?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json
 {"speakerId": "user1"}
