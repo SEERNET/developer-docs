@@ -90,12 +90,29 @@ except ApiException as e:
     print("Exception when calling DenoiseApi->async_denoise_audio: %s\n" % e)
 ```
 
-### Shell
+### Output
 
 ```shell
-# The above command returns output:
+# Sync:
 
 {
+"content": "bytesEncodedDenoisedAudioString",
+"sampleRate": 8000,
+"encoding": "FLAC",
+"languageCode": "en-US"
+}
+
+# Async:
+
+{
+"request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
+"api": "requested_api_name"
+}
+
+# Webhook:
+
+{
+"request_id": "unique_request_id_corresponding to async request_id",
 "content": "bytesEncodedDenoisedAudioString",
 "sampleRate": 8000,
 "encoding": "FLAC",
