@@ -24,6 +24,10 @@ Splits audio clip into segments corresponding to a unique speaker and returns st
 | `POST https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/identify` | Low     | Good     |
 | `POST https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/identify` | High    | Best     |
 
+### Choose Api Version
+
+Each api version is optimized to provide optimal latency and accuracy for different usecases. Api version should be selected depending upon the trade-off betweeen accuracy and latency suitable for the required usecase.
+
 ### Sample Code
 
 ### Shell
