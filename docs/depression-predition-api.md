@@ -1,6 +1,6 @@
 ---
 id: depression-prediction-api
-title: Depression Predition Api
+title: Depression Prediction Api
 sidebar_label: Depression Prediction Api
 ---
 

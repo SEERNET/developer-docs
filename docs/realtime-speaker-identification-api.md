@@ -6,7 +6,10 @@ sidebar_label: Realtime Speaker Identification Api
 
 Realtime speaker identification api identifies speakers from the audio file in realtime
 
-> Enroll user using [Speaker Enrollment Api](./speaker-enrollment-api) before using identification api.
+> Enroll user using [Speaker Enrollment Api](./speaker-enrollment-api.html) before using identification api.
+
+ <br />
+> Install deepaffects python library to use this api using `pip install deepaffects`.
 
 ### Grpc Call
 
