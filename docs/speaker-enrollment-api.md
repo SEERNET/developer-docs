@@ -6,7 +6,7 @@ sidebar_label: Speaker Enrollment/Deletion Api
 
 <h3> Speaker Enrollment API for Identification (REST Api)</h3>
 
-Speaker enrollment api enrolls user for [Speaker Identification Api](./speaker-identification-api) and [Realtime Speaker Identification Api](./realtime-speaker-identification-api).
+Speaker enrollment api enrolls user for [Speaker Identification Api](./speaker-identification-api.html) and [Realtime Speaker Identification Api](./realtime-speaker-identification-api.html).
 
 ### POST Request
 
