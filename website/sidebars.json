@@ -17,7 +17,6 @@
       "audio-denoising-api",
       "paralinguistic-feature-extraction-api"
     ],
-    "Custom Audio Analysis": ["depression-prediction-api"],
     "Generic Text Analysis": ["text-emotion-recognition-api"]
   }
 }
