@@ -16,9 +16,7 @@ Currently, deepaffects provides 2 audio based products:
 
 1.  **Generic Audio Analysis**: Generic Audio Analysis contains APIs like: Denoising API, Speaker Diarization API, Paralinguistic Feature Extraction API, Speaker Identification API, Emotion Extraction API. The APIs in this product are available for use to all developers. The developer has the ability to activate only specific set of APIs by switching them on in the dashboard.
 
-2.  **Custom Audio Analysis**: Custom Audio Analysis contains custom API's built exclusively for clients. These API's are approved for usage only for the specific clients.
-
-3.  **Generic Text Analysis**: Generic Text Analysis contains Text Emotion API. more api's are coming soon
+2.  **Generic Text Analysis**: Generic Text Analysis contains Text Emotion API. more api's are coming soon
 
 ## Choose your language
 
