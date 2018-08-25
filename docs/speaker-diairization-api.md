@@ -61,7 +61,7 @@ deepaffects.configuration.api_key['apikey'] = '<API_KEY>'
 
 # create an instance of the API class
 api_instance = deepaffects.DiarizeApiV2()
-body = deepaffects.DiarizeAudio.fromFile("/path/to/file") # DiarizeAudio | Audio object that needs to be diarized.
+body = deepaffects.DiarizeAudio.from_file("/path/to/file") # DiarizeAudio | Audio object that needs to be diarized.
 webhook = 'https://your/webhook/' # str | The webhook url where result from async resource is posted
 request_id = 'request_id_example' # str | Unique identifier for the request (optional)
 
