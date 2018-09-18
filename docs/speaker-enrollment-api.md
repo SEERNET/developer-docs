@@ -1,7 +1,7 @@
 ---
 id: speaker-enrollment-api
-title: Speaker Enrollment/Deletion Api
-sidebar_label: Speaker Enrollment/Deletion Api
+title: Speaker Enrollment Api
+sidebar_label: Speaker Enrollment Api
 ---
 
 <h3> Speaker Enrollment API for Identification (REST Api)</h3>
