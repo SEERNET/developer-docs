@@ -18,6 +18,10 @@ To link up your requests to webhooks you can pass a `webhook` parameter when mak
 
 If you return anything other than a HTTP 200 status to the webhook POST then we’ll try to deliver the response to the webhook for up to 5 times with an exponential backoff. If we don't receive a 200 response from your server, we stop delivering the response.
 
+For testing you can create a temporary webhook using https://beeceptor.com/ 
+
+To know more about webhooks visit https://simonfredsted.com/1583
+
 ## Sync v/s Async v/s Realtime
 
 As mentioned above, processing larger audio files take a while and hence we've created async apis specifically for them.

@@ -9,4 +9,5 @@ website/translated_docs
 website/build/
 website/yarn.lock
 website/node_modules
+website/.firebase
 website/i18n/*
