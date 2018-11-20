@@ -104,3 +104,37 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diariz
 | Parameter | Type   | Description    | Notes              |
 | --------- | ------ | -------------- | ------------------ |
 | message   | String | Request status | Success or Failure |
+
+### Get Enrolled Speakers Api
+
+This API lists all the enrolled speakers enrolled for a developer along with enrollment status
+
+### GET Request
+
+`GET https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/get_enrolled_speakers`
+
+### Sample Code
+
+### Shell
+
+```shell
+curl -X GET "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/get_enrolled_speakers?apikey=<API_KEY>"
+
+```shell
+# The above command returns output:
+{
+  "developer_id": "testuser",
+  "enrolled_speaker_ids": [
+    {
+      "speaker_id": "speaker_1",
+      "enrollment_complete" "True"
+    }
+  ]
+}
+```
+
+### Query Parameters
+
+| Parameter | Type   | Description | Notes                                           |
+| --------- | ------ | ----------- | ----------------------------------------------- |
+| apikey   | String | The apikey  | Required for authentication inside all requests |
