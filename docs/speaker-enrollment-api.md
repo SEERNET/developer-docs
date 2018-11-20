@@ -6,7 +6,9 @@ sidebar_label: Speaker Enrollment API
 
 <h3> Speaker Enrollment API for Identification (REST Api)</h3>
 
-Speaker enrollment api enrolls user for [Speaker Identification Api](./speaker-identification-api.html) and [Realtime Speaker Identification Api](./realtime-speaker-identification-api.html).
+Speaker enrollment api enrolls user for [Speaker Identification Api](./speaker-identification-api.html),  [Realtime Speaker Identification Api](./realtime-speaker-identification-api.html).
+[Speaker Diarization Api](./speaker-diarization-api.html)
+
 
 ### POST Request
 
@@ -17,11 +19,10 @@ Speaker enrollment api enrolls user for [Speaker Identification Api](./speaker-i
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Shell-->
 ```shell
-curl -X POST \
-"https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/enroll?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
+curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/enroll?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json
-{"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US", "speakerId": "user1" }
+{"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US", "speakerId": "speaker1" }
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -77,7 +78,7 @@ curl -X POST \
 
 | Parameter | Type   | Description                              | Notes                                                                                                                                                                 |
 | --------- | ------ | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| message   | String | Status of enrollment Success or Failure | Success: Current enrollment is successful. Failure: The enrollment failed |
+| message   | String | Status of enrollment | Success:  Enrollment is successfull|
 
 ### Speaker Enrollment Delete API for Identification (REST Api)
 
