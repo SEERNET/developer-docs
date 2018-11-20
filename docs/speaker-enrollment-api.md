@@ -57,9 +57,9 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariz
 
 ### Output Parameters (Sync)
 
-| Parameter | Type   | Description                              | Notes                                                                                                                                                                 |
+| Parameter | Type   | Description                              | Notes                     |
 | --------- | ------ | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| message   | String | Status of enrollment | Success:  Enrollment is successfull|
+| message   | String | Status of enrollment Success | Success:  enrollment is successfull|
 
 ### Speaker Enrollment Delete API for Identification (REST Api)
 
@@ -126,8 +126,7 @@ curl -X GET "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diariza
   "developer_id": "testuser",
   "enrolled_speaker_ids": [
     {
-      "speaker_id": "speaker_1",
-      "enrollment_complete" "True"
+      "speaker_id": "speaker_1"
     }
   ]
 }
