@@ -19,7 +19,7 @@ Splits audio clip into segments corresponding to a unique speaker
 curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/diarize?apikey=<API_KEY>&webhook=<WEBHOOK_URL>&request_id=<REQUEST_ID>" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json
-{"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US", "speakers": 2, "audioType": "callcenter"}
+{"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US", "speakers": 2, "audioType": "callcenter", "speakerIds":["speaker1"]}
 ```
 
 ### Javascript
@@ -122,6 +122,7 @@ except ApiException as e:
 | content      | String | base64 encoding of the audio file.                       |                              |
 | speakers     | Number | Number of speakers in the file (-1 for unknown speakers) | [default to -1]              |
 | audioType    | String | Type of the audio based on number of speakers            | [default to callcenter]      |
+| speakerIds   | List of Strings | List of enrolled speaker ids using enrollment api   | Optional      |
 
 > audioType can have two values 1) callcenter 2) meeting. We recommend using callcenter when there are two speakers expected to be identified and meeting when multiple speakers are expected.
 

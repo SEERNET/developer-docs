@@ -6,19 +6,21 @@ sidebar_label: Speaker Enrollment Api
 
 <h3> Speaker Enrollment API for Identification (REST Api)</h3>
 
-Speaker enrollment api enrolls user for [Speaker Identification Api](./speaker-identification-api.html) and [Realtime Speaker Identification Api](./realtime-speaker-identification-api.html).
+Speaker enrollment api enrolls user for [Speaker Identification Api](./speaker-identification-api.html),  [Realtime Speaker Identification Api](./realtime-speaker-identification-api.html).
+[Speaker Diarization Api](./speaker-diarization-api.html)
+
 
 ### POST Request
 
-`POST https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/enroll`
+`POST https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/enroll`
 
 ### Sample Code
 
 ```shell
-curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/enroll?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
+curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/enroll?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json
-{"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US", "speakerId": "user1" }
+{"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US", "speakerId": "speaker1" }
 ```
 
 ### Output
@@ -32,8 +34,6 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diariz
 ```
 
 > For every successfull enrollment the response will containe message as "Success".  
->  Repeat the enrollment with different audios untill the status message changes to
-> "Complete". Then proceed with speaker identification
 
  <br />
 > Enroll a user atleast thrice with 3 different audio, each about 10-12 seconds.
@@ -57,9 +57,9 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diariz
 
 ### Output Parameters (Sync)
 
-| Parameter | Type   | Description                              | Notes                                                                                                                                                                 |
+| Parameter | Type   | Description                              | Notes                     |
 | --------- | ------ | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| message   | String | Status of enrollment Success or Complete | Success: Current enrollment is successfull, Complete: Enrollment is completed, Repeat the enrollments with different audio samples until Complete message is received |
+| message   | String | Status of enrollment Success | Success:  enrollment is successfull|
 
 ### Speaker Enrollment Delete API for Identification (REST Api)
 
@@ -126,8 +126,7 @@ curl -X GET "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diariza
   "developer_id": "testuser",
   "enrolled_speaker_ids": [
     {
-      "speaker_id": "speaker_1",
-      "enrollment_complete" "True"
+      "speaker_id": "speaker_1"
     }
   ]
 }
