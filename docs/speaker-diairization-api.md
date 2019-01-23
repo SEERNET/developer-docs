@@ -52,24 +52,35 @@ apiInstance.asyncDiarizeAudio(body, webhook, callback);
 ### Python
 
 ```python
-import deepaffects
-from deepaffects.rest import ApiException
-from pprint import pprint
+import requests
+import base64
 
-# Configure API key authorization: UserSecurity
-deepaffects.configuration.api_key['apikey'] = '<API_KEY>'
+url = "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/diarize"
 
-# create an instance of the API class
-api_instance = deepaffects.DiarizeApiV2()
-body = deepaffects.DiarizeAudio.from_file("/path/to/file") # DiarizeAudio | Audio object that needs to be diarized.
-webhook = 'https://your/webhook/' # str | The webhook url where result from async resource is posted
-request_id = 'request_id_example' # str | Unique identifier for the request (optional)
+querystring = {"apikey":"<API_KEY>", "webhook":"<WEBHOOK_URL>", "request_id":"<OPTIONAL_REQUEST_ID>"}
 
-try:
-    api_response = api_instance.async_diarize_audio(body, webhook, request_id=request_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DiarizeApiV2->async_diarize_audio: %s\n" % e)
+payload = {
+    "encoding": "Wave",
+    "languageCode": "en-US",
+    "speakers": -1,
+    "doVad": true
+}
+
+# The api accepts data either as a url or as base64 encoded content
+# passing payload as url:
+payload["url"] = "https://publicly-facing-url.wav"
+# alternatively, passing payload as content:
+with open(audio_file_name, 'rb') as fin:
+    audio_content = fin.read()
+payload["content"] = base64.b64encode(audio_content).decode('utf-8')
+
+headers = {
+    'Content-Type': "application/json",
+}
+
+response = requests.post(url, data=payload, headers=headers, params=querystring)
+
+print(response.text)
 ```
 
 ### Output
@@ -122,6 +133,7 @@ except ApiException as e:
 | content      | String | base64 encoding of the audio file.                       |                              |
 | speakers     | Number | Number of speakers in the file (-1 for unknown speakers) | [default to -1]              |
 | audioType    | String | Type of the audio based on number of speakers            | [default to callcenter]      |
+| doVad        | Bool   | Apply voice activity detection                           | [default to False]      |
 
 > audioType can have two values 1) callcenter 2) meeting. We recommend using callcenter when there are two speakers expected to be identified and meeting when multiple speakers are expected.
 
