@@ -133,7 +133,8 @@ print(response.text)
 | content      | String | base64 encoding of the audio file.                       |                              |
 | speakers     | Number | Number of speakers in the file (-1 for unknown speakers) | [default to -1]              |
 | audioType    | String | Type of the audio based on number of speakers            | [default to callcenter]      |
-| doVad        | Bool   | Apply voice activity detection                           | [default to False]      |
+| speakerIds   | List[String] | Optional set of speakers to be identified from the call | [default to []]      |
+| doVad        | Bool   | Apply voice activity detection                           | [default to False]           |
 
 > audioType can have two values 1) callcenter 2) meeting. We recommend using callcenter when there are two speakers expected to be identified and meeting when multiple speakers are expected.
 
