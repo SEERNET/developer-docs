@@ -136,7 +136,8 @@ print(response.text)
 | speakerIds   | List[String] | Optional set of speakers to be identified from the call | [default to []]      |
 | doVad        | Bool   | Apply voice activity detection                           | [default to False]           |
 
-> audioType can have two values 1) callcenter 2) meeting. We recommend using callcenter when there are two speakers expected to be identified and meeting when multiple speakers are expected.
+> audioType: can have two values 1) callcenter 2) meeting. We recommend using callcenter when there are two-three speakers expected to be identified and meeting when more than 3 speakers are expected.
+> doVad: Default=False. This parameters is required if you want silence & noise segments removed from the diarization output. 
 
 ### Query Parameters
 
