@@ -138,3 +138,7 @@ curl -X GET "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diariza
 | Parameter | Type   | Description | Notes                                           |
 | --------- | ------ | ----------- | ----------------------------------------------- |
 | apikey   | String | The apikey  | Required for authentication inside all requests |
+
+## About
+
+DeepAffects is a speech analysis platform for Developers. We offer a number of speech analysis apis like, Speech Enhancement, Multi-Speaker Diarization, Emotion Recognition, Voice-prints, Conversation Metrics etc. For more information, checkout our [developer portal](https://developers.deepaffects.com)
