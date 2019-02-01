@@ -15,7 +15,8 @@
       "emotion-recognition-api",
       "realtime-emotion-recognition-api",
       "audio-denoising-api",
-      "paralinguistic-feature-extraction-api"
+      "paralinguistic-feature-extraction-api",
+      "interaction-analytics-api"
     ],
     "Generic Text Analysis": ["text-emotion-recognition-api"]
   }
