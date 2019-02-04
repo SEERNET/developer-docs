@@ -8,9 +8,7 @@ Audio denoising api removes noise from your audio signals and returns the denois
 
 ### POST Request
 
-`POST https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/denoise`
-
-`POST https://proxy.api.deepaffects.com/audio/generic/api/v1/async/denoise`
+`POST https://proxy.api.deepaffects.com/audio/generic/api/v2/async/denoise`
 
 ### Sample Code
 
@@ -36,9 +34,6 @@ var callback = function(error, data, response) {
   }
 };
 
-// sync request
-apiInstance.syncDenoiseAudio(body, callback);
-
 webhook = "http://your/webhook/";
 // async request
 apiInstance.asyncDenoiseAudio(body, webhook, callback);
@@ -47,11 +42,9 @@ apiInstance.asyncDenoiseAudio(body, webhook, callback);
 ### Shell
 
 ```shell
-# sync request
-curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/denoise?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
 
 # async request
-curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/async/denoise?apikey=<API_KEY>>&webhook=<Your webhook url>&request_id=abcd-1234" -H 'content-type: application/json' -d @data.json
+curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/denoise?apikey=<API_KEY>>&webhook=<Your webhook url>&request_id=abcd-1234" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US"}
@@ -60,63 +53,57 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/async/denoi
 ### Python
 
 ```python
-import deepaffects
-from deepaffects.rest import ApiException
-from pprint import pprint
+import requests
+import base64
 
-deepaffects.configuration.api_key['apikey'] = '<API_KEY>'
-api_instance = deepaffects.DenoiseApi()
+url = "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/denoise"
 
-body = deepaffects.Audio.from_file(file_name="/path/to/file")
+querystring = {"apikey":"<API_KEY>", "webhook":"<WEBHOOK_URL>", "request_id":"<OPTIONAL_REQUEST_ID>"}
 
-out_file_name = "/path/to/denoised_out_file.wav"
+payload = {
+    "encoding": "Wave",
+    "languageCode": "en-US",
+    "speakers": -1,
+    "doVad": true
+}
 
-try:
-    # Denoise an audio file
-    api_response = api_instance.sync_denoise_audio(body)
-    api_response.to_file(out_file_name)
-except ApiException as e:
-    print("Exception when calling DenoiseApi->sync_denoise_audio: %s\n" % e)
+# The api accepts data either as a url or as base64 encoded content
+# passing payload as url:
+payload["url"] = "https://publicly-facing-url.wav"
+# alternatively, passing payload as content:
+with open(audio_file_name, 'rb') as fin:
+    audio_content = fin.read()
+payload["content"] = base64.b64encode(audio_content).decode('utf-8')
 
-# async api
-webhook = 'https://your/webhook/' # str | The webhook url where result from async resource is posted
-request_id = 'request_id_example' # str | Unique identifier for the request (optional)
+headers = {
+    'Content-Type': "application/json",
+}
 
-try:
-    # Denoise an audio file
-    api_response = api_instance.async_denoise_audio(body, webhook, request_id=request_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DenoiseApi->async_denoise_audio: %s\n" % e)
+response = requests.post(url, data=payload, headers=headers, params=querystring)
+
+print(response.text)
 ```
 
 ### Output
 
 ```shell
-# Sync:
-
-{
-"content": "bytesEncodedDenoisedAudioString",
-"sampleRate": 8000,
-"encoding": "FLAC",
-"languageCode": "en-US"
-}
-
 # Async:
 
 {
 "request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
-"api": "requested_api_name"
+"api": "/audio/generic/api/v2/async/denoise"
 }
 
 # Webhook:
 
 {
-"request_id": "unique_request_id_corresponding to async request_id",
-"content": "bytesEncodedDenoisedAudioString",
-"sampleRate": 8000,
-"encoding": "FLAC",
-"languageCode": "en-US"
+"request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
+"response": {
+    "url": "https://time-limited.wav",
+    "sampleRate": 8000,
+    "encoding": "FLAC",
+    "languageCode": "en-US"
+    }
 }
 ```
 
@@ -137,15 +124,6 @@ except ApiException as e:
 | webhook    | String | The webhook url at which the responses will be sent                    | Required for async requests                     |
 | request_id | Number | An optional unique id to link async response with the original request | Optional                                        |
 
-### Output Parameters (Sync)
-
-| Parameter    | Type   | Description                               | Notes                        |
-| ------------ | ------ | ----------------------------------------- | ---------------------------- |
-| encoding     | String | Encoding of audio file like MP3, WAV etc. |                              |
-| sampleRate   | Number | Sample rate of the audio file.            |                              |
-| languageCode | String | Language spoken in the audio file.        | [default to &#39;en-US&#39;] |
-| content      | String | base64 encoding of the audio file.        |                              |
-
 ### Output Parameters (Async)
 
 | Parameter  | Type   | Description                     | Notes                                                              |
@@ -161,4 +139,4 @@ except ApiException as e:
 | encoding     | String | Encoding of audio file like MP3, WAV etc. |                                                                    |
 | sampleRate   | Number | Sample rate of the audio file.            |                                                                    |
 | languageCode | String | Language spoken in the audio file.        | [default to &#39;en-US&#39;]                                       |
-| content      | String | base64 encoding of the audio file.        |                                                                    |
+| url      | String | A time-limited one time access url of the file |                                                   |
