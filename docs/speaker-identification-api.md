@@ -16,9 +16,6 @@ Splits audio clip into segments corresponding to a unique speaker and returns st
 V1 - `POST https://proxy.api.deepaffects.com/audio/generic/api/v1/async/diarization/identify`
 <br />
 V2 - `POST https://proxy.api.deepaffects.com/audio/generic/api/v2/async/diarization/identify`
-<br />
-V3 - `POST https://proxy.api.deepaffects.com/audio/generic/api/v3/async/diarization/identify`
-<br />
 
 ### Sync
 
@@ -33,8 +30,7 @@ Each api version is optimized to provide optimal latency and accuracy for differ
 | Api Version | Latency | Accuracy |
 | ----------- | ------- | -------- |
 | V1 Async    | Low     | Good     |
-| V2 Async    | More    | Better   |
-| V3 Async    | High    | Best     |
+| V2 Async    | High    | Best     |
 | V1 Sync     | Low     | Good     |
 | V2 Sync     | High    | Best     |
 
@@ -95,8 +91,12 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariz
 | encoding     | String       | Encoding of audio file like MP3, WAV etc. |                              |
 | sampleRate   | Number       | Sample rate of the audio file.            |                              |
 | languageCode | String       | Language spoken in the audio file.        | [default to &#39;en-US&#39;] |
-| content      | String       | base64 encoding of the audio file.        |                              |
 | speakerIds   | List[String] | List of enrolled speakers to identify     |                              |
+| content      | String | base64 encoding of the audio file.                       | Optional                     |
+| url          | String | Publicly facing url                                      | Optional                     |
+
+> NOTE: Exactly one of url and content should be passed. In case both values are passed, error is thrown
+
 
 ### Query Parameters
 

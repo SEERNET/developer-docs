@@ -130,11 +130,14 @@ print(response.text)
 | encoding     | String | Encoding of audio file like MP3, WAV etc.                |                              |
 | sampleRate   | Number | Sample rate of the audio file.                           |                              |
 | languageCode | String | Language spoken in the audio file.                       | [default to &#39;en-US&#39;] |
-| content      | String | base64 encoding of the audio file.                       |                              |
 | speakers     | Number | Number of speakers in the file (-1 for unknown speakers) | [default to -1]              |
 | audioType    | String | Type of the audio based on number of speakers            | [default to callcenter]      |
 | speakerIds   | List[String] | Optional set of speakers to be identified from the call | [default to []]      |
 | doVad        | Bool   | Apply voice activity detection                           | [default to False]           |
+| content      | String | base64 encoding of the audio file.                       | Optional                     |
+| url          | String | Publicly facing url                                      | Optional                     |
+
+> Exactly one of url and content should be passed. In case both values are passed, error is thrown
 
 > audioType: can have two values 1) callcenter 2) meeting. We recommend using callcenter when there are two-three speakers expected to be identified and meeting when more than 3 speakers are expected.
 > doVad: Default=False. This parameters is required if you want silence & noise segments removed from the diarization output. 

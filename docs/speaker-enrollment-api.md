@@ -10,12 +10,12 @@ Speaker enrollment api enrolls user for [Speaker Identification Api](./speaker-i
 
 ### POST Request
 
-`POST https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/enroll`
+`POST https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/enroll`
 
 ### Sample Code
 
 ```shell
-curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/enroll?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
+curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/enroll?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US", "speakerId": "user1" }
@@ -139,6 +139,6 @@ curl -X GET "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diariza
 | --------- | ------ | ----------- | ----------------------------------------------- |
 | apikey   | String | The apikey  | Required for authentication inside all requests |
 
-## About
+### About
 
 DeepAffects is a speech analysis platform for Developers. We offer a number of speech analysis apis like, Speech Enhancement, Multi-Speaker Diarization, Emotion Recognition, Voice-prints, Conversation Metrics etc. For more information, checkout our [developer portal](https://developers.deepaffects.com)
