@@ -64,8 +64,7 @@ querystring = {"apikey":"<API_KEY>", "webhook":"<WEBHOOK_URL>", "request_id":"<O
 payload = {
     "encoding": "FLAC",
     "languageCode": "en-US",
-    "speakers": -1,
-    "doVad": true
+    "sampleRate": 8000
 }
 
 # The api accepts data either as a url or as base64 encoded content

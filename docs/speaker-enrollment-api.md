@@ -32,7 +32,7 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariz
 ```
 
 > For every successfull enrollment the response will containe message as "Success".  
->  Repeat the enrollment with different audios untill the status message changes to
+>  Repeat the enrollment with different audios until the status message changes to
 > "Complete". Then proceed with speaker identification
 
  <br />
@@ -119,6 +119,7 @@ This API lists all the enrolled speakers enrolled for a developer along with enr
 
 ```shell
 curl -X GET "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/get_enrolled_speakers?apikey=<API_KEY>"
+```
 
 ```shell
 # The above command returns output:
