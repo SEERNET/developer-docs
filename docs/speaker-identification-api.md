@@ -13,33 +13,18 @@ Splits audio clip into segments corresponding to a unique speaker and returns st
 
 ### Async
 
-V1 - `POST https://proxy.api.deepaffects.com/audio/generic/api/v1/async/diarization/identify`
-<br />
-V2 - `POST https://proxy.api.deepaffects.com/audio/generic/api/v2/async/diarization/identify`
+`POST https://proxy.api.deepaffects.com/audio/generic/api/v2/async/diarization/identify`
 
 ### Sync
 
-V1 - `POST https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/identify`
-<br />
-V2 - `POST https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/identify`
-
-### Choose Api Version
-
-Each api version is optimized to provide optimal latency and accuracy for different usecases. Api version should be selected depending upon the trade-off betweeen accuracy and latency suitable for the required usecase.
-
-| Api Version | Latency | Accuracy |
-| ----------- | ------- | -------- |
-| V1 Async    | Low     | Good     |
-| V2 Async    | High    | Best     |
-| V1 Sync     | Low     | Good     |
-| V2 Sync     | High    | Best     |
+`POST https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/identify`
 
 ### Sample Code
 
 ### Shell
 
 ```shell
-curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v3/async/diarization/identify?apikey=<API_KEY>&webhook=<WEBHOOK_URL>&request_id=<REQUEST_ID>" -H 'content-type: application/json' -d @data.json
+curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/diarization/identify?apikey=<API_KEY>&webhook=<WEBHOOK_URL>&request_id=<REQUEST_ID>" -H 'content-type: application/json' -d @data.json
 
 curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/identify?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
 

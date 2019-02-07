@@ -31,11 +31,6 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariz
 }
 ```
 
-> For every successfull enrollment the response will containe message as "Success".  
->  Repeat the enrollment with different audios until the status message changes to
-> "Complete". Then proceed with speaker identification
-
- <br />
 > Enroll a user atleast thrice with 3 different audio, each about 10-12 seconds.
 > The more diverse the enrollment audio files, the better the accuracy for identification.
 
@@ -59,7 +54,7 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariz
 
 | Parameter | Type   | Description                              | Notes                                                                                                                                                                 |
 | --------- | ------ | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| message   | String | Status of enrollment Success or Complete | Success: Current enrollment is successfull, Complete: Enrollment is completed, Repeat the enrollments with different audio samples until Complete message is received |
+| message   | String | Status of enrollment Success or Failure | Success: Current enrollment is successful. Failure: The enrollment failed |
 
 ### Speaker Enrollment Delete API for Identification (REST Api)
 
