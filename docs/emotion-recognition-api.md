@@ -78,7 +78,7 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/recog
 
 | Parameter  | Type   | Description                                                            | Notes                                           |
 | ---------- | ------ | ---------------------------------------------------------------------- | ----------------------------------------------- |
-| api_key    | String | The apikey                                                             | Required for authentication inside all requests |
+| apikey    | String | The apikey                                                             | Required for authentication inside all requests |
 | webhook    | String | The webhook url at which the responses will be sent                    | Required for async requests                     |
 | request_id | Number | An optional unique id to link async response with the original request | Optional                                        |
 

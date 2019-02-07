@@ -48,7 +48,7 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariz
 
 | Parameter | Type   | Description | Notes                                           |
 | --------- | ------ | ----------- | ----------------------------------------------- |
-| api_key   | String | The apikey  | Required for authentication inside all requests |
+| apikey   | String | The apikey  | Required for authentication inside all requests |
 
 ### Output Parameters (Sync)
 
@@ -92,7 +92,7 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diariz
 
 | Parameter | Type   | Description | Notes                                           |
 | --------- | ------ | ----------- | ----------------------------------------------- |
-| api_key   | String | The apikey  | Required for authentication inside all requests |
+| apikey   | String | The apikey  | Required for authentication inside all requests |
 
 ### Output Parameters (Sync)
 

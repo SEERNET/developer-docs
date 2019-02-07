@@ -98,7 +98,7 @@ except ApiException as e:
 
 | Parameter | Type   | Description | Notes                                           |
 | --------- | ------ | ----------- | ----------------------------------------------- |
-| api_key   | String | The apikey  | Required for authentication inside all requests |
+| apikey   | String | The apikey  | Required for authentication inside all requests |
 
 ### Output Parameters
 

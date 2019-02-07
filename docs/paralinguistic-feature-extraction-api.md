@@ -131,7 +131,7 @@ apiInstance.asyncFeaturizeAudio(body, webhook, callback);
 
 | Parameter  | Type   | Description                                                            | Notes                                           |
 | ---------- | ------ | ---------------------------------------------------------------------- | ----------------------------------------------- |
-| api_key    | String | The apikey                                                             | Required for authentication inside all requests |
+| apikey    | String | The apikey                                                             | Required for authentication inside all requests |
 | webhook    | String | The webhook url at which the responses will be sent                    | Required for async requests                     |
 | request_id | Number | An optional unique id to link async response with the original request | Optional                                        |
 
