@@ -139,9 +139,9 @@ apiInstance.asyncFeaturizeAudio(body, webhook, callback);
 
 | Name       | Type           | Description                         | Notes |
 | ---------- | -------------- | ----------------------------------- | ----- |
-| **mfccs**  | **[[Number]]** | mel frequency cepstral coefficients |       |
-| **zcr**    | **[Number]**   | zero crossing rate                  |       |
-| **energy** | **[Number]**   | energy                              |       |
+| mfccs  | Number | mel frequency cepstral coefficients |       |
+| zcr    | Number   | zero crossing rate                  |       |
+| energy | Number   | energy                              |       |
 
 ### Available Short Term Features
 
