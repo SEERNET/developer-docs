@@ -78,7 +78,7 @@ headers = {
     'Content-Type': "application/json",
 }
 
-response = requests.post(url, data=payload, headers=headers, params=querystring)
+response = requests.post(url, json=payload, headers=headers, params=querystring)
 
 print(response.text)
 ```

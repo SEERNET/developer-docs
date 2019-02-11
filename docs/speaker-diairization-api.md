@@ -63,7 +63,7 @@ payload = {
     "encoding": "Wave",
     "languageCode": "en-US",
     "speakers": -1,
-    "doVad": true
+    "doVad": True
 }
 
 # The api accepts data either as a url or as base64 encoded content
@@ -78,7 +78,7 @@ headers = {
     'Content-Type': "application/json",
 }
 
-response = requests.post(url, data=payload, headers=headers, params=querystring)
+response = requests.post(url, json=payload, headers=headers, params=querystring)
 
 print(response.text)
 ```
