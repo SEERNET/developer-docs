@@ -41,7 +41,8 @@ var options = { method: 'POST',
    { url: 'https://publicly-facing-url.flac',
      encoding: 'FLAC',
      languageCode: 'en-US',
-     sampleRate: 8000 },
+     sampleRate: 8000,
+     metrics: ['all'] },
   json: true };
 
 request(options, function (error, response, body) {
@@ -64,7 +65,8 @@ querystring = {"apikey":"<API_KEY>", "webhook":"<WEBHOOK_URL>", "request_id":"<O
 payload = {
     "encoding": "FLAC",
     "languageCode": "en-US",
-    "sampleRate": 8000
+    "sampleRate": 8000,
+    "metrics": ["all"]
 }
 
 # The api accepts data either as a url or as base64 encoded content
@@ -142,19 +144,22 @@ print(response.text)
         "end": 1, 
         "speaker_id": "0", 
         "start": 0, 
-        "text": "this is fun"
+        "text": "this is fun",
+        "emotion": "joy"
         },
         {
         "end": 3, 
         "speaker_id": "1", 
         "start": 1, 
-        "text": "not really"
+        "text": "not really",
+        "emotion": "sadness"
         }, 
         {
         "end": 4.5, 
         "speaker_id": "0", 
         "start": 3, 
-        "text": "let's get this going"
+        "text": "let's get this going",
+        "emotion": "joy"
         }
     ], 
     "talk_to_listen_ratio": [
@@ -191,6 +196,7 @@ print(response.text)
 | languageCode | String | Language spoken in the audio file.                       | [default to &#39;en-US&#39;] |
 | content      | String | base64 encoding of the audio file.                       | Optional                     |
 | url          | String | Publicly facing url                                      | Optional                     |
+| metrics          | List[String] | List of metrics to be run. Send ['all'] to extract all analytics                                      | Acceptable values in the list: 'all', 'emotion', 'energy', 'interruptions', 'pace', 'questions_asked', 'tone', 'talk_to_listen_ratio'                |
 
 > Exactly one of url and content should be passed. In case both values are passed, error is thrown
 
@@ -237,7 +243,8 @@ print(response.text)
 | speaker_id | String | The speaker id for the corresponding audio segment |       |
 | start      | Number | Start time of the audio segment in seconds         |       |
 | end        | Number | End time of the audio segment in seconds           |       |
-| text        | String | The transcription output corresponding to the segment           |       |
+| text       | String | The transcription output corresponding to the segment           |       |
+| emotion    | String | Emotion corresponding to the segment                | Will be computed only if specified via metrics |
 
 #### SpeakerId-Value Segment
 
