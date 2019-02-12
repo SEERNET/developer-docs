@@ -145,21 +145,24 @@ print(response.text)
         "speaker_id": "0", 
         "start": 0, 
         "text": "this is fun",
-        "emotion": "joy"
+        "emotion": "joy",
+        "emotion_score": 0.99
         },
         {
         "end": 3, 
         "speaker_id": "1", 
         "start": 1, 
         "text": "not really",
-        "emotion": "sadness"
+        "emotion": "sadness",
+        "emotion_score": 0.92
         }, 
         {
         "end": 4.5, 
         "speaker_id": "0", 
         "start": 3, 
         "text": "let's get this going",
-        "emotion": "joy"
+        "emotion": "joy",
+        "emotion_score": 0.81
         }
     ], 
     "talk_to_listen_ratio": [
@@ -245,6 +248,7 @@ print(response.text)
 | end        | Number | End time of the audio segment in seconds           |       |
 | text       | String | The transcription output corresponding to the segment           |       |
 | emotion    | String | Emotion corresponding to the segment                | Will be computed only if specified via metrics |
+| emotion_score | Number | The confidence score for the emotion | Will be computed only if emotion is computed |
 
 #### SpeakerId-Value Segment
 
