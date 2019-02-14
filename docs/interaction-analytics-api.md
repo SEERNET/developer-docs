@@ -21,7 +21,7 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/async/analy
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US"}
 
 # in case of using a url
-{"url": "https://publicly-facing-url.flac", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US"
+{"url": "https://publicly-facing-url.flac", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US"}
 ```
 
 ### Javascript
