@@ -31,8 +31,10 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariz
 }
 ```
 
-> Enroll a user atleast thrice with 3 different audio, each about 10-12 seconds.
+> NOTE: Enroll a user atleast thrice with 3 different audio, each about 10-12 seconds.
 > The more diverse the enrollment audio files, the better the accuracy for identification.
+
+> NOTE: All the enrollments for a particular speaker should be of same sampling rate. This check is added to avoid contamination of existing voiceprint. In case you want to enroll more audios corresponding to the speaker, create a new speakerId.
 
 ### Body Parameters
 
