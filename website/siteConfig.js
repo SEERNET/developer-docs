@@ -21,8 +21,8 @@ const users = [
 ];
 
 const siteConfig = {
-  title: "DeepAffects" /* title for your website */,
-  tagline: "AI platform for developers",
+  title: "" /* title for your website */,
+  tagline: "The new standard for speech analysis APIs for developers",
   url: "https://docs.deepaffects.com" /* your website url */,
   baseUrl: "/" /* base url for your project */,
   // For github.io type URLs, you would set the url and baseUrl like:
