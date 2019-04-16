@@ -136,11 +136,15 @@ print(response.text)
 | doVad        | Bool   | Apply voice activity detection                           | [default to False]           |
 | content      | String | base64 encoding of the audio file.                       | Optional                     |
 | url          | String | Publicly facing url                                      | Optional                     |
+| source          | String | The source for the audio file: webex, zoom, gotomeeting, phone                                      | Optional                     |
 
 > Exactly one of url and content should be passed. In case both values are passed, error is thrown
 
 > audioType: can have two values 1) callcenter 2) meeting. We recommend using callcenter when there are two-three speakers expected to be identified and meeting when more than 3 speakers are expected.
+
 > doVad: Default=False. This parameters is required if you want silence & noise segments removed from the diarization output. 
+
+> source: Adding source information enables an enhanced model which is built specifically for those audio sources. 
 
 ### Query Parameters
 
