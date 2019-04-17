@@ -18,7 +18,7 @@ Voice activity detection (VAD) is a technique used in speech processing to detec
 ### Shell
 
 ```shell
-curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/async/vad?apikey=<API_KEY>&webhook=<WEBHOOK_URL>&request_id=<OPTIONAL_REQUEST_ID>" -H 'content-type: application/json' -d @data.json
+curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/async/vad?apikey=<API_KEY>&webhook=<WEBHOOK_URL>" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US", "minNonSpeechDuration": 1}
@@ -32,7 +32,6 @@ var options = { method: 'POST',
   url: 'https://proxy.api.deepaffects.com/audio/generic/api/v1/async/vad',
   qs: 
    { apikey: '<API_KEY>',
-     request_id: '<OPTIONAL_REQUEST_ID>',
      webhook: '<WEBHOOK_URL>' },
   headers: 
    { 'Content-Type': 'application/json' },
@@ -58,7 +57,7 @@ import base64
 
 url = "https://proxy.api.deepaffects.com/audio/generic/api/v1/async/vad"
 
-querystring = {"apikey":"<API_KEY>", "webhook":"<WEBHOOK_URL>", "request_id":"<OPTIONAL_REQUEST_ID>"}
+querystring = {"apikey":"<API_KEY>", "webhook":"<WEBHOOK_URL>"}
 
 payload = {
     "encoding": "Wave",

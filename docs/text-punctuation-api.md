@@ -25,7 +25,7 @@ Currently, the following punctuations are added to the text:
 ### Shell
 
 ```shell
-curl -X POST "https://proxy.api.deepaffects.com/text/generic/api/v1/async/punctuate?apikey=<API_KEY>&webhook=<WEBHOOK_URL>&request_id=<OPTIONAL_REQUEST_ID>" -H 'content-type: application/json' -d @data.json
+curl -X POST "https://proxy.api.deepaffects.com/text/generic/api/v1/async/punctuate?apikey=<API_KEY>&webhook=<WEBHOOK_URL>" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json
 {"texts": ["so its more fluid than it is and you know its not the best kind of feedback right"]}
@@ -39,7 +39,6 @@ var options = { method: 'POST',
   url: 'https://proxy.api.deepaffects.com/text/generic/api/v1/async/punctuate',
   qs: 
    { apikey: '<API_KEY>',
-     request_id: '<OPTIONAL_REQUEST_ID>',
      webhook: '<WEBHOOK_URL>' },
   headers: 
    { 'Content-Type': 'application/json' },
@@ -62,7 +61,7 @@ import base64
 
 url = "https://proxy.api.deepaffects.com/text/generic/api/v1/async/punctuate"
 
-querystring = {"apikey":"<API_KEY>", "webhook":"<WEBHOOK_URL>", "request_id":"<OPTIONAL_REQUEST_ID>"}
+querystring = {"apikey":"<API_KEY>", "webhook":"<WEBHOOK_URL>"}
 
 {"texts": ["so its more fluid than it is and you know its not the best kind of feedback right"]}
 

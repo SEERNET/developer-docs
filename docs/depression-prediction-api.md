@@ -27,7 +27,7 @@ Depression prediction api predicts whether the audio clip contains a depressed p
 ```shell
 curl -X POST "https://proxy.api.deepaffects.com/audio/custom/ellipsis/api/v1/sync/is_depressed?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
 
-curl -X POST "https://proxy.api.deepaffects.com/audio/custom/ellipsis/api/v1/async/is_depressed?apikey=<API_KEY>&webhook=<Your webhook url>&request_id=abcd-1234" -H 'content-type: application/json' -d @data.json
+curl -X POST "https://proxy.api.deepaffects.com/audio/custom/ellipsis/api/v1/async/is_depressed?apikey=<API_KEY>&webhook=<Your webhook url>" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US"}
