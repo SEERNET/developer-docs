@@ -15,7 +15,7 @@ Automatic Speech Recognition API provides high-quality speech-to-text conversion
 ### Shell
 
 ```shell
-curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/async/asr?apikey=<API_KEY>&webhook=<WEBHOOK_URL>&request_id=<REQUEST_ID>" -H 'content-type: application/json' -d @data.json
+curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/async/asr?apikey=<API_KEY>&webhook=<WEBHOOK_URL>" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json with content
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US", "audioType": "callcenter", "enableSpeakerDiarization": true}
@@ -33,8 +33,7 @@ var options = { method: 'POST',
   url: 'https://proxy.api.deepaffects.com/audio/generic/api/v1/async/asr',
   qs: 
    { apikey: '<API_KEY>',
-     webhook: '<WEBHOOK_URL>',
-     request_id: '<REQUEST_ID>' },
+     webhook: '<WEBHOOK_URL>'},
   headers: 
    {  'Content-Type': 'application/json' },
   body: 
@@ -61,7 +60,7 @@ import base64
 
 url = "https://proxy.api.deepaffects.com/audio/generic/api/v1/async/asr"
 
-querystring = {"apikey":"<API_KEY>", "webhook":"<WEBHOOK_URL>", "request_id":"<OPTIONAL_REQUEST_ID>"}
+querystring = {"apikey":"<API_KEY>", "webhook":"<WEBHOOK_URL>"}
 
 payload = {
     "encoding": "FLAC",
@@ -180,7 +179,7 @@ audioType: can have the following values:
 | ---------- | ------ | ---------------------------------------------------------------------- | ----------------------------------------------- |
 | apikey    | String | The apikey                                                             | Required for authentication inside all requests |
 | webhook    | String | The webhook url at which the responses will be sent                    | Required for async requests                     |
-| request_id | Number | An optional unique id to link async response with the original request | Optional                                        |
+| request_id | String | An optional unique id to link async response with the original request | Optional                                        |
 
 ### Output Parameters (Async)
 
