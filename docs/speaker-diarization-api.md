@@ -1,5 +1,5 @@
 ---
-id: speaker-diairization-api
+id: speaker-diarization-api
 title: Speaker Diarization Api
 sidebar_label: Speaker Diarization Api
 ---
@@ -86,18 +86,6 @@ print(response.text)
 ### Output
 
 ```shell
-# Sync:
-
-{
-  "num_speakers": 2,
-  "segments":[
-        {
-            "speaker_id": "speaker1",
-            "start": 0,
-            "end": 1
-        }
-    ]
-}
 
 # Async:
 
@@ -138,9 +126,17 @@ print(response.text)
 | url          | String | Publicly facing url                                      | Optional                     |
 | source          | String | The source for the audio file: webex, zoom, gotomeeting, phone                                      | Optional                     |
 
+audioType: can have the following values: 
+  1) callcenter 
+  2) meeting
+  3) earningscalls
+  4) interview
+  5) media-broadcast
+
+> We recommend using callcenter when there are upto 6 speakers expected to be identified and meeting when more than 6 speakers are expected.
+
 > Exactly one of url and content should be passed. In case both values are passed, error is thrown
 
-> audioType: can have two values 1) callcenter 2) meeting. We recommend using callcenter when there are two-three speakers expected to be identified and meeting when more than 3 speakers are expected.
 
 > doVad: Default=False. This parameters is required if you want silence & noise segments removed from the diarization output. 
 

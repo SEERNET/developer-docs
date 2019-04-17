@@ -21,7 +21,7 @@ const users = [
 ];
 
 const siteConfig = {
-  title: "" /* title for your website */,
+  title: "DeepAffects Developer Docs" /* title for your website */,
   tagline: "The new standard for speech analysis APIs for developers",
   url: "https://docs.deepaffects.com" /* your website url */,
   baseUrl: "/" /* base url for your project */,
@@ -86,7 +86,10 @@ const siteConfig = {
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
-  repoUrl: "https://github.com/SEERNET/developer-docs"
+  repoUrl: "https://github.com/SEERNET/developer-docs",
+
+  gaTrackingId: "UA-96958609-1",
+  gaGtag: true
 };
 
 module.exports = siteConfig;

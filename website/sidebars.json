@@ -8,7 +8,7 @@
       "concepts"
     ],
     "Generic Audio Analysis": [
-      "speaker-diairization-api",
+      "speaker-diarization-api",
       "speaker-enrollment-api",
       "speaker-identification-api",
       "realtime-speaker-identification-api",
