@@ -140,7 +140,7 @@ print(response.text)
             "end": 4,
             "word": "Susan",
             "confidence": 0.97
-        },
+        }
     ],
     "transcript": "Hi! Hello, this is Susan."
   }

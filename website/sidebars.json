@@ -7,6 +7,9 @@
       "errors",
       "concepts"
     ],
+    "Jobs": [
+      "job-status-api"
+    ],
     "Generic Audio Analysis": [
       "speaker-diarization-api",
       "speech-to-text-api",
