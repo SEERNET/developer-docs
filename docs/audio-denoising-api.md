@@ -1,7 +1,7 @@
 ---
 id: audio-denoising-api
-title: Audio Denoising Api
-sidebar_label: Audio Denoising Api
+title: Audio Denoising API
+sidebar_label: Audio Denoising API
 ---
 
 Audio denoising api removes noise from your audio signals and returns the denoised audio clip

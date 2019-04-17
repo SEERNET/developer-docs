@@ -1,7 +1,7 @@
 ---
 id: depression-prediction-api
-title: Depression Prediction Api
-sidebar_label: Depression Prediction Api
+title: Depression Prediction API
+sidebar_label: Depression Prediction API
 ---
 
 Depression prediction api predicts whether the audio clip contains a depressed person

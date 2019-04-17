@@ -1,7 +1,7 @@
 ---
 id: speaker-diarization-api
-title: Speaker Diarization Api
-sidebar_label: Speaker Diarization Api
+title: Speaker Diarization API
+sidebar_label: Speaker Diarization API
 ---
 
 Speaker diarization api tries to figure out "Who Speaks When".

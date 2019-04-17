@@ -1,7 +1,7 @@
 ---
 id: speaker-identification-api
-title: Speaker Identification Api
-sidebar_label: Speaker Identification Api
+title: Speaker Identification API
+sidebar_label: Speaker Identification API
 ---
 
 Speaker identification api tries to figure out "Who Speaks When" for already enrolled speakers.

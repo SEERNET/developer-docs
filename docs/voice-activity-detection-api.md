@@ -1,7 +1,7 @@
 ---
 id: voice-activity-detection-api
-title: Voice Activity Detection Api
-sidebar_label: Voice Activity Detection Api
+title: Voice Activity Detection API
+sidebar_label: Voice Activity Detection API
 ---
 
 Voice activity detection (VAD) is a technique used in speech processing to detect the presence (or absence) of human speech. The DeepAffects Voice activity detection API analyzes the audio input and returns specific segments where human speech is detected.

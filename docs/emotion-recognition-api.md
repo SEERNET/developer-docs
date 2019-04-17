@@ -1,7 +1,7 @@
 ---
 id: emotion-recognition-api
-title: Emotion Recognition Api
-sidebar_label: Emotion Recognition Api
+title: Emotion Recognition API
+sidebar_label: Emotion Recognition API
 ---
 
 Emotion recognition api extract basic emotions from the audio file

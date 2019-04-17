@@ -51,7 +51,6 @@ request(options, function (error, response, body) {
 
   console.log(body);
 });
-
 ```
 
 ### Python
@@ -106,6 +105,7 @@ print(response.text)
 "request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
 "response": {
   "num_speakers": 2,
+  "confidence": 0.97,
   "words":[
         {
             "speaker_id": "1",

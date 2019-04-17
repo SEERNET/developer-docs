@@ -1,7 +1,7 @@
 ---
 id: paralinguistic-feature-extraction-api
-title: Paralinguistic Feature Extraction Api
-sidebar_label: Paralinguistic Feature Extraction Api
+title: Paralinguistic Feature Extraction API
+sidebar_label: Paralinguistic Feature Extraction API
 ---
 
 Paralingustic feature extraction api extracts features from audio file as explained in the next section

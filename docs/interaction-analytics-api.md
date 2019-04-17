@@ -1,7 +1,7 @@
 ---
 id: interaction-analytics-api
-title: Interaction Analytics Api
-sidebar_label: Interaction Analytics Api
+title: Interaction Analytics API
+sidebar_label: Interaction Analytics API
 ---
 
 DeepAffects Interaction Analytics API extracts comprehensive interaction based metrics from your audio data

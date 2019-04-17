@@ -1,7 +1,7 @@
 ---
 id: text-punctuation-api
-title: Smart Punctuation Api
-sidebar_label: Smart Punctuation Api
+title: Smart Punctuation API
+sidebar_label: Smart Punctuation API
 ---
 
 Do you've incorrectly formatted or unformatted text? The DeepAffects Smart Punctuation takes a text blob and adds relevant punctuations to the text. The Punctuation API is specifically trained to accurately punctuate noisy asr output.
