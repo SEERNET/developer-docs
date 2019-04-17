@@ -175,6 +175,6 @@ audioType: can have the following values:
 
 | Parameter  | Type   | Description                                        | Notes |
 | ---------- | ------ | -------------------------------------------------- | ----- |
-| speaker_id | Number | The speaker id for the corresponding audio segment |       |
+| speaker_id | String | The speaker id for the corresponding audio segment |       |
 | start      | Number | Start time of the audio segment in seconds         |       |
 | end        | Number | End time of the audio segment in seconds           |       |
