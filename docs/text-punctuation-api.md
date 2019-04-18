@@ -1,7 +1,7 @@
 ---
 id: text-punctuation-api
-title: Smart Punctuation Api
-sidebar_label: Smart Punctuation Api
+title: Smart Punctuation API
+sidebar_label: Smart Punctuation API
 ---
 
 Do you've incorrectly formatted or unformatted text? The DeepAffects Smart Punctuation takes a text blob and adds relevant punctuations to the text. The Punctuation API is specifically trained to accurately punctuate noisy asr output.
@@ -25,7 +25,7 @@ Currently, the following punctuations are added to the text:
 ### Shell
 
 ```shell
-curl -X POST "https://proxy.api.deepaffects.com/text/generic/api/v1/async/punctuate?apikey=<API_KEY>&webhook=<WEBHOOK_URL>&request_id=<OPTIONAL_REQUEST_ID>" -H 'content-type: application/json' -d @data.json
+curl -X POST "https://proxy.api.deepaffects.com/text/generic/api/v1/async/punctuate?apikey=<API_KEY>&webhook=<WEBHOOK_URL>" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json
 {"texts": ["so its more fluid than it is and you know its not the best kind of feedback right"]}
@@ -39,7 +39,6 @@ var options = { method: 'POST',
   url: 'https://proxy.api.deepaffects.com/text/generic/api/v1/async/punctuate',
   qs: 
    { apikey: '<API_KEY>',
-     request_id: '<OPTIONAL_REQUEST_ID>',
      webhook: '<WEBHOOK_URL>' },
   headers: 
    { 'Content-Type': 'application/json' },
@@ -62,7 +61,7 @@ import base64
 
 url = "https://proxy.api.deepaffects.com/text/generic/api/v1/async/punctuate"
 
-querystring = {"apikey":"<API_KEY>", "webhook":"<WEBHOOK_URL>", "request_id":"<OPTIONAL_REQUEST_ID>"}
+querystring = {"apikey":"<API_KEY>", "webhook":"<WEBHOOK_URL>"}
 
 {"texts": ["so its more fluid than it is and you know its not the best kind of feedback right"]}
 
@@ -112,7 +111,7 @@ print(response.text)
 | ---------- | ------ | ---------------------------------------------------------------------- | ----------------------------------------------- |
 | apikey    | String | The apikey                                                             | Required for authentication inside all requests |
 | webhook    | String | The webhook url at which the responses will be sent                    | Required for async requests                     |
-| request_id | Number | An optional unique id to link async response with the original request | Optional                                        |
+| request_id | String | An optional unique id to link async response with the original request | Optional                                        |
 
 ### Output Parameters (Async)
 

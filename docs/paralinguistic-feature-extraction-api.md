@@ -1,7 +1,7 @@
 ---
 id: paralinguistic-feature-extraction-api
-title: Paralinguistic Feature Extraction Api
-sidebar_label: Paralinguistic Feature Extraction Api
+title: Paralinguistic Feature Extraction API
+sidebar_label: Paralinguistic Feature Extraction API
 ---
 
 Paralingustic feature extraction api extracts features from audio file as explained in the next section
@@ -24,7 +24,7 @@ There are two stages in the audio feature extraction methodology:
 ```shell
 curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/featurize?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
 
-curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/async/featurize?apikey=<API_KEY>&webhook=<Your webhook url>&request_id=abcd-1234" -H 'content-type: application/json' -d @data.json
+curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/async/featurize?apikey=<API_KEY>&webhook=<Your webhook url>" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US"}
@@ -133,7 +133,7 @@ apiInstance.asyncFeaturizeAudio(body, webhook, callback);
 | ---------- | ------ | ---------------------------------------------------------------------- | ----------------------------------------------- |
 | apikey    | String | The apikey                                                             | Required for authentication inside all requests |
 | webhook    | String | The webhook url at which the responses will be sent                    | Required for async requests                     |
-| request_id | Number | An optional unique id to link async response with the original request | Optional                                        |
+| request_id | String | An optional unique id to link async response with the original request | Optional                                        |
 
 ### Output Parameters
 

@@ -1,7 +1,7 @@
 ---
 id: emotion-recognition-api
-title: Emotion Recognition Api
-sidebar_label: Emotion Recognition Api
+title: Emotion Recognition API
+sidebar_label: Emotion Recognition API
 ---
 
 Emotion recognition api extract basic emotions from the audio file
@@ -19,7 +19,7 @@ Emotion recognition api extract basic emotions from the audio file
 ```shell
 curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/recognise_emotion?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
 
-curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/recognise_emotion?apikey=<API_KEY>&webhook=<Your webhook url>&request_id=abcd-1234" -H 'content-type: application/json' -d @data.json
+curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/recognise_emotion?apikey=<API_KEY>&webhook=<Your webhook url>" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US"}
@@ -80,7 +80,7 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/recog
 | ---------- | ------ | ---------------------------------------------------------------------- | ----------------------------------------------- |
 | apikey    | String | The apikey                                                             | Required for authentication inside all requests |
 | webhook    | String | The webhook url at which the responses will be sent                    | Required for async requests                     |
-| request_id | Number | An optional unique id to link async response with the original request | Optional                                        |
+| request_id | String | An optional unique id to link async response with the original request | Optional                                        |
 
 ### Output Parameters
 

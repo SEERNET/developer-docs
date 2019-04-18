@@ -1,7 +1,7 @@
 ---
 id: realtime-emotion-recognition-api
-title: Realtime Emotion Recognition Api
-sidebar_label: Realtime Emotion Recognition Api
+title: Realtime Emotion Recognition API
+sidebar_label: Realtime Emotion Recognition API
 ---
 
 Realtime emotion recognition api Extracts basic emotions from the audio file in realtime

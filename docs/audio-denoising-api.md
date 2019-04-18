@@ -1,7 +1,7 @@
 ---
 id: audio-denoising-api
-title: Audio Denoising Api
-sidebar_label: Audio Denoising Api
+title: Audio Denoising API
+sidebar_label: Audio Denoising API
 ---
 
 Audio denoising api removes noise from your audio signals and returns the denoised audio clip
@@ -44,7 +44,7 @@ apiInstance.asyncDenoiseAudio(body, webhook, callback);
 ```shell
 
 # async request
-curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/denoise?apikey=<API_KEY>>&webhook=<Your webhook url>&request_id=abcd-1234" -H 'content-type: application/json' -d @data.json
+curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/denoise?apikey=<API_KEY>>&webhook=<Your webhook url>" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US"}
@@ -58,7 +58,7 @@ import base64
 
 url = "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/denoise"
 
-querystring = {"apikey":"<API_KEY>", "webhook":"<WEBHOOK_URL>", "request_id":"<OPTIONAL_REQUEST_ID>"}
+querystring = {"apikey":"<API_KEY>", "webhook":"<WEBHOOK_URL>"}
 
 payload = {
     "encoding": "Wave",
@@ -125,7 +125,7 @@ print(response.text)
 | ---------- | ------ | ---------------------------------------------------------------------- | ----------------------------------------------- |
 | apikey    | String | The apikey                                                             | Required for authentication inside all requests |
 | webhook    | String | The webhook url at which the responses will be sent                    | Required for async requests                     |
-| request_id | Number | An optional unique id to link async response with the original request | Optional                                        |
+| request_id | String | An optional unique id to link async response with the original request | Optional                                        |
 
 ### Output Parameters (Async)
 

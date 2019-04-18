@@ -1,7 +1,7 @@
 ---
 id: realtime-speaker-identification-api
-title: Realtime Speaker Identification Api
-sidebar_label: Realtime Speaker Identification Api
+title: Realtime Speaker Identification API
+sidebar_label: Realtime Speaker Identification API
 ---
 
 Realtime speaker identification api identifies speakers from the audio file in realtime

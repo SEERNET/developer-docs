@@ -1,7 +1,7 @@
 ---
 id: text-emotion-recognition-api
-title: Text Emotion Recognition Api
-sidebar_label: Text Emotion Recognition Api
+title: Text Emotion Recognition API
+sidebar_label: Text Emotion Recognition API
 ---
 
 Text emotion api extracts basic emotions from the text input

@@ -1,7 +1,7 @@
 ---
 id: speaker-identification-api
-title: Speaker Identification Api
-sidebar_label: Speaker Identification Api
+title: Speaker Identification API
+sidebar_label: Speaker Identification API
 ---
 
 Speaker identification api tries to figure out "Who Speaks When" for already enrolled speakers.
@@ -24,7 +24,7 @@ Splits audio clip into segments corresponding to a unique speaker and returns st
 ### Shell
 
 ```shell
-curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/diarization/identify?apikey=<API_KEY>&webhook=<WEBHOOK_URL>&request_id=<REQUEST_ID>" -H 'content-type: application/json' -d @data.json
+curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/diarization/identify?apikey=<API_KEY>&webhook=<WEBHOOK_URL>" -H 'content-type: application/json' -d @data.json
 
 curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/identify?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
 
@@ -89,7 +89,7 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariz
 | ---------- | ------ | ---------------------------------------------------------------------- | ----------------------------------------------- |
 | apikey    | String | The apikey                                                             | Required for authentication inside all requests |
 | webhook    | String | The webhook url at which the responses will be sent                    | Required for async requests                     |
-| request_id | Number | An optional unique id to link async response with the original request | Optional                                        |
+| request_id | String | An optional unique id to link async response with the original request | Optional                                        |
 
 ### Output Parameters (Async)
 
