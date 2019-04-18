@@ -21,7 +21,7 @@ const users = [
 ];
 
 const siteConfig = {
-  title: "DeepAffects Developer Docs" /* title for your website */,
+  title: "" /* title for your website */,
   tagline: "The new standard for speech analysis APIs for developers",
   url: "https://docs.deepaffects.com" /* your website url */,
   baseUrl: "/" /* base url for your project */,
