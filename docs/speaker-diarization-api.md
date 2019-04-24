@@ -62,7 +62,7 @@ querystring = {"apikey":"<API_KEY>", "webhook":"<WEBHOOK_URL>"}
 payload = {
     "encoding": "Wave",
     "languageCode": "en-US",
-    "speakers": -1,
+    "speakerCount": -1,
     "doVad": True
 }
 
