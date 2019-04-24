@@ -29,3 +29,19 @@ As mentioned above, processing larger audio files take a while and hence we've c
 The sync apis are limited to audio files less than 2 minutes. For files with duration larger than those, use the async variant of the API.
 
 For realtime processing we've created realtime api's based on grpc which accepts the data in smaller chunks and provides the response in realtime.
+
+## Audio Encoding
+
+DeepAffects supports various audio types for ease of integration. As a rule of thumb, we support all the audiotypes which are inherently supported by [ffmpeg](https://trac.ffmpeg.org/wiki/audio%20types)
+
+A subset of the supported formats is specified below. A more exhaustive list can be fetched via `ffmpeg -formats`
+
+1. WAV
+2. MP3
+3. PCM (signed/unsigned) (8/16/32/64 bit) (big/little endian)
+4. AAC
+5. Mulaw
+6. MP4
+7. M4A
+8. MOV
+9. WMV (Windows Media Video)

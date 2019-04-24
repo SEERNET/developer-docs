@@ -118,7 +118,7 @@ print(response.text)
 | encoding     | String | Encoding of audio file like MP3, WAV etc.                |                              |
 | sampleRate   | Number | Sample rate of the audio file.                           |                              |
 | languageCode | String | Language spoken in the audio file.                       | [default to &#39;en-US&#39;] |
-| speakers     | Number | Number of speakers in the file (-1 for unknown speakers) | [default to -1]              |
+| speakerCount     | Number | Number of speakers in the file (-1 for unknown speakers) | [default to -1]              |
 | audioType    | String | Type of the audio based on number of speakers            | [default to callcenter]      |
 | speakerIds   | List[String] | Optional set of speakers to be identified from the call | [default to []]      |
 | doVad        | Bool   | Apply voice activity detection                           | [default to False]           |
