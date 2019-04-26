@@ -12,7 +12,9 @@ Automatic Speech Recognition API provides high-quality speech-to-text conversion
 
 ### Sample Code
 
-### Shell
+<!--DOCUSAURUS_CODE_TABS-->
+
+<!--Shell-->
 
 ```shell
 curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/async/asr?apikey=<API_KEY>&webhook=<WEBHOOK_URL>" -H 'content-type: application/json' -d @data.json
@@ -24,7 +26,7 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/async/asr?a
 {"url": "https://publicly-facing-url.flac", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US", "audioType": "callcenter", "enableSpeakerDiarization": true}
 ```
 
-### Javascript
+<!--Javascript-->
 
 ```javascript
 var request = require("request");
@@ -53,7 +55,7 @@ request(options, function (error, response, body) {
 });
 ```
 
-### Python
+<!--Python-->
 
 ```python
 import requests
@@ -88,20 +90,23 @@ response = requests.post(url, json=payload, headers=headers, params=querystring)
 
 print(response.text)
 ```
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Output
 
-```shell
+<!--DOCUSAURUS_CODE_TABS-->
 
-# Async:
+<!--Async-->
 
+```json
 {
 "request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
 "api": "requested_api_name"
 }
+```
 
-# Webhook:
-
+<!--Webhook-->
+```json
 {
 "request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
 "response": {
@@ -148,6 +153,7 @@ print(response.text)
   }
 }
 ```
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Body Parameters
 
