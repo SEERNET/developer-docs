@@ -89,7 +89,8 @@ const siteConfig = {
   repoUrl: "https://github.com/SEERNET/developer-docs",
 
   gaTrackingId: "UA-96958609-1",
-  gaGtag: true
+  gaGtag: true,
+  docsSideNavCollapsible: true
 };
 
 module.exports = siteConfig;
