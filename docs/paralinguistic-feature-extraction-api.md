@@ -18,8 +18,8 @@ There are two stages in the audio feature extraction methodology:
 2.  Mid-term feature extraction: Extracts a number of statistcs (e.g. mean and standard deviation) over each short-term feature sequence.
 
 ### Sample Code
-
-### Shell
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Shell-->
 
 ```shell
 curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/featurize?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
@@ -30,7 +30,7 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/async/featu
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US"}
 ```
 
-### Python
+<!--Python-->
 
 ```python
 import deepaffects
@@ -63,7 +63,7 @@ except ApiException as e:
     print("Exception when calling FeaturizeApi->async_featurize_audio: %s\n" % e)
 ```
 
-### Javascript
+<!--Javascript-->
 
 ```javascript
 var DeepAffects = require("deep-affects");
@@ -92,23 +92,24 @@ apiInstance.syncFeaturizeAudio(body, callback);
 webhook = "http://your/webhook/";
 apiInstance.asyncFeaturizeAudio(body, webhook, callback);
 ```
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Output
+<!--DOCUSAURUS_CODE_TABS-->
 
-```shell
-# Sync:
-
+<!--Sync-->
+```json
 {"mfccs": [[0.1, 0.3, ..], [0.9, 0.2, ..], [0.1, 0.2, ..]], "zcr": [0.1, 0.2, ..], "energy": [0.3, 0.4, ..]}
-
-# Async:
-
+```
+<!--Async-->
+```json
 {
 "request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
 "api": "requested_api_name"
 }
-
-# Webhook:
-
+```
+<!--Webhook-->
+```json
 {
 "request_id": "unique_request_id_corresponding to async request_id",
 "response": {
@@ -117,6 +118,7 @@ apiInstance.asyncFeaturizeAudio(body, webhook, callback);
     "energy": [0.3, 0.4, ..]}
 }
 ```
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Body Parameters
 

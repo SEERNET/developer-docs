@@ -14,7 +14,10 @@ Emotion recognition api extract basic emotions from the audio file
 
 ### Sample Code
 
-### Shell
+<!--DOCUSAURUS_CODE_TABS-->
+
+<!--Shell-->
+
 
 ```shell
 curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/recognise_emotion?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
@@ -25,11 +28,14 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/recog
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US"}
 ```
 
+<!--END_DOCUSAURUS_CODE_TABS-->
+
 ### Output
 
-```shell
-# Sync:
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Sync-->
 
+```json
 {
     "segments":
         [{
@@ -38,16 +44,18 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/recog
         "end": 1
     }]
 }
+```
 
-# Async:
-
+<!--Async-->
+```json
 {
 "request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
 "api": "requested_api_name"
 }
+```
 
-# Webhook:
-
+<!--Webhook-->
+```json
 {
 "request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
 "response": {
@@ -60,6 +68,7 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/recog
 }
 }
 ```
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Body Parameters
 

@@ -14,6 +14,8 @@ Speaker enrollment api enrolls user for [Speaker Identification Api](./speaker-i
 
 ### Sample Code
 
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Shell-->
 ```shell
 curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/enroll?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
 
@@ -21,15 +23,19 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariz
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US", "speakerId": "user1" }
 ```
 
+<!--END_DOCUSAURUS_CODE_TABS-->
+
 ### Output
 
-```shell
-# Sync:
-
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Sync-->
+```json
 {
   "message": "Success"
 }
 ```
+<!--END_DOCUSAURUS_CODE_TABS-->
+
 
 > NOTE: Enroll a user atleast thrice with 3 different audio, each about 10-12 seconds.
 > The more diverse the enrollment audio files, the better the accuracy for identification.
@@ -68,7 +74,8 @@ This API deletes speaker enrollment for the user
 
 ### Sample Code
 
-### Shell
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Shell-->
 
 ```shell
 curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/delete?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
@@ -77,7 +84,10 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diariz
 {"speakerId": "user1"}
 ```
 
-```shell
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+### Output
+```json
 # The above command returns output:
 {
   "message": "Success"
@@ -112,13 +122,17 @@ This API lists all the enrolled speakers enrolled for a developer along with enr
 
 ### Sample Code
 
-### Shell
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Shell-->
 
 ```shell
 curl -X GET "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/get_enrolled_speakers?apikey=<API_KEY>"
 ```
 
-```shell
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+
+```json
 # The above command returns output:
 {
   "developer_id": "testuser",

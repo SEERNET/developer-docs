@@ -13,7 +13,8 @@ Splits audio clip into segments corresponding to a unique speaker
 
 ### Sample Code
 
-### Shell
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Shell-->
 
 ```shell
 curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/diarize?apikey=<API_KEY>&webhook=<WEBHOOK_URL>" -H 'content-type: application/json' -d @data.json
@@ -21,8 +22,7 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/diari
 # contents of data.json
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US", "audioType": "callcenter"}
 ```
-
-### Javascript
+<!--Javascript-->
 
 ```javascript
 var DeepAffects = require("deep-affects");
@@ -48,8 +48,7 @@ webhook = "https://your/webhook/";
 // async request
 apiInstance.asyncDiarizeAudio(body, webhook, callback);
 ```
-
-### Python
+<!--Python-->
 
 ```python
 import requests
@@ -83,19 +82,23 @@ response = requests.post(url, json=payload, headers=headers, params=querystring)
 print(response.text)
 ```
 
+<!--END_DOCUSAURUS_CODE_TABS-->
+
 ### Output
 
-```shell
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Async-->
 
-# Async:
-
+```json
 {
 "request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
 "api": "requested_api_name"
 }
+```
 
-# Webhook:
+<!--Webhook-->
 
+```json
 {
 "request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
 "response": {
@@ -110,6 +113,7 @@ print(response.text)
   }
 }
 ```
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Body Parameters
 

@@ -21,7 +21,9 @@ Splits audio clip into segments corresponding to a unique speaker and returns st
 
 ### Sample Code
 
-### Shell
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Shell-->
 
 ```shell
 curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/diarization/identify?apikey=<API_KEY>&webhook=<WEBHOOK_URL>" -H 'content-type: application/json' -d @data.json
@@ -32,11 +34,14 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariz
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US", speakerIds: ["user1"]}
 ```
 
+<!--END_DOCUSAURUS_CODE_TABS-->
+
 ### Output
 
-```shell
-# Sync:
+<!--DOCUSAURUS_CODE_TABS-->
 
+<!--Sync-->
+```json
 {
     "segments":
         [{
@@ -45,17 +50,18 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariz
             "end": 1
         }]
 }
+```
 
-
-# Async:
-
+<!--Async-->
+```json
 {
 "request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
 "api": "requested_api_name"
 }
+```
 
-# Webhook:
-
+<!--Webhook-->
+```json
 {
 "request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
 "response": {
@@ -68,6 +74,7 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariz
 }
 }
 ```
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Body Parameters
 
