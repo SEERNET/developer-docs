@@ -28,7 +28,8 @@ Currently, the following punctuations are added to the text:
 
 
 ```shell
-curl -X POST "https://proxy.api.deepaffects.com/text/generic/api/v1/async/punctuate?apikey=<API_KEY>&webhook=<WEBHOOK_URL>" -H 'content-type: application/json' -d @data.json
+curl -X POST \
+"https://proxy.api.deepaffects.com/text/generic/api/v1/async/punctuate?apikey=<API_KEY>&webhook=<WEBHOOK_URL>" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json
 {"texts": ["so its more fluid than it is and you know its not the best kind of feedback right"]}

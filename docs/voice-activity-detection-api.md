@@ -20,7 +20,8 @@ Voice activity detection (VAD) is a technique used in speech processing to detec
 <!--Shell-->
 
 ```shell
-curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/async/vad?apikey=<API_KEY>&webhook=<WEBHOOK_URL>" -H 'content-type: application/json' -d @data.json
+curl -X POST \
+"https://proxy.api.deepaffects.com/audio/generic/api/v1/async/vad?apikey=<API_KEY>&webhook=<WEBHOOK_URL>" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US", "minNonSpeechDuration": 1}
