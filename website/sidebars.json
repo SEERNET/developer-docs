@@ -9,6 +9,7 @@
     ],
     "Generic Audio Analysis": [
       "speaker-diarization-api",
+      "interaction-analytics-api",
       "speaker-enrollment-api",
       "speaker-identification-api",
       "realtime-speaker-identification-api",
@@ -16,8 +17,7 @@
       "emotion-recognition-api",
       "realtime-emotion-recognition-api",
       "audio-denoising-api",
-      "paralinguistic-feature-extraction-api",
-      "interaction-analytics-api"
+      "paralinguistic-feature-extraction-api"
     ],
     "Generic Text Analysis": [
       "text-emotion-recognition-api",
