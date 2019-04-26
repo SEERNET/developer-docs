@@ -161,7 +161,7 @@ print(response.text)
 | url          | String | Publicly facing url                                      | Optional                     |
 | source          | String | The source for the audio file: webex, zoom, gotomeeting, phone                                      | Optional                     |
 | enableSpeakerDiarization  | Boolean | Tags each word corresponding to the speaker                                   | [default to false]                     |
-| enablePunctuation  | Boolean | Enables DeepAffects [Smart Punctuation API](./text-punctuation-api.html)        | [default to true]                     |
+| enablePunctuation  | Boolean | Enables DeepAffects [Smart Punctuation API](text-punctuation-api.md)        | [default to true]                     |
 
 audioType: can have the following values: 
   1) callcenter 
