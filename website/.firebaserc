@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "dev-docs-e192b"
+    "default": "dev-docs-e192b",
+    "private": "private-developer-docs"
   }
 }

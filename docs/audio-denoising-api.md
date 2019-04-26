@@ -12,35 +12,8 @@ Audio denoising api removes noise from your audio signals and returns the denois
 
 ### Sample Code
 
-### Javascript
-
-```javascript
-var DeepAffects = require("deep-affects");
-var defaultClient = DeepAffects.ApiClient.instance;
-
-// Configure API key authorization: UserSecurity
-var UserSecurity = defaultClient.authentications["UserSecurity"];
-UserSecurity.apiKey = "<API_KEY>";
-
-var apiInstance = new DeepAffects.DenoiseApi();
-
-var body = DeepAffects.Audio.fromFile("/path/to/file"); // {Audio} Audio object
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log("API called successfully. Returned data: " + data);
-  }
-};
-
-webhook = "http://your/webhook/";
-// async request
-apiInstance.asyncDenoiseAudio(body, webhook, callback);
-```
-
-### Shell
-
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Shell-->
 ```shell
 
 # async request
@@ -50,8 +23,7 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/denoi
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US"}
 ```
 
-### Python
-
+<!--Python-->
 ```python
 import requests
 import base64
@@ -83,18 +55,47 @@ response = requests.post(url, json=payload, headers=headers, params=querystring)
 print(response.text)
 ```
 
+<!--Javascript-->
+
+```javascript
+var DeepAffects = require("deep-affects");
+var defaultClient = DeepAffects.ApiClient.instance;
+
+// Configure API key authorization: UserSecurity
+var UserSecurity = defaultClient.authentications["UserSecurity"];
+UserSecurity.apiKey = "<API_KEY>";
+
+var apiInstance = new DeepAffects.DenoiseApi();
+
+var body = DeepAffects.Audio.fromFile("/path/to/file"); // {Audio} Audio object
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log("API called successfully. Returned data: " + data);
+  }
+};
+
+webhook = "http://your/webhook/";
+// async request
+apiInstance.asyncDenoiseAudio(body, webhook, callback);
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
+
 ### Output
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Async-->
 
-```shell
-# Async:
-
+```json
 {
 "request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
 "api": "/audio/generic/api/v2/async/denoise"
 }
-
-# Webhook:
-
+```
+<!--Webhook-->
+```json
 {
 "request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
 "response": {
@@ -105,6 +106,8 @@ print(response.text)
     }
 }
 ```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Body Parameters
 

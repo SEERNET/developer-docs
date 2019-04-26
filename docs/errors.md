@@ -20,7 +20,7 @@ Our API returns standard HTTP success or error status codes. For errors, we will
 
 ## Example error response.
 
-```javascript
+```json
 {
   "fault": {
     "faultstring": "Invalid ApiKey",
