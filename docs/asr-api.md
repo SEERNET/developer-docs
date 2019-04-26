@@ -42,6 +42,7 @@ var options = { method: 'POST',
      url: 'https://publicly-facing-url.flac',
      sampleRate: 8000,
      enableSpeakerDiarization: true,
+     enablePunctuation: true,
      audioType: "callcenter" },
   json: true };
 
@@ -67,7 +68,8 @@ payload = {
     "languageCode": "en-US",
     "sampleRate": 8000
     "audioType": "callcenter",
-    "enableSpeakerDiarization": true
+    "enableSpeakerDiarization": true,
+    "enablePunctuation": true
 }
 
 # The api accepts data either as a url or as base64 encoded content
@@ -159,6 +161,7 @@ print(response.text)
 | url          | String | Publicly facing url                                      | Optional                     |
 | source          | String | The source for the audio file: webex, zoom, gotomeeting, phone                                      | Optional                     |
 | enableSpeakerDiarization  | Boolean | Tags each word corresponding to the speaker                                   | [default to false]                     |
+| enablePunctuation  | Boolean | Enables DeepAffects [Smart Punctuation API](./text-punctuation-api.html)        | [default to true]                     |
 
 audioType: can have the following values: 
   1) callcenter 
@@ -201,7 +204,7 @@ audioType: can have the following values:
 | ------------ | ------ | ------------------------------- | ------------------------------------------------------------------------------- |
 | num_speakers | Number | The number of speakers detected | Field is set only when `enableSpeakerDiarization` is `true` |
 | words     | List   | List of word segments       | The Word Segment is defined below                                           |
-| transcript     | String   | The entire transcript along with the punctuations powered by the Smart Punctuations API       |                                            |
+| transcript     | String   | The entire transcript with/without punctuations according to the input       |                                            |
 | confidence | Number | Overall transcription confidence | |
 
 

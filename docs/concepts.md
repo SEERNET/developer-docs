@@ -55,4 +55,3 @@ A subset of the supported formats is specified as follows:
 2. Store the audio data in a lossless format wherever possible. Lossy audio may have a negative impact on the accuracy of the API.
 
 3. In case of multiple channels, DeepAffects downmixes it to a single channel during transcoding.
-
