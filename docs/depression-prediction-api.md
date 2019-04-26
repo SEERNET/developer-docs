@@ -22,7 +22,9 @@ Depression prediction api predicts whether the audio clip contains a depressed p
 
 ### Sample Code
 
-### Shell
+<!--DOCUSAURUS_CODE_TABS-->
+
+<!--Shell-->
 
 ```shell
 curl -X POST "https://proxy.api.deepaffects.com/audio/custom/ellipsis/api/v1/sync/is_depressed?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
@@ -33,7 +35,7 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/custom/ellipsis/api/v1/asy
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US"}
 ```
 
-### Javascript
+<!--Javascript-->
 
 ```javascript
 var DeepAffects = require("deep-affects");
@@ -63,7 +65,7 @@ apiInstance.syncIsDepressed(body, callback);
 apiInstance.asyncIsDepressed(body, callback);
 ```
 
-### Python
+<!--Python-->
 
 ```python
 from __future__ import print_statement
@@ -91,24 +93,35 @@ api_response = api_instance.async_is_depressed(body, webhook, request_id=request
 pprint(api_response)
 ```
 
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+<!--DOCUSAURUS_CODE_TABS-->
+
+<!--Sync-->
 ```shell
 # The above sync request returns output:
 
 True
+```
+<!--Async-->
 
+```json
 # The above async request returns output:
 {
   "request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
   "api": "/api/v1/async/is_depressed"
 }
+```
+<!--Webhook-->
 
+```json
 # The response on the webhook url:
 {
   "request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
   "depressed": True
 }
 ```
-
+<!--END_DOCUSAURUS_CODE_TABS-->
 ### Body Parameters
 
 | Parameter    | Type   | Description                               | Notes                        |

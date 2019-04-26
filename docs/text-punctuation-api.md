@@ -22,7 +22,10 @@ Currently, the following punctuations are added to the text:
 
 ### Sample Code
 
-### Shell
+<!--DOCUSAURUS_CODE_TABS-->
+
+<!--Shell-->
+
 
 ```shell
 curl -X POST "https://proxy.api.deepaffects.com/text/generic/api/v1/async/punctuate?apikey=<API_KEY>&webhook=<WEBHOOK_URL>" -H 'content-type: application/json' -d @data.json
@@ -30,7 +33,7 @@ curl -X POST "https://proxy.api.deepaffects.com/text/generic/api/v1/async/punctu
 # contents of data.json
 {"texts": ["so its more fluid than it is and you know its not the best kind of feedback right"]}
 ```
-### Javascript
+<!--Javascript-->
 
 ```javascript
 var request = require("request");
@@ -51,9 +54,8 @@ request(options, function (error, response, body) {
 
   console.log(body);
 });
-
 ```
-### Python
+<!--Python-->
 
 ```python
 import requests
@@ -73,31 +75,31 @@ response = requests.post(url, json=payload, headers=headers, params=querystring)
 
 print(response.text)
 ```
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Output
 
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Async-->
 
-```shell
-# Async:
-
+```json
 {
 "request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
 "api": "requested_api_name"
 }
+```
 
-# Webhook:
-
+<!--Webhook-->
+```json
 {
     "request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
     "response": {
-        {
         "punctuated_texts":
             ["So it's more fluid than it is, and you know it's not the best kind of feedback, right?"]
-        }
-
     }
 }
 ```
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Body Parameters
 
