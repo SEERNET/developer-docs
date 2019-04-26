@@ -17,7 +17,8 @@ Speaker enrollment api enrolls user for [Speaker Identification Api](./speaker-i
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Shell-->
 ```shell
-curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/enroll?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
+curl -X POST \
+"https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/enroll?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US", "speakerId": "user1" }
@@ -78,7 +79,8 @@ This API deletes speaker enrollment for the user
 <!--Shell-->
 
 ```shell
-curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/delete?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
+curl -X POST \
+"https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/delete?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json
 {"speakerId": "user1"}
@@ -126,7 +128,8 @@ This API lists all the enrolled speakers enrolled for a developer along with enr
 <!--Shell-->
 
 ```shell
-curl -X GET "https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/get_enrolled_speakers?apikey=<API_KEY>"
+curl -X GET \
+"https://proxy.api.deepaffects.com/audio/generic/api/v1/sync/diarization/get_enrolled_speakers?apikey=<API_KEY>"
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->

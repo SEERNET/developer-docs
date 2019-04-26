@@ -17,7 +17,8 @@ Text emotion api extracts basic emotions from the text input
 <!--Shell-->
 
 ```shell
-curl -X POST "https://proxy.api.deepaffects.com/text/generic/api/latest/sync/text_recognise_emotion?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
+curl -X POST \
+"https://proxy.api.deepaffects.com/text/generic/api/latest/sync/text_recognise_emotion?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
 
 
 # contents of data.json

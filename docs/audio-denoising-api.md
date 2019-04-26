@@ -17,7 +17,8 @@ Audio denoising api removes noise from your audio signals and returns the denois
 ```shell
 
 # async request
-curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/denoise?apikey=<API_KEY>>&webhook=<Your webhook url>" -H 'content-type: application/json' -d @data.json
+curl -X POST \
+"https://proxy.api.deepaffects.com/audio/generic/api/v2/async/denoise?apikey=<API_KEY>>&webhook=<Your webhook url>" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US"}
