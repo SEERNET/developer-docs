@@ -17,7 +17,8 @@ Automatic Speech Recognition API provides high-quality speech-to-text conversion
 <!--Shell-->
 
 ```shell
-curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v1/async/asr?apikey=<API_KEY>&webhook=<WEBHOOK_URL>" -H 'content-type: application/json' -d @data.json
+curl -X POST \
+"https://proxy.api.deepaffects.com/audio/generic/api/v1/async/asr?apikey=<API_KEY>&webhook=<WEBHOOK_URL>" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json with content
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US", "audioType": "callcenter", "enableSpeakerDiarization": true}
