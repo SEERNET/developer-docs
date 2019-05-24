@@ -203,8 +203,9 @@ print(response.text)
 | encoding     | String | Encoding of audio file like MP3, WAV etc.                |                              |
 | sampleRate   | Number | Sample rate of the audio file.                           |                              |
 | languageCode | String | Language spoken in the audio file.                       | [default to &#39;en-US&#39;] |
-| content      | String | base64 encoding of the audio file.                       | Optional                     |
-| url          | String | Publicly facing url                                      | Optional                     |
+| content      | String | base64 encoding of the audio file.                       | Semi-Optional                     |
+| url          | String | Publicly facing url                                      | Semi-Optional                     |
+| separateSpeakerPerChannel | Boolean | Set to True if the input audio is multi-channel and each channel has a separate speaker | [default to False] |
 | metrics          | List[String] | List of metrics to be run. Send ['all'] to extract all analytics                                      | Acceptable values in the list: 'all', 'emotion', 'energy', 'interruptions', 'pace', 'questions_asked', 'tone', 'talk_to_listen_ratio'                |
 
 > Exactly one of url and content should be passed. In case both values are passed, error is thrown
