@@ -163,12 +163,13 @@ print(response.text)
 | encoding     | String | Encoding of audio file like MP3, WAV etc.                |                              |
 | sampleRate   | Number | Sample rate of the audio file.                           |                              |
 | languageCode | String | Language spoken in the audio file.                       | [default to &#39;en-US&#39;] |
+| content      | String | base64 encoding of the audio file.                       | Semi-Optional                     |
+| url          | String | Publicly facing url                                      | Semi-Optional                     |
 | audioType    | String | Type of the audio based on number of speakers            | [default to callcenter]      |
-| content      | String | base64 encoding of the audio file.                       | Optional                     |
-| url          | String | Publicly facing url                                      | Optional                     |
 | source          | String | The source for the audio file: webex, zoom, gotomeeting, phone                                      | Optional                     |
-| enableSpeakerDiarization  | Boolean | Tags each word corresponding to the speaker                                   | [default to false]                     |
 | enablePunctuation  | Boolean | Enables DeepAffects [Smart Punctuation API](text-punctuation-api.md)        | [default to true]                     |
+| enableSpeakerDiarization  | Boolean | Tags each word corresponding to the speaker                                   | [default to False]                     |
+| separateSpeakerPerChannel | Boolean | Set to `True` if the input audio is multi-channel and each channel has a separate speaker | [default to False] The value will be used if `enableSpeakerDiarization` is set to `True`|
 
 audioType: can have the following values: 
   1) callcenter 
