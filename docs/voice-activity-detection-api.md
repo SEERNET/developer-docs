@@ -121,8 +121,8 @@ print(response.text)
 | sampleRate   | Number       | Sample rate of the audio file.            |                              |
 | languageCode | String       | Language spoken in the audio file.        | [default to &#39;en-US&#39;] |
 | minNonSpeechDuration   | Number | The minimum duration for a non-speech segment     |    Optional, defaults to 0                          |
-| content      | String | base64 encoding of the audio file.                       | Optional                     |
-| url          | String | Publicly facing url                                      | Optional                     |
+| content      | String | base64 encoding of the audio file.                       | Semi-Optional                     |
+| url          | String | Publicly facing url                                      | Semi-Optional                     |
 
 > NOTE: Exactly one of url and content should be passed. In case both values are passed, error is thrown
 
