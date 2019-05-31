@@ -12,14 +12,16 @@ Job Status API returns information about the status of the job and its correspon
 
 ### Sample Code
 
-### Shell
+<!--DOCUSAURUS_CODE_TABS-->
+
+<!--Shell-->
 
 ```shell
 curl -X GET \
   'https://proxy.api.deepaffects.com/transaction/generic/api/v1/async/status?apikey=<API_KEY>&request_id=<REQUEST_ID>'
 ```
 
-### Javascript
+<!--Javascript-->
 ```javascript
 var request = require("request");
 
@@ -36,7 +38,7 @@ request(options, function (error, response, body) {
 });
 ```
 
-### Python
+<!--Python-->
 ```python
 import requests
 
@@ -53,6 +55,7 @@ response = requests.get(url, data=payload, headers=headers, params=querystring)
 
 print(response.text)
 ```
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Output
 
