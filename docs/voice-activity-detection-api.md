@@ -4,7 +4,7 @@ title: Voice Activity Detection API
 sidebar_label: Voice Activity Detection API
 ---
 
-Voice activity detection (VAD) is a technique used in speech processing to detect the presence (or absence) of human speech. The DeepAffects Voice activity detection API analyzes the audio input and returns specific segments where human speech is detected.
+Voice activity detection (VAD) is a technique used in speech processing to detect the presence (or absence) of human speech. The DeepAffects Voice activity detection API analyzes the audio input and tags specific segments where human speech is detected. We additionaly tag non-speech segments with additional metadata such as noise, music, applause or laughter for additional down stream processing.
 
 
 ### POST Request
@@ -107,6 +107,10 @@ print(response.text)
             "tag": "speech",
             "start": 0,
             "end": 1
+        },{
+            "tag": "laughter",
+            "start": 1,
+            "end": 3
         }]
 }
 }
@@ -156,3 +160,5 @@ print(response.text)
 | tag | String | Tag for the corresponding segment, eg: speech |       |
 | start      | Float  | Start of the audio segment.           |       |
 | end        | Float  | end of the audio segment.             |       |
+
+> Note: Currently supported tags: noise, speech, music, applause, laughter
