@@ -87,9 +87,10 @@ apiInstance.syncRecogniseTextEmotion(body, callback);
 # Sync:
 
 {
-"version": "1.0.4",
+"version": "1.0.5",
 "response": {
-  "anticipation": 0.0, "joy": 0.0, "sadness": 0.0, "neutral": 1.0, "disgust": 0.0, "anger": 0.0, "surprise": 0.0, "fear": 0.0, "trust": 0.0}
+  "neutral": 0.7
+  }
 }
 ```
 
@@ -113,4 +114,4 @@ Output is the list of emotion scores. The parameters in emotion scores are as fo
 | Parameter | Type   | Description                     | Notes |
 | --------- | ------ | ------------------------------- | ----- |
 | version   | String | API Version.                    |       |
-| response  | Object | Object with emotion and scores. |       |
+| response  | Object | Object with emotion and score. |       |
