@@ -9,6 +9,7 @@
     ],
     "Generic Audio Analysis": [
       "speaker-diarization-api",
+      "speech-to-text-api",
       "interaction-analytics-api",
       "speaker-enrollment-api",
       "speaker-identification-api",
