@@ -29,17 +29,29 @@ curl -X POST \
 ### Output
 
 <!--DOCUSAURUS_CODE_TABS-->
-<!--Sync-->
+<!--Success-->
 ```json
 {
   "message": "Success"
+}
+```
+<!--Failure-->
+
+```json
+{
+  "fault": {
+    "detail": {
+      "error_code": "com.deepaffects.BadRequest"
+    }, 
+    "fault_string": "Error in enroll: Insufficent speech content in audio"
+  }
 }
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 
 > **NOTES:** 
->  * Enroll a user with one to three audio samples of 6-12 seconds each, no more than 12 seconds, and ideally 10-12 seconds, where there's continuous speech, no silence, and preferably no background noise.
+>  * Enroll a user with one to three audio samples of 10-12 seconds each, no more than 30 seconds, and ideally with at least 6 seconds, where there's continuous speech, no silence, and preferably no background noise.
 >  * Ideally, only enroll multiple audio samples when they show the diversity in the person's speech, and do not use multiple samples from same audio recording.
 >  * All audio samples in a speakerId should be of the same sample rate, although you may create multiple speakerIds per person, each with different sample rates.
 >  * You may add the additional audio samples to a speakerId over an extended time period.
