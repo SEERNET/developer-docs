@@ -65,7 +65,7 @@ curl -X POST \
 | sampleRate   | Number | Sample rate of the audio file.            |                              |
 | languageCode | String | Language spoken in the audio file.        | [default to &#39;en-US&#39;] |
 | content      | String | base64 encoding of the audio file.        |                              |
-| speakerId    | String | speaker id tobe registered                |                              |
+| speakerId    | String | speaker id to be registered               | acceptable format: `[a-zA-Z0-9_]+` |
 
 ### Query Parameters
 
