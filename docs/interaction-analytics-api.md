@@ -206,7 +206,7 @@ print(response.text)
 | content      | String | base64 encoding of the audio file.                       | Semi-Optional                     |
 | url          | String | Publicly facing url                                      | Semi-Optional                     |
 | separateSpeakerPerChannel | Boolean | Set to True if the input audio is multi-channel and each channel has a separate speaker | [default to False] |
-| metrics          | List[String] | List of metrics to be run. Send ['all'] to extract all analytics                                      | Acceptable values in the list: 'all', 'emotion', 'energy', 'interruptions', 'pace', 'questions_asked', 'tone', 'talk_to_listen_ratio'                |
+| metrics          | List[String] | List of metrics to be run. Send ['all'] to extract all analytics                                      | Acceptable values in the list: 'all', 'emotion', 'energy', 'interruptions', 'pace', 'questions_asked', 'tone', 'talk_to_listen_ratio', 'key_phrases', 'summary'                |
 
 > Exactly one of url and content should be passed. In case both values are passed, error is thrown
 
@@ -244,6 +244,7 @@ print(response.text)
 | questions_asked | List  | List of SpeakerId-Value Segments       |             |
 | tone | List    | List of SpeakerId-Value Segments       |              |
 | talk_to_listen_ratio | List    | List of SpeakerId-Value Segments       |              |
+| calleq | Object    | Aggregate level metrics       | The CallEQ Object is defined below           |
 
 
 #### Diarized Segment
@@ -272,3 +273,11 @@ print(response.text)
 | start      | Number | Start time of the audio segment in seconds         |       |
 | end        | Number | End time of the audio segment in seconds           |       |
 
+
+#### CallEQ Object
+
+| Parameter  | Type   | Description                                        | Notes |
+| ---------- | ------ | -------------------------------------------------- | ----- |
+| summary      | String | Extractive summary comprised of top few sentences from the conversation to present the gist of the call.          |       |
+| key_phrases        | List[String] | Top key phrases in the conversation ranked based on their importance and affinity to a extreme sentiments.           |       |
+| loudness        | List[Tuple] | start, end timings of 90% percentile "loud" segments           |       |
