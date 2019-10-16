@@ -208,7 +208,9 @@ print(response.text)
 | separateSpeakerPerChannel | Boolean | Set to True if the input audio is multi-channel and each channel has a separate speaker | [default to False] |
 | metrics          | List[String] | List of metrics to be run. Send ['all'] to extract all analytics                                      | Acceptable values in the list: 'all', 'emotion', 'energy', 'interruptions', 'pace', 'questions_asked', 'tone', 'talk_to_listen_ratio', 'key_phrases', 'summary'                |
 
-> Exactly one of url and content should be passed. In case both values are passed, error is thrown
+Additional to the above parameters, all the parameters from the [Speaker Diarization API](./speaker-diarization-api.html) and the [Speech Recognition API](./speech-to-text-api.html) are also acknowledged.
+
+> Exactly one of url and content should be passed. In case both values are passed, an error is thrown.
 
 ### Query Parameters
 
@@ -236,7 +238,7 @@ print(response.text)
 
 | Parameter    | Type   | Description                     | Notes                                                                           |
 | ------------ | ------ | ------------------------------- | ------------------------------------------------------------------------------- |
-| num_speakers | Number | The number of speakers detected | The number of speaker will be detected only when the request set speakers to -1 |
+| num_speakers | Number | The number of speakers detected | The number of speakers will be equal to `speakerCount` parameter. In case `speakerCount` is set as `-1`, or isn't set, the number of speakers are estimated algorithmically|
 | segments     | List   | List of diarized segments       | The Diarized Segment is defined below                        |
 | energy     | List   | List of SpeakerId-Value Segments       | The SpeakerId-Value Segment is defined below                        |
 | interruptions     | List   | List of Timed Segments       | The Timed Segment is defined below                        |
