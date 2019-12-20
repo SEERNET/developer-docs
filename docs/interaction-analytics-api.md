@@ -244,7 +244,7 @@ Additional to the above parameters, all the parameters from the [Speaker Diariza
 | energy     | List   | List of SpeakerId-Value Segments       | The SpeakerId-Value Segment is defined below                        |
 | interruptions     | List   | List of Timed Segments       | The Timed Segment is defined below                        |
 | pace     | List   | List of SpeakerId-Value Segments       |                         |
-| questions_asked | List  | List of SpeakerId-Value Segments       |             |
+| questions_asked | List  | List of SpeakerId-Questions Segments       | The SpeakerId-Questions Segment is defined below                        |
 | tone | List    | List of SpeakerId-Value Segments       |              |
 | talk_to_listen_ratio | List    | List of SpeakerId-Value Segments       |              |
 | calleq | Object    | Aggregate level metrics       | The CallEQ Object is defined below           |
@@ -275,6 +275,15 @@ Additional to the above parameters, all the parameters from the [Speaker Diariza
 | ---------- | ------ | -------------------------------------------------- | ----- |
 | start      | Number | Start time of the audio segment in seconds         |       |
 | end        | Number | End time of the audio segment in seconds           |       |
+
+
+#### SpeakerId-Questions Segment
+
+| Parameter  | Type   | Description                                        | Notes |
+| ---------- | ------ | -------------------------------------------------- | ----- |
+| speaker_id | String | The speaker id for the corresponding audio segment |       |
+| value      | Number | Number of questions asked y the speaker_id |       |
+| questions | List | List of question objects where single object consists of start, end and text keys |       |
 
 
 #### CallEQ Object
