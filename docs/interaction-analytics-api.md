@@ -104,94 +104,108 @@ print(response.text)
 <!--Webhook-->
 ```json
 {
-"request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
-"response":
-    {
+  "request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62", 
+  "response": {
     "energy": [
-        {
+      {
         "speaker_id": "0", 
         "value": 8
-        },
-        {
+      }, 
+      {
         "speaker_id": "1", 
         "value": 2
-        }
+      }
     ], 
     "interruptions": [
-        {
+      {
         "end": 3.1, 
         "start": 2.9
-        }
+      }
     ], 
     "num_speakers": 2, 
     "pace": [
-        {
+      {
         "speaker_id": "0", 
         "value": "slow"
-        },
-        {
+      }, 
+      {
         "speaker_id": "1", 
         "value": "fast"
-        }
+      }
     ], 
     "questions_asked": [
-        {
+      {
+        "questions": [
+          {
+            "end": 293.02, 
+            "start": 292.1, 
+            "text": "Does that make sense?"
+          }
+        ], 
         "speaker_id": "0", 
-        "value": 31
-        },
-        {
+        "value": 1
+      }, 
+      {
+        "questions": [
+          {
+            "end": 420.02, 
+            "start": 418.1, 
+            "text": "Sorry, what platform?"
+          }
+        ], 
         "speaker_id": "1", 
-        "value": 11
-        }
+        "value": 1
+      }
     ], 
     "segments": [
-        {
+      {
+        "emotion": "joy", 
+        "emotion_score": 0.99, 
         "end": 1, 
         "speaker_id": "0", 
         "start": 0, 
-        "text": "this is fun",
-        "emotion": "joy",
-        "emotion_score": 0.99
-        },
-        {
+        "text": "this is fun"
+      }, 
+      {
+        "emotion": "sadness", 
+        "emotion_score": 0.92, 
         "end": 3, 
         "speaker_id": "1", 
         "start": 1, 
-        "text": "not really",
-        "emotion": "sadness",
-        "emotion_score": 0.92
-        }, 
-        {
+        "text": "not really"
+      }, 
+      {
+        "emotion": "joy", 
+        "emotion_score": 0.81, 
         "end": 4.5, 
         "speaker_id": "0", 
         "start": 3, 
-        "text": "let's get this going",
-        "emotion": "joy",
-        "emotion_score": 0.81
-        }
+        "text": "let's get this going"
+      },
+      ...
     ], 
     "talk_to_listen_ratio": [
-        {
+      {
         "speaker_id": "0", 
         "value": "55:45"
-        },
-        {
+      }, 
+      {
         "speaker_id": "1", 
         "value": "45:55"
-        }
+      }
     ], 
     "tone": [
-        {
+      {
         "speaker_id": "0", 
         "value": "excited"
-        },
-        {
+      }, 
+      {
         "speaker_id": "1", 
         "value": "sad"
-        }
+      }
     ], 
-    "total_speech_duration": 4.5
-    }
+    "total_speech_duration": 500.5
+  }
 }
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -244,9 +258,11 @@ Additional to the above parameters, all the parameters from the [Speaker Diariza
 | energy     | List   | List of SpeakerId-Value Segments       | The SpeakerId-Value Segment is defined below                        |
 | interruptions     | List   | List of Timed Segments       | The Timed Segment is defined below                        |
 | pace     | List   | List of SpeakerId-Value Segments       |                         |
-| questions_asked | List  | List of SpeakerId-Value Segments       |             |
+| questions_asked | List  | List of Question-Asked Segments       |             |
 | tone | List    | List of SpeakerId-Value Segments       |              |
 | talk_to_listen_ratio | List    | List of SpeakerId-Value Segments       |              |
+| intent_timings | List | List of Intent-Timings Segment |              |
+| key_phrase_timings | List | List of KeyPhrase-Timings-Timings Segment |              |
 | calleq | Object    | Aggregate level metrics       | The CallEQ Object is defined below           |
 
 
@@ -284,3 +300,28 @@ Additional to the above parameters, all the parameters from the [Speaker Diariza
 | summary      | String | Extractive summary comprised of top few sentences from the conversation to present the gist of the call.          |       |
 | key_phrases        | List[String] | Top key phrases in the conversation ranked based on their importance and affinity to a extreme sentiments.           |       |
 | loudness        | List[Tuple] | start, end timings of 90% percentile "loud" segments           |       |
+
+
+#### Question-Asked Segment
+
+| Parameter  | Type   | Description                                        | Notes |
+| ---------- | ------ | -------------------------------------------------- | ----- |
+| speaker_id | String | The speaker id for the corresponding questions segment |       |
+| value        | Number | Count of number of questions asked by the speaker           |       |
+| questions        | List[Objects] | List of objects with start, end, text entries. This object describes the exact point in time where the question was asked            |       |
+
+#### Intent-Timings Segment
+
+| Parameter  | Type   | Description                                        | Notes |
+| ---------- | ------ | -------------------------------------------------- | ----- |
+| speaker_id | String | The speaker id for the corresponding questions segment |       |
+| intents    | List[Objects] | List of objects with start, end, text, intent entries. This object describes the exact point in time where the intent was detected            |       |
+
+
+#### KeyPhrase-Timings Segment
+
+| Parameter  | Type   | Description                                        | Notes |
+| ---------- | ------ | -------------------------------------------------- | ----- |
+| start      | Number | Start time of the audio segment in seconds         |       |
+| end        | Number | End time of the audio segment in seconds           |       |
+| keyphrase        | String | The key phrase at the point in time          |       |
