@@ -10,7 +10,7 @@ Chapter Detection API automatically extracts chapters from a video. For each cha
 
 ### POST Request
 
-`POST https://proxy.api.deepaffects.com//video/generic/api/alpha/async/videochapters`
+`POST https://proxy.api.deepaffects.com/video/generic/api/alpha/async/videochapters`
 
 ### Sample Code
 
