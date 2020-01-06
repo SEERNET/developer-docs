@@ -23,10 +23,10 @@ curl -X POST \
 "https://proxy.api.deepaffects.com/video/generic/api/alpha/async/videochapters?apikey=<API_KEY>>&webhook=<Your webhook url>" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json with content
-{"content": "bytesEncodedVideoString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US"}
+{"content": "bytesEncodedVideoString", "sampleRate": 8000, "encoding": "MPEG-4", "languageCode": "en-US"}
 
 # contents of data.json with url
-{"url": "https://publicly-facing-url.flac", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US"}
+{"url": "https://publicly-facing-url.mp4", "sampleRate": 8000, "encoding": "MPEG-4", "languageCode": "en-US"}
 
 ```
 
