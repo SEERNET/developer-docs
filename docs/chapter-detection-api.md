@@ -6,7 +6,7 @@ sidebar_label: Chapter Detection API
 
 Chapter Detection API automatically extracts chapters from a video. For each chapter, Optical Character Recognition (OCR) is performed to extract the text in the video frame. If the frame is of a slidedeck, title is also extracted. Thus generating a 'Table of Contents' metadata for the video. 
 
-> Note: This API is still in alpha release.
+> Note: This API is in alpha release.
 
 ### POST Request
 
@@ -108,9 +108,8 @@ request(options, function (error, response, body) {
     "chapters": [
       {
         "end": 1, 
-        "raw_text": "raw% text", 
         "start": 0, 
-        "text": "cleaned text", 
+        "confidence": 0.98,
         "title": "TITLE"
       }
     ]
@@ -126,9 +125,9 @@ request(options, function (error, response, body) {
 | ------------ | ------ | ----------------------------------------- | ---------------------------- |
 | encoding     | String | Encoding of video file like MP4, MKV etc. |                              |
 | sampleRate   | Number | Sample rate of the video file.            |                              |
-| languageCode | String | Language spoken in the video file.        | [default to &#39;en-US&#39;] |
-| content      | String | base64 encoding of the video file.                       | Optional                     |
-| url          | String | Publicly facing url                                      | Optional                     |
+| languageCode | String | Language of the text in the video file.   | [default to &#39;en-US&#39;] |
+| content      | String | base64 encoding of the video file.        | Optional                     |
+| url          | String | Publicly facing url                       | Optional                     |
 
 > Exactly one of url and content should be passed. In case both values are passed, error is thrown
 
@@ -162,5 +161,4 @@ request(options, function (error, response, body) {
 | start | Number | The start time of the chapter |  |
 | end   | Number | The start time of the chapter |  |
 | title     | String   | The title extracted from the OCR output       | Set if a slide is detected in the frame                                            |
-| raw_text     | String   | The entire raw text extracted by the OCR engine      | |
-| text     | String   | Cleaned up version of the raw text extracted by the OCR engine      | |
+| confidence     | Number   | The confidence score for the detected title      | |
