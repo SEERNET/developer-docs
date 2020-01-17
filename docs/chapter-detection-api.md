@@ -161,4 +161,6 @@ request(options, function (error, response, body) {
 | start | Number | The start time of the chapter |  |
 | end   | Number | The start time of the chapter |  |
 | title     | String   | The title extracted from the OCR output       | Set if a slide is detected in the frame                                            |
-| confidence     | Number   | The confidence score for the detected title      | |
+| title_confidence     | Number   | The confidence score for the detected title      | |
+| category     | String   | The category of the chapter, eg: slide, demo       |                                             |
+| category_confidence     | Number   | The confidence score for the category detection      | |
