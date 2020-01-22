@@ -276,6 +276,7 @@ Additional to the above parameters, all the parameters from the [Speaker Diariza
 | text       | String | The transcription output corresponding to the segment           |       |
 | emotion    | String | Emotion corresponding to the segment                | Will be computed only if specified via metrics |
 | emotion_score | Number | The confidence score for the emotion | Will be computed only if emotion is computed |
+| intent     | String | Intent corresponding to the segment: Current intent list: budget, authority, timing, action, need               | Will be computed only if specified via metrics |
 
 #### SpeakerId-Value Segment
 
