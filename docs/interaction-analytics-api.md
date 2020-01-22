@@ -221,7 +221,7 @@ print(response.text)
 | url          | String | Publicly facing url                                      | Semi-Optional                     |
 | separateSpeakerPerChannel | Boolean | Set to True if the input audio is multi-channel and each channel has a separate speaker | [default to False] |
 | speakerIds   | List[String] | Optional set of speakers to be identified from the call | [default to []]      |
-| metrics          | List[String] | List of metrics to be run. Send ['all'] to extract all analytics                                      | Acceptable values in the list: 'all', 'emotion', 'energy', 'interruptions', 'pace', 'questions_asked', 'tone', 'talk_to_listen_ratio', 'key_phrases', 'summary'                |
+| metrics          | List[String] | List of metrics to be run. Send ['all'] to extract all analytics                                      | Acceptable values in the list: 'all', 'emotion', 'energy', 'interruptions', 'pace', 'questions_asked', 'tone', 'talk_to_listen_ratio', 'key_phrases', 'summary', 'intents'                |
 
 Additional to the above parameters, all the parameters from the [Speaker Diarization API](./speaker-diarization-api.html) and the [Speech Recognition API](./speech-to-text-api.html) are also acknowledged.
 
