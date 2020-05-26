@@ -184,7 +184,7 @@ print(response.text)
       },
       ...
     ], 
-    "talk_to_listen_ratio": [
+    "talk_to_listen": [
       {
         "speaker_id": "0", 
         "value": "55:45"
@@ -221,7 +221,7 @@ print(response.text)
 | url          | String | Publicly facing url                                      | Semi-Optional                     |
 | separateSpeakerPerChannel | Boolean | Set to True if the input audio is multi-channel and each channel has a separate speaker | [default to False] |
 | speakerIds   | List[String] | Optional set of speakers to be identified from the call | [default to []]      |
-| metrics          | List[String] | List of metrics to be run. Send ['all'] to extract all analytics                                      | Acceptable values in the list: 'all', 'emotion', 'energy', 'interruptions', 'pace', 'questions_asked', 'tone', 'talk_to_listen_ratio', 'key_phrases', 'summary', 'intents'                |
+| metrics          | List[String] | List of metrics to be run. Send ['all'] to extract all analytics                                      | Acceptable values in the list: 'all', 'emotion', 'energy', 'interruptions', 'pace', 'questions_asked', 'tone', 'talk_to_listen', 'key_phrases', 'summary', 'intents'                |
 
 Additional to the above parameters, all the parameters from the [Speaker Diarization API](./speaker-diarization-api.html) and the [Speech Recognition API](./speech-to-text-api.html) are also acknowledged.
 
@@ -260,7 +260,7 @@ Additional to the above parameters, all the parameters from the [Speaker Diariza
 | pace     | List   | List of SpeakerId-Value Segments       |                         |
 | questions_asked | List  | List of Question-Asked Segments       |             |
 | tone | List    | List of SpeakerId-Value Segments       |              |
-| talk_to_listen_ratio | List    | List of SpeakerId-Value Segments       |              |
+| talk_to_listen | List    | List of SpeakerId-Value Segments       |              |
 | intent_timings | List | List of Intent-Timings Segment |              |
 | key_phrase_timings | List | List of KeyPhrase-Timings-Timings Segment |              |
 | calleq | Object    | Aggregate level metrics       | The CallEQ Object is defined below           |
