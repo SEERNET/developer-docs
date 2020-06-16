@@ -33,7 +33,7 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariz
 <!--Success-->
 ```json
 {
-  "message": "Success"
+  "message": "Success", "speaker_id": "speaker1", "enrollment_complete":True, "total_speech_duration": 20.0, "total_enroll_duration": 30.0, "enroll_quality": "average"
 }
 ```
 <!--Failure-->
@@ -76,9 +76,14 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariz
 
 ### Output Parameters (Sync)
 
-| Parameter | Type   | Description                              | Notes                     |
-| --------- | ------ | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| message   | String | Status of enrollment Success | Success:  enrollment is successfull|
+| Parameter             | Type   | Description                             | Notes                              |
+| --------------------- | ------ | --------------------------------------- | ---------------------------------- |
+| message               | String | Status of enrollment Success            | Success:  enrollment is successfull|
+| speaker_id            | String | Registered speaker id                   |                                    |
+| enroll_quality        | String | Quality of the enrollment               | values: poor, average, good, high  |
+| enrollment_complete   | Bool   | Status of the enrollment                | True if total speech exceeds 12sec |
+| total_speech_duration | Number | Total Speech Duration of the enrollment |                                    |
+| total_enroll_duration | Number | Total Duration of the enrollment        |                                    |
 
 ### Speaker Enrollment Delete API for Identification (REST Api)
 
@@ -129,9 +134,44 @@ curl -X POST \
 | --------- | ------ | -------------- | ------------------ |
 | message   | String | Request status | Success or Failure |
 
-### Get Enrolled Speakers Api
 
-This API lists all the enrolled speakers enrolled for a developer along with enrollment status
+### Get Speaker Enrollment Status Api
+
+This API fetches the status of speaker enrollment for a developer
+
+### GET Request
+
+`GET https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/enroll`
+
+### Sample Code
+
+### Shell
+
+```shell
+curl -X GET "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/enroll?apikey=<API_KEY>&speakerId=<SPEAKER_ID>"
+
+```shell
+# The above command returns output:
+{
+  "speaker_id": "speaker_1",
+  "enrollment_complete":True,
+  "total_speech_duration": 20.0,
+  "total_enroll_duration": 30.0,
+  "enroll_quality": "average"
+}
+```
+
+### Query Parameters
+
+| Parameter | Type   | Description                             | Notes                                           |
+| --------- | ------ | --------------------------------------- | ----------------------------------------------- |
+| apikey    | String | The apikey                              | Required for authentication inside all requests |
+| speakerId | String | speaker id whose details to be fetched  |                                                 |
+
+
+### Get All Enrolled Speakers Api
+
+This API lists all the completely enrolled speakers for a developer along with other data
 
 ### GET Request
 
@@ -156,7 +196,11 @@ curl -X GET \
   "developer_id": "testuser",
   "enrolled_speaker_ids": [
     {
-      "speaker_id": "speaker_1"
+      "speaker_id": "speaker_1",
+      "enrollment_complete":True,
+      "total_speech_duration": 20.0,
+      "total_enroll_duration": 30.0,
+      "enroll_quality": "average"
     }
   ]
 }
@@ -164,10 +208,7 @@ curl -X GET \
 
 ### Query Parameters
 
-| Parameter | Type   | Description | Notes                                           |
-| --------- | ------ | ----------- | ----------------------------------------------- |
-| apikey   | String | The apikey  | Required for authentication inside all requests |
-
-### About
-
-DeepAffects is a speech analysis platform for Developers. We offer a number of speech analysis apis like, Speech Enhancement, Multi-Speaker Diarization, Emotion Recognition, Voice-prints, Conversation Metrics etc. For more information, checkout our [developer portal](https://developers.deepaffects.com)
+| Parameter      | Type   | Description | Notes                                                                       |
+| -------------- | ------ | ----------- | --------------------------------------------------------------------------- |
+| apikey         | String | The apikey  | Required for authentication inside all requests                             |
+| getAllSpeakers | Bool   | true/false  | Set to true for fetching incomplete enrolled speakers too. Default to false |
