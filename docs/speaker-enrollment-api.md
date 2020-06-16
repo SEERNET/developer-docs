@@ -6,7 +6,9 @@ sidebar_label: Speaker Enrollment API
 
 <h3> Speaker Enrollment API for Identification (REST Api)</h3>
 
-Speaker enrollment api enrolls user for [Speaker Identification Api](./speaker-identification-api.html) and [Realtime Speaker Identification Api](./realtime-speaker-identification-api.html).
+Speaker enrollment api enrolls user for [Speaker Identification Api](./speaker-identification-api.html),  [Realtime Speaker Identification Api](./realtime-speaker-identification-api.html).
+[Speaker Diarization Api](./speaker-diarization-api.html)
+
 
 ### POST Request
 
@@ -17,11 +19,10 @@ Speaker enrollment api enrolls user for [Speaker Identification Api](./speaker-i
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Shell-->
 ```shell
-curl -X POST \
-"https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/enroll?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
+curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/enroll?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json
-{"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US", "speakerId": "user1" }
+{"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US", "speakerId": "speaker1" }
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -32,7 +33,7 @@ curl -X POST \
 <!--Success-->
 ```json
 {
-  "message": "Success"
+  "message": "Success", "speaker_id": "speaker1", "enrollment_complete":True, "total_speech_duration": 20.0, "total_enroll_duration": 30.0, "enroll_quality": "average"
 }
 ```
 <!--Failure-->
@@ -75,9 +76,14 @@ curl -X POST \
 
 ### Output Parameters (Sync)
 
-| Parameter | Type   | Description                              | Notes                                                                                                                                                                 |
-| --------- | ------ | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| message   | String | Status of enrollment Success or Failure | Success: Current enrollment is successful. Failure: The enrollment failed |
+| Parameter             | Type   | Description                             | Notes                              |
+| --------------------- | ------ | --------------------------------------- | ---------------------------------- |
+| message               | String | Status of enrollment Success            | Success:  enrollment is successfull|
+| speaker_id            | String | Registered speaker id                   |                                    |
+| enroll_quality        | String | Quality of the enrollment               | values: poor, average, good, high  |
+| enrollment_complete   | Bool   | Status of the enrollment                | True if total speech exceeds 12sec |
+| total_speech_duration | Number | Total Speech Duration of the enrollment |                                    |
+| total_enroll_duration | Number | Total Duration of the enrollment        |                                    |
 
 ### Speaker Enrollment Delete API for Identification (REST Api)
 
@@ -128,9 +134,44 @@ curl -X POST \
 | --------- | ------ | -------------- | ------------------ |
 | message   | String | Request status | Success or Failure |
 
-### Get Enrolled Speakers Api
 
-This API lists all the enrolled speakers enrolled for a developer along with enrollment status
+### Get Speaker Enrollment Status Api
+
+This API fetches the status of speaker enrollment for a developer
+
+### GET Request
+
+`GET https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/enroll`
+
+### Sample Code
+
+### Shell
+
+```shell
+curl -X GET "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/enroll?apikey=<API_KEY>&speakerId=<SPEAKER_ID>"
+
+```shell
+# The above command returns output:
+{
+  "speaker_id": "speaker_1",
+  "enrollment_complete":True,
+  "total_speech_duration": 20.0,
+  "total_enroll_duration": 30.0,
+  "enroll_quality": "average"
+}
+```
+
+### Query Parameters
+
+| Parameter | Type   | Description                             | Notes                                           |
+| --------- | ------ | --------------------------------------- | ----------------------------------------------- |
+| apikey    | String | The apikey                              | Required for authentication inside all requests |
+| speakerId | String | speaker id whose details to be fetched  |                                                 |
+
+
+### Get All Enrolled Speakers Api
+
+This API lists all the completely enrolled speakers for a developer along with other data
 
 ### GET Request
 
@@ -156,7 +197,10 @@ curl -X GET \
   "enrolled_speaker_ids": [
     {
       "speaker_id": "speaker_1",
-      "enrollment_complete" "True"
+      "enrollment_complete":True,
+      "total_speech_duration": 20.0,
+      "total_enroll_duration": 30.0,
+      "enroll_quality": "average"
     }
   ]
 }
@@ -164,10 +208,7 @@ curl -X GET \
 
 ### Query Parameters
 
-| Parameter | Type   | Description | Notes                                           |
-| --------- | ------ | ----------- | ----------------------------------------------- |
-| apikey   | String | The apikey  | Required for authentication inside all requests |
-
-### About
-
-DeepAffects is a speech analysis platform for Developers. We offer a number of speech analysis apis like, Speech Enhancement, Multi-Speaker Diarization, Emotion Recognition, Voice-prints, Conversation Metrics etc. For more information, checkout our [developer portal](https://developers.deepaffects.com)
+| Parameter      | Type   | Description | Notes                                                                       |
+| -------------- | ------ | ----------- | --------------------------------------------------------------------------- |
+| apikey         | String | The apikey  | Required for authentication inside all requests                             |
+| getAllSpeakers | Bool   | true/false  | Set to true for fetching incomplete enrolled speakers too. Default to false |
