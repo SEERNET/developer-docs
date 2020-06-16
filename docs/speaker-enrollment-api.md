@@ -109,12 +109,14 @@ curl -X POST \
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Output
+<!--DOCUSAURUS_CODE_TABS-->
 ```json
 # The above command returns output:
 {
   "message": "Success"
 }
 ```
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Body Parameters
 
@@ -147,12 +149,15 @@ This API fetches the status of speaker enrollment for a developer
 
 ### Shell
 
+<!--DOCUSAURUS_CODE_TABS-->
 ```shell
 curl -X GET "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/enroll?apikey=<API_KEY>&speakerId=<SPEAKER_ID>"
 ```
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Output
 
+<!--DOCUSAURUS_CODE_TABS-->
 ```json
 # The above command returns output:
 {
@@ -163,6 +168,7 @@ curl -X GET "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariza
   "enroll_quality": "average"
 }
 ```
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Query Parameters
 
