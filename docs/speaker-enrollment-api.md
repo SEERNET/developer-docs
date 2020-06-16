@@ -19,7 +19,8 @@ Speaker enrollment api enrolls user for [Speaker Identification Api](./speaker-i
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Shell-->
 ```shell
-curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/enroll?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
+curl -X POST \
+"https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/enroll?apikey=<API_KEY>" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US", "speakerId": "speaker1" }
@@ -33,7 +34,12 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariz
 <!--Success-->
 ```json
 {
-  "message": "Success", "speaker_id": "speaker1", "enrollment_complete":true, "total_speech_duration": 20.0, "total_enroll_duration": 30.0, "enroll_quality": "average"
+  "enroll_quality": "average", 
+  "enrollment_complete": true, 
+  "message": "Success", 
+  "speaker_id": "speaker1", 
+  "total_enroll_duration": 30.0, 
+  "total_speech_duration": 20.0
 }
 ```
 <!--Failure-->
@@ -110,14 +116,12 @@ curl -X POST \
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Output
-<!--DOCUSAURUS_CODE_TABS-->
 ```json
 # The above command returns output:
 {
   "message": "Success"
 }
 ```
-<!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Body Parameters
 
@@ -149,14 +153,17 @@ This API fetches the status of speaker enrollment for a developer
 ### Sample Code
 
 <!--DOCUSAURUS_CODE_TABS-->
+<!--Shell-->
+
 ```shell
-curl -X GET "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/enroll?apikey=<API_KEY>&speakerId=<SPEAKER_ID>"
+curl -X GET \
+"https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/enroll?apikey=<API_KEY>&speakerId=<SPEAKER_ID>"
 ```
+
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Output
 
-<!--DOCUSAURUS_CODE_TABS-->
 ```json
 # The above command returns output:
 {
@@ -167,7 +174,6 @@ curl -X GET "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariza
   "enroll_quality": "average"
 }
 ```
-<!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Query Parameters
 
@@ -196,6 +202,7 @@ curl -X GET \
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
+
 ### Output
 
 ```json
