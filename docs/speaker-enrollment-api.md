@@ -149,8 +149,11 @@ This API fetches the status of speaker enrollment for a developer
 
 ```shell
 curl -X GET "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/enroll?apikey=<API_KEY>&speakerId=<SPEAKER_ID>"
+```
 
-```shell
+### Output
+
+```json
 # The above command returns output:
 {
   "speaker_id": "speaker_1",
@@ -188,7 +191,7 @@ curl -X GET \
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
-
+### Output
 
 ```json
 # The above command returns output:
