@@ -56,7 +56,7 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariz
 >  * Ideally, only enroll multiple audio samples when they show the diversity in the person's speech, and do not use multiple samples from same audio recording.
 >  * Enrollments with less than 6 seconds of speech will be rejected.
 >  * You may add the additional audio samples to a speakerId over an extended time period.
->. * If total speech duration of an enrollment is less than 12 seconds, enroll status will be incomplete and enrollment_complete will be set as false.
+>  * If total speech duration of an enrollment is less than 12 seconds, enroll status will be incomplete and enrollment_complete will be set as false.
 
 
 ### Body Parameters
