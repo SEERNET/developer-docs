@@ -33,7 +33,7 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariz
 <!--Success-->
 ```json
 {
-  "message": "Success", "speaker_id": "speaker1", "enrollment_complete":True, "total_speech_duration": 20.0, "total_enroll_duration": 30.0, "enroll_quality": "average"
+  "message": "Success", "speaker_id": "speaker1", "enrollment_complete":true, "total_speech_duration": 20.0, "total_enroll_duration": 30.0, "enroll_quality": "average"
 }
 ```
 <!--Failure-->
@@ -56,6 +56,7 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariz
 >  * Ideally, only enroll multiple audio samples when they show the diversity in the person's speech, and do not use multiple samples from same audio recording.
 >  * Enrollments with less than 6 seconds of speech will be rejected.
 >  * You may add the additional audio samples to a speakerId over an extended time period.
+>. * If total speech duration of an enrollment is less than 12 seconds, enroll status will be incomplete and enrollment_complete will be set as false.
 
 
 ### Body Parameters
@@ -81,7 +82,7 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariz
 | message               | String | Status of enrollment Success            | Success:  enrollment is successfull|
 | speaker_id            | String | Registered speaker id                   |                                    |
 | enroll_quality        | String | Quality of the enrollment               | values: poor, average, good, high  |
-| enrollment_complete   | Bool   | Status of the enrollment                | True if total speech exceeds 12sec |
+| enrollment_complete   | Bool   | Status of the enrollment                | true if total speech exceeds 12sec |
 | total_speech_duration | Number | Total Speech Duration of the enrollment |                                    |
 | total_enroll_duration | Number | Total Duration of the enrollment        |                                    |
 
@@ -147,8 +148,6 @@ This API fetches the status of speaker enrollment for a developer
 
 ### Sample Code
 
-### Shell
-
 <!--DOCUSAURUS_CODE_TABS-->
 ```shell
 curl -X GET "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diarization/enroll?apikey=<API_KEY>&speakerId=<SPEAKER_ID>"
@@ -162,7 +161,7 @@ curl -X GET "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariza
 # The above command returns output:
 {
   "speaker_id": "speaker_1",
-  "enrollment_complete":True,
+  "enrollment_complete":true,
   "total_speech_duration": 20.0,
   "total_enroll_duration": 30.0,
   "enroll_quality": "average"
@@ -206,7 +205,7 @@ curl -X GET \
   "enrolled_speaker_ids": [
     {
       "speaker_id": "speaker_1",
-      "enrollment_complete":True,
+      "enrollment_complete":true,
       "total_speech_duration": 20.0,
       "total_enroll_duration": 30.0,
       "enroll_quality": "average"
