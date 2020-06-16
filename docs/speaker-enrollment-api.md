@@ -52,9 +52,9 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariz
 
 
 > **NOTES:** 
->  * Enroll a user with one to three audio samples of 10-12 seconds each, no more than 30 seconds, and ideally with at least 6 seconds, where there's continuous speech, no silence, and preferably no background noise.
+>  * Enroll a user with three to five audio samples of 12-24 seconds each, no more than 30 seconds, and with at least 10 seconds, where there's continuous speech, no silence, and preferably no background noise.
 >  * Ideally, only enroll multiple audio samples when they show the diversity in the person's speech, and do not use multiple samples from same audio recording.
->  * All audio samples in a speakerId should be of the same sample rate, although you may create multiple speakerIds per person, each with different sample rates.
+>  * Enrollments with less than 6 seconds of speech will be rejected.
 >  * You may add the additional audio samples to a speakerId over an extended time period.
 
 
