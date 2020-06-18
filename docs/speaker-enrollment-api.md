@@ -4,9 +4,9 @@ title: Speaker Enrollment API
 sidebar_label: Speaker Enrollment API
 ---
 
-<h3> Speaker Enrollment API for Identification (REST Api)</h3>
+<h3> Speaker Enrollment API for Text Independent Speaker Identification (REST Api)</h3>
 
-Speaker enrollment api enrolls user for [Speaker Identification Api](./speaker-identification-api.html),  [Realtime Speaker Identification Api](./realtime-speaker-identification-api.html),
+Speaker Enrollment process is text independent means there are no restrictions on what the speaker says in the audio and hence no specific passphrases are required during the process. Speaker enrollment api enrolls user for [TI Speaker Identification Api](./speaker-identification-api.html),  [Realtime Speaker Identification Api](./realtime-speaker-identification-api.html),
 [Speaker Diarization Api](./speaker-diarization-api.html)
 
 

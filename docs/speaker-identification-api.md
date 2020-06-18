@@ -1,11 +1,11 @@
 ---
 id: speaker-identification-api
-title: Speaker Identification API
-sidebar_label: Speaker Identification API
+title: Text Independent Speaker Identification API
+sidebar_label: TI Speaker Identification API
 ---
 
-Speaker identification api tries to figure out "Who Speaks When" for already enrolled speakers.
-Splits audio clip into segments corresponding to a unique speaker and returns start and end of the segment
+Text Independent Speaker identification api tries to figure out "Who Speaks When" for already enrolled speakers. Here, there are no restrictions on what the speaker says in the audio and therefore no specific passphrase is required during enrollment or identification.
+Splits audio clip into segments corresponding to a unique speaker and then compares its features with the features of the specified speakers in the requests and finally returns start and end of the segment with the identified speaker. Returns UserNotIdentified if user is identified with a low score.
 
 > Enroll user using [Speaker Enrollment Api](./speaker-enrollment-api.html) before using identification api.
 
