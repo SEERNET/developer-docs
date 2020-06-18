@@ -62,7 +62,7 @@ curl -X POST \
 >  * Ideally, only enroll multiple audio samples when they show the diversity in the person's speech, and do not use multiple samples from same audio recording.
 >  * Enrollments with less than 6 seconds of speech will be rejected.
 >  * You may add the additional audio samples to a speakerId over an extended time period.
->  * If total speech duration of an enrollment is less than 12 seconds, the enrollment will be treated as incomplete.
+>  * If total speech duration of an enrollment is less than 12 seconds, the enrollment will be treated as incomplete and enrollment_complete will be set to false.
 >  * Enrollments with status enrollment_complete=true will be considered for identification, otherwise it would return error message.
 
 
