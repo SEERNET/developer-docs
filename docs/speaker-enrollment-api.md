@@ -6,7 +6,7 @@ sidebar_label: Speaker Enrollment API
 
 <h3> Speaker Enrollment API for Text Independent Speaker Identification (REST Api)</h3>
 
-Speaker Enrollment process is text independent means there are no restrictions on what the speaker says in the audio and hence no specific passphrases are required during the process. Speaker enrollment api enrolls user for [TI Speaker Identification Api](./speaker-identification-api.html),  [Realtime Speaker Identification Api](./realtime-speaker-identification-api.html),
+Speaker Enrollment process is *text independent*. This implies that there are no restrictions on what the speaker says in the audio and hence no specific passphrases are required during the process. Speaker Enrollment API enrolls user for [TI Speaker Identification Api](./speaker-identification-api.html),  [Realtime Speaker Identification Api](./realtime-speaker-identification-api.html),
 [Speaker Diarization Api](./speaker-diarization-api.html)
 
 
@@ -86,7 +86,7 @@ curl -X POST "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/diariz
 | total_speech_duration | Number | Total Speech Duration of the enrollment |                                    |
 | total_enroll_duration | Number | Total Duration of the enrollment        |                                    |
 
-### Speaker Enrollment Delete API for Identification (REST Api)
+### Speaker Enrollment Delete API (REST Api)
 
 This API deletes speaker enrollment for the user
 

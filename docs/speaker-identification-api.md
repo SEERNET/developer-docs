@@ -4,8 +4,9 @@ title: Text Independent Speaker Identification API
 sidebar_label: Speaker Identification API
 ---
 
-Text Independent Speaker Identification API tries to figure out "Who Speaks When" for already enrolled speakers. Here, there are no restrictions on what the speaker says in the audio and therefore no specific passphrase is required during enrollment or identification.
-Splits audio clip into segments corresponding to a unique speaker and then compares its features with the features of the specified speakers in the requests and finally returns start and end of the segment with the identified speaker. Returns UserNotIdentified if user is identified with a low score.
+Text Independent Speaker Identification API tries to figure out *"Who Speaks When"* for already enrolled speakers. *Text Independent* implies that there are no restrictions on what the speaker says in the audio and therefore no specific passphrase is required during enrollment or identification.
+
+The algorithm splits audio clip into segments corresponding to a unique speaker and then compares its features with the voiceprints of the specified speakers in the request. Finally, the API returns start and end of the segment with the identified speaker. In cases where no user is identified, the segments are marked as `UserNotIdentified`.
 
 > Enroll user using [Speaker Enrollment Api](./speaker-enrollment-api.html) before using identification api.
 
