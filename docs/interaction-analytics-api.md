@@ -299,10 +299,9 @@ Additional to the above parameters, all the parameters from the [Speaker Diariza
 | Parameter  | Type   | Description                                        | Notes |
 | ---------- | ------ | -------------------------------------------------- | ----- |
 | summary      | String | Extractive summary comprised of top few sentences from the conversation to present the gist of the call.          |       |
-| summary_timings      | List[Objects] | List of objects with start, end, text. Each text entry comprises of sentences from extractive summary          |       |
+| summary_timings      | List[Summary-Timings] | List of objects with start, end, text. Each text entry comprises of sentences from extractive summary          |       |
 | key_phrases        | List[String] | Top key phrases in the conversation ranked based on their importance and affinity to a extreme sentiments.           |       |
 | loudness        | List[Tuple] | start, end timings of 90% percentile "loud" segments           |       |
-| summary_timings   | List[Summary-Timings] | start, end timings of summary sentences                |       |
 
 
 #### Question-Asked Segment
