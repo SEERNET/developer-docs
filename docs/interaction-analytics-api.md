@@ -302,6 +302,7 @@ Additional to the above parameters, all the parameters from the [Speaker Diariza
 | summary_timings      | List[Objects] | List of objects with start, end, text. Each text entry comprises of sentences from extractive summary          |       |
 | key_phrases        | List[String] | Top key phrases in the conversation ranked based on their importance and affinity to a extreme sentiments.           |       |
 | loudness        | List[Tuple] | start, end timings of 90% percentile "loud" segments           |       |
+| summary_timings   | List[Summary-Timings] | start, end timings of summary sentences                |       |
 
 
 #### Question-Asked Segment
@@ -327,3 +328,11 @@ Additional to the above parameters, all the parameters from the [Speaker Diariza
 | start      | Number | Start time of the audio segment in seconds         |       |
 | end        | Number | End time of the audio segment in seconds           |       |
 | keyphrase        | String | The key phrase at the point in time          |       |
+
+#### Summary-Timings Segment
+
+| Parameter  | Type   | Description                                  | Notes |
+| ---------- | ------ | -------------------------------------------- | ----- |
+| start      | Number | Start time of the summary segment in seconds |       |
+| end        | Number | End time of the summary segment in seconds   |       |
+| text       | String | Text of the summary segment                  |       |
