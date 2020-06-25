@@ -164,7 +164,8 @@ print(response.text)
         "end": 1, 
         "speaker_id": "0", 
         "start": 0, 
-        "text": "this is fun"
+        "text": "this is fun",
+        "confidence": 0.91
       }, 
       {
         "emotion": "sadness", 
@@ -172,7 +173,8 @@ print(response.text)
         "end": 3, 
         "speaker_id": "1", 
         "start": 1, 
-        "text": "not really"
+        "text": "not really",
+        "confidence": 0.98
       }, 
       {
         "emotion": "joy", 
@@ -180,7 +182,8 @@ print(response.text)
         "end": 4.5, 
         "speaker_id": "0", 
         "start": 3, 
-        "text": "let's get this going"
+        "text": "let's get this going",
+        "confidence": 0.96
       },
       ...
     ], 
@@ -274,6 +277,7 @@ Additional to the above parameters, all the parameters from the [Speaker Diariza
 | start      | Number | Start time of the audio segment in seconds         |       |
 | end        | Number | End time of the audio segment in seconds           |       |
 | text       | String | The transcription output corresponding to the segment           |       |
+| confidence | Number | The confidence score for the transcribed segment |  |
 | emotion    | String | Emotion corresponding to the segment                | Will be computed only if specified via metrics |
 | emotion_score | Number | The confidence score for the emotion | Will be computed only if emotion is computed |
 | intent     | String | Intent corresponding to the segment: Current intent list: budget, authority, timing, action, need               | Will be computed only if specified via metrics |
