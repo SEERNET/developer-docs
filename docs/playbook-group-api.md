@@ -56,7 +56,7 @@ curl -X POST \
 | group      | String       | Name of the group                   | Required                         |
 | group_type | String       | Type of the group                   | Required. "intent" or "keyword"  |
 | hints      | List[String] | Hints for group                     | Required                         |
-| questions  | List[String] | Questions for group                 |                                  |
+| questions  | List[String] | Questions for group                 | Required                         |
 | stopwords  | List[String] | Stopwords for group                 |                                  |
 | comply     | Bool         | flag to enable or disable the group | Default is false                 |
 
