@@ -131,6 +131,7 @@ print(response.text)
 
 
 > **NOTES:**
+>  This is an Async API
 >  The order in the list for the punctuated texts matches that of the input text.
 >  In case webhook is not provided, use our Async Stauts API to fetch the response.
 
