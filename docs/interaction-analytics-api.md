@@ -218,6 +218,7 @@ print(response.text)
 | Parameter    | Type   | Description                                              | Notes                        |
 | ------------ | ------ | -------------------------------------------------------- | ---------------------------- |
 | encoding     | String | Encoding of audio file like MP3, WAV etc.                | Required                     |
+| sampleRate   | Number | Sample rate of the audio file.                           |                              |
 | languageCode | String | Language spoken in the audio file.                       | Required. [default to &#39;en-US&#39;] |
 | separateSpeakerPerChannel | Boolean | Set to True if the input audio is multi-channel and each channel has a separate speaker | Optional. [default to False] |
 | speakerCount | Number | Number of speakers in the file (-1 for unknown speakers) | Optional. [default to -1]         |
