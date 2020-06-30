@@ -120,31 +120,22 @@ print(response.text)
 
 | Parameter    | Type   | Description                                              | Notes                        |
 | ------------ | ------ | -------------------------------------------------------- | ---------------------------- |
-| encoding     | String | Encoding of audio file like MP3, WAV etc.                |                              |
-| sampleRate   | Number | Sample rate of the audio file.                           |                              |
-| languageCode | String | Language spoken in the audio file.                       | [default to &#39;en-US&#39;] |
-| separateSpeakerPerChannel | Boolean | Set to True if the input audio is multi-channel and each channel has a separate speaker | [default to False] |
-| speakerCount     | Number | Number of speakers in the file (-1 for unknown speakers) | [default to -1]              |
-| audioType    | String | Type of the audio based on number of speakers            | [default to callcenter]      |
-| speakerIds   | List[String] | Optional set of speakers to be identified from the call | [default to []]      |
-| doVad        | Bool   | Apply voice activity detection                           | [default to False]           |
+| encoding     | String | Encoding of audio file like MP3, WAV etc.                | Required                     |
+| languageCode | String | Language spoken in the audio file.                       | Required. [default to &#39;en-US&#39;] |
+| separateSpeakerPerChannel | Boolean | Set to True if the input audio is multi-channel and each channel has a separate speaker | Optional. [default to False] |
+| speakerCount | Number | Number of speakers in the file (-1 for unknown speakers) | Optional. [default to -1]         |
+| audioType    | String | Type of the audio based on number of speakers            | Optional. Values it can take: "callcenter", "meeting", "earningscalls", "interview", "media-broadcast". [default to callcenter]      |
+| speakerIds   | List[String] | Optional set of speakers to be identified from the call | Optional. [default to []]    |
+| doVad        | Bool   | Apply voice activity detection                           | Optional. [default to False]      |
 | content      | String | base64 encoding of the audio file.                       | Semi-Optional                     |
 | url          | String | Publicly facing url                                      | Semi-Optional                     |
-| source          | String | The source for the audio file: webex, zoom, gotomeeting, phone                                      | Optional                     |
+| source       | String | The source for the audio file: webex, zoom, gotomeeting, phone | Optional                    |
 
-audioType: can have the following values: 
-  1) callcenter 
-  2) meeting
-  3) earningscalls
-  4) interview
-  5) media-broadcast
-
-> We recommend using callcenter when there are upto 6 speakers expected to be identified and meeting when more than 6 speakers are expected.
+> We recommend using callcenter when there are 2-3 speakers expected to be identified and meeting when 4-6 speakers are expected.
 
 > Exactly one of url and content should be passed. In case both values are passed, error is thrown
 
-
-> doVad: Default=False. This parameters is required if you want silence & noise segments removed from the diarization output. 
+> doVad: Default=False. This parameters is required if you want silence & noise segments removed from the diarization output. We suggest you to set it to True
 
 > source: Adding source information enables an enhanced model which is built specifically for those audio sources. 
 
@@ -152,7 +143,7 @@ audioType: can have the following values:
 
 | Parameter  | Type   | Description                                                            | Notes                                           |
 | ---------- | ------ | ---------------------------------------------------------------------- | ----------------------------------------------- |
-| apikey    | String | The apikey                                                             | Required for authentication inside all requests |
+| apikey     | String | The apikey                                                             | Required for authentication inside all requests |
 | webhook    | String | The webhook url at which the responses will be sent                    | Required for async requests                     |
 | request_id | String | An optional unique id to link async response with the original request | Optional                                        |
 
@@ -165,19 +156,19 @@ audioType: can have the following values:
 
 ### Output Parameters (Webhook)
 
-| Parameter  | Type   | Description                          | Notes                                                              |
-| ---------- | ------ | ------------------------------------ | ------------------------------------------------------------------ |
-| request_id | String | The request id                       | This defaults to the originally sent id or is generated by the api |
-| response   | Object | The actual output of the diarization | The Diarized object is defined below                               |
+| Parameter  | Type            | Description                          | Notes                                                              |
+| ---------- | --------------- | ------------------------------------ | ------------------------------------------------------------------ |
+| request_id | String          | The request id                       | This defaults to the originally sent id or is generated by the api |
+| response   | Diarized-Object | The actual output of the diarization | The Diarized-Object is defined below                               |
 
-#### Diarized Object
+#### Diarized-Object
 
-| Parameter    | Type   | Description                     | Notes                                                                           |
-| ------------ | ------ | ------------------------------- | ------------------------------------------------------------------------------- |
-| num_speakers | Number | The number of speakers detected | The number of speaker will be detected only when the request set speakers to -1 |
-| segments     | List   | List of diarized segments       | The Diarized Segment is defined below                                           |
+| Parameter    | Type                   | Description                     | Notes                                                                           |
+| ------------ | ---------------------- | ------------------------------- | ------------------------------------------------------------------------------- |
+| num_speakers | Number                 | The number of speakers detected | The number of speaker will be detected only when the request set speakers to -1 |
+| segments     | List[Diarized-Segment] | List of diarized segments       | The Diarized-Segment is defined below                                           |
 
-#### Diarized Segment
+#### Diarized-Segment
 
 | Parameter  | Type   | Description                                        | Notes |
 | ---------- | ------ | -------------------------------------------------- | ----- |
