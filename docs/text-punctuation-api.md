@@ -130,8 +130,4 @@ print(response.text)
 | punctuated_texts | List   | List of punctuated texts corresponding to the original input text||
 
 
-> **NOTES:**
->  This is an Async API
->  The order in the list for the punctuated texts matches that of the input text.
->  In case webhook is not provided, use our Async Stauts API to fetch the response.
-
+> Note: The order in the list for the punctuated texts matches that of the input text.
