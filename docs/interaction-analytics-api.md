@@ -307,7 +307,6 @@ print(response.text)
 | summary_timings | List[Summary-Timings] | List of objects with start, end, text. Each text entry comprises of sentences from extractive summary     |       |
 | key_phrases     | List[String]          | Top key phrases in the conversation ranked based on their importance and affinity to a extreme sentiments |       |
 | loudness        | List[Tuple]           | start, end timings of 90% percentile "loud" segments                                                      |       |
-| summaries       | List[SpeakerId-Value] | List of SpeakerId-Value Segments. `value` corresponds to extractive summary of the speaker                |       |
 
 
 #### Question-Asked Segment
