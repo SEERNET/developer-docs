@@ -124,20 +124,19 @@ print(response.text)
 | languageCode | String | Language spoken in the audio file.                       | Required. [default to &#39;en-US&#39;] |
 | separateSpeakerPerChannel | Boolean | Set to True if the input audio is multi-channel and each channel has a separate speaker | Optional. [default to False] |
 | speakerCount | Number | Number of speakers in the file (-1 for unknown speakers) | Optional. [default to -1]         |
-| audioType    | String | Type of the audio based on number of speakers            | Optional. Values it can take: "callcenter", "meeting", "earningscalls", "interview", "media-broadcast". [default to callcenter]      |
+| audioType    | String | Type of the audio based on number of speakers            | Optional. [default to callcenter]. Permitted values: "callcenter", "meeting", "earningscalls", "interview", "media-broadcast" |
 | speakerIds   | List[String] | Optional set of speakers to be identified from the call | Optional. [default to []]    |
 | doVad        | Bool   | Apply voice activity detection                           | Optional. [default to False]      |
 | content      | String | base64 encoding of the audio file.                       | Semi-Optional                     |
 | url          | String | Publicly facing url                                      | Semi-Optional                     |
 | source       | String | The source for the audio file: webex, zoom, gotomeeting, phone | Optional                    |
 
-> We recommend using callcenter when there are 2-3 speakers expected to be identified and meeting when 4-6 speakers are expected.
+> **NOTES:** 
+>  * We recommend using callcenter when there are 2-3 speakers expected to be identified and meeting when 4-6 speakers are expected.
+>  * Exactly one of url and content should be passed. In case both values are passed, error is thrown
+>  * doVad: This parameters is required if you want silence & noise segments removed from the diarization output. We suggest you to set it to True
+>  * source: Adding source information enables an enhanced model which is built specifically for those audio sources. 
 
-> Exactly one of url and content should be passed. In case both values are passed, error is thrown
-
-> doVad: Default=False. This parameters is required if you want silence & noise segments removed from the diarization output. We suggest you to set it to True
-
-> source: Adding source information enables an enhanced model which is built specifically for those audio sources. 
 
 ### Query Parameters
 
