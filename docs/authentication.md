@@ -5,7 +5,7 @@ sidebar_label: Authentication
 ---
 
 DeepAffects uses API keys to allow access to the API. You can register a new DeepAffects API key at our [developer portal](https://developers.deepaffects.com).
-DeepAffects expects for the API key to be included in all API requests to the server along with the base url
+DeepAffects expects for the API key to be included in all API requests to the server along with the base url.
 
 <!--DOCUSAURUS_CODE_TABS-->
 

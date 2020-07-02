@@ -158,67 +158,67 @@ print(response.text)
 
 ### Body Parameters
 
-| Parameter    | Type   | Description                                                    | Notes                        |
-| ------------ | ------ | -------------------------------------------------------------- | ---------------------------- |
-| encoding     | String | Encoding of audio file like MP3, WAV etc.                      |                              |
-| sampleRate   | Number | Sample rate of the audio file.                                 |                              |
-| languageCode | String | Language spoken in the audio file.                             | [default to &#39;en-US&#39;] |
-| content      | String | base64 encoding of the audio file.                             | Semi-Optional                |
-| url          | String | Publicly facing url                                            | Semi-Optional                |
-| audioType    | String | Type of the audio based on number of speakers                  | Optional. [default to callcenter]. Permitted values: "callcenter", "meeting", "earningscalls", "interview", "media-broadcast" |
-| source       | String | The source for the audio file: webex, zoom, gotomeeting, phone | Optional. The value will be used if `enableSpeakerDiarization` is set to `True`                     |
-| speakerCount | Number | Number of speakers in the file (-1 for unknown speakers)       | Optional. [default to -1]. The value will be used if `enableSpeakerDiarization` is set to `True`    |
-| speakerIds   | List[String] | Optional set of speakers to be identified                | Optional. [default to []]. The value will be used if `enableSpeakerDiarization` is set to `True`    |
-| doVad        | Bool         | Apply voice activity detection                           | Optional. [default to False]. The value will be used if `enableSpeakerDiarization` is set to `True` |
-| enablePunctuation         | Boolean | Enables DeepAffects [Smart Punctuation API](text-punctuation-api.md)                      | Optional. [default to true]                        |
-| enableSpeakerDiarization  | Boolean | Tags each word corresponding to the speaker                                               | Optional. [default to False]                       |
-| separateSpeakerPerChannel | Boolean | Set to `True` if the input audio is multi-channel and each channel has a separate speaker | Optional. [default to False] The value will be used if `enableSpeakerDiarization` is set to `True` |
+| Parameter    | Type   | Description                                                     | Notes                        |
+| ------------ | ------ | --------------------------------------------------------------- | ---------------------------- |
+| encoding     | String | Encoding of audio file like MP3, WAV etc.                       |                              |
+| sampleRate   | Number | Sample rate of the audio file.                                  |                              |
+| languageCode | String | Language spoken in the audio file.                              | [default to &#39;en-US&#39;] |
+| content      | String | base64 encoding of the audio file.                              | Semi-Optional.               |
+| url          | String | Publicly facing url.                                            | Semi-Optional.               |
+| audioType    | String | Type of the audio based on number of speakers.                  | Optional. [default to callcenter]. Permitted values: `callcenter`, `meeting`, `earnings_calls`, `interview`, `press_conference`. |
+| source       | String | The source for the audio file: webex, zoom, gotomeeting, phone. | Optional. The value will be used if `enableSpeakerDiarization` is set to `True`.                     |
+| speakerCount | Number | Number of speakers in the file (-1 for unknown speakers).       | Optional. [default to -1]. The value will be used if `enableSpeakerDiarization` is set to `True`.    |
+| speakerIds   | List[String] | Optional set of speakers to be identified.                | Optional. [default to []]. The value will be used if `enableSpeakerDiarization` is set to `True`.    |
+| doVad        | Bool         | Apply voice activity detection.                           | Optional. [default to False]. The value will be used if `enableSpeakerDiarization` is set to `True`. |
+| enablePunctuation         | Boolean | Enables DeepAffects [Smart Punctuation API](text-punctuation-api.md).                      | Optional. [default to true]                        |
+| enableSpeakerDiarization  | Boolean | Tags each word corresponding to the speaker.                                               | Optional. [default to False]                       |
+| separateSpeakerPerChannel | Boolean | Set to `True` if the input audio is multi-channel and each channel has a separate speaker. | Optional. [default to False] The value will be used if `enableSpeakerDiarization` is set to `True`. |
 
 > **NOTES:** 
 >  * We recommend using callcenter when there are 2-3 speakers expected to be identified and meeting when 4-6 speakers are expected.
->  * Exactly one of url and content should be passed. In case both values are passed, error is thrown
->  * doVad: This parameters is required if you want silence & noise segments removed from the diarization output. We suggest you to set it to True
+>  * Exactly one of url and content should be passed. In case both values are passed, error is thrown.
+>  * doVad: This parameters is required if you want silence & noise segments removed from the diarization output. We suggest you to set it to True.
 >  * source: Adding source information enables an enhanced model which is built specifically for those audio sources.
 
 
 ### Query Parameters
 
-| Parameter  | Type   | Description                                                            | Notes                                           |
-| ---------- | ------ | ---------------------------------------------------------------------- | ----------------------------------------------- |
-| apikey    | String | The apikey                                                             | Required for authentication inside all requests |
-| webhook    | String | The webhook url at which the responses will be sent                    | Required for async requests                     |
-| request_id | String | An optional unique id to link async response with the original request | Optional                                        |
+| Parameter  | Type   | Description                                                             | Notes                                            |
+| ---------- | ------ | ----------------------------------------------------------------------- | ------------------------------------------------ |
+| apikey     | String | The apikey.                                                             | Required for authentication inside all requests. |
+| webhook    | String | The webhook url at which the responses will be sent.                    | Required for async requests.                     |
+| request_id | String | An optional unique id to link async response with the original request. | Optional.                                        |
 
 ### Output Parameters (Async)
 
-| Parameter  | Type   | Description                     | Notes                                                              |
-| ---------- | ------ | ------------------------------- | ------------------------------------------------------------------ |
-| request_id | String | The request id                  | This defaults to the originally sent id or is generated by the api |
-| api        | String | The api method which was called |                                                                    |
+| Parameter  | Type   | Description                      | Notes                                                               |
+| ---------- | ------ | -------------------------------- | ------------------------------------------------------------------- |
+| request_id | String | The request id.                  | This defaults to the originally sent id or is generated by the api. |
+| api        | String | The api method which was called. |                                                                     |
 
 ### Output Parameters (Webhook)
 
-| Parameter  | Type   | Description                          | Notes                                                              |
-| ---------- | ------ | ------------------------------------ | ------------------------------------------------------------------ |
-| request_id | String | The request id                       | This defaults to the originally sent id or is generated by the api |
-| response   | Object | The actual output of the transcription | The Transcribed object is defined below                               |
+| Parameter  | Type   | Description                             | Notes                                                               |
+| ---------- | ------ | --------------------------------------- | ------------------------------------------------------------------- |
+| request_id | String | The request id.                         | This defaults to the originally sent id or is generated by the api. |
+| response   | Object | The actual output of the transcription. | The Transcribed object is defined below.                            |
 
 #### Transcribed Object
 
-| Parameter    | Type   | Description                     | Notes                                                                           |
-| ------------ | ------ | ------------------------------- | ------------------------------------------------------------------------------- |
-| num_speakers | Number | The number of speakers detected | Field is set only when `enableSpeakerDiarization` is `true` |
-| words     | List   | List of word segments       | The Word Segment is defined below                                           |
-| transcript     | String   | The entire transcript with/without punctuations according to the input       |                                            |
-| confidence | Number | Overall transcription confidence | |
+| Parameter    | Type   | Description                       | Notes                                                                           |
+| ------------ | ------ | --------------------------------- | ------------------------------------------------------------------------------- |
+| num_speakers | Number | The number of speakers detected.  | Field is set only when `enableSpeakerDiarization` is `true`. |
+| words        | List   | List of word segments.            | The Word Segment is defined below.                           |
+| transcript   | String | The entire transcript with/without punctuations according to the input. |                        |
+| confidence   | Number | Overall transcription confidence. |                                                              |
 
 
 #### Word Segment
 
-| Parameter  | Type   | Description                                        | Notes |
-| ---------- | ------ | -------------------------------------------------- | ----- |
-| speaker_id | String | The speaker id for the corresponding audio segment |   Field is set only when `enableSpeakerDiarization` is `true`    |
-| start      | Number | Start time of the audio segment in seconds         |       |
-| end        | Number | End time of the audio segment in seconds           |       |
-| word        | String | The word corresponding to the audio segment         |       |
-| confidence        | Number | Confidence score for the word           |       |
+| Parameter  | Type   | Description                                         | Notes |
+| ---------- | ------ | --------------------------------------------------- | ----- |
+| speaker_id | String | The speaker id for the corresponding audio segment. | Field is set only when `enableSpeakerDiarization` is `true`. |
+| start      | Number | Start time of the audio segment in seconds.         |       |
+| end        | Number | End time of the audio segment in seconds.           |       |
+| word       | String | The word corresponding to the audio segment.        |       |
+| confidence | Number | Confidence score for the word.                      |       |

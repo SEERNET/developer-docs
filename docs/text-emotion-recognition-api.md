@@ -105,7 +105,7 @@ apiInstance.syncRecogniseTextEmotion(body, callback);
 
 | Parameter | Type   | Description | Notes                                            |
 | --------- | ------ | ----------- | ------------------------------------------------ |
-| apikey    | String | The apikey  | Required for authentication inside all requests. |
+| apikey    | String | The apikey. | Required for authentication inside all requests. |
 
 ### Output Parameters
 

@@ -4,7 +4,7 @@ title: Playbook API
 sidebar_label: Playbook API
 ---
 
-APIs to add, fetch and delete Playbook
+APIs to add, fetch and delete Playbook.
 
 
 ### Playbook Add Request
@@ -51,22 +51,22 @@ curl -X POST \
 
 ### Body Parameters
 
-| Parameter  | Type         | Description                       | Notes    |
-| ---------- | ------------ | --------------------------------- | -------- |
-| playbook   | String       | Name of the playbook              | Required |
-| groups     | List[String] | List of group names to be applied | Required |
+| Parameter  | Type         | Description                        | Notes    |
+| ---------- | ------------ | ---------------------------------- | -------- |
+| playbook   | String       | Name of the playbook.              | Required |
+| groups     | List[String] | List of group names to be applied. | Required |
 
 ### Query Parameters
 
-| Parameter | Type   | Description | Notes                                           |
-| --------- | ------ | ----------- | ----------------------------------------------- |
-| apikey    | String | The apikey  | Required for authentication inside all requests |
+| Parameter | Type   | Description | Notes                                            |
+| --------- | ------ | ----------- | ------------------------------------------------ |
+| apikey    | String | The apikey. | Required for authentication inside all requests. |
 
 ### Output Parameters
 
-| Parameter | Type   | Description         | Notes              |
-| --------- | ------ | ------------------- | ------------------ |
-| message   | String | Status Message      | Success or Failure |
+| Parameter | Type   | Description         | Notes               |
+| --------- | ------ | ------------------- | ------------------- |
+| message   | String | Status Message.     | Success or Failure. |
 
 
 ### Playbook Delete Request
@@ -104,16 +104,16 @@ curl -X DELETE \
 
 ### Query Parameters
 
-| Parameter | Type   | Description    | Notes                                           |
-| --------- | ------ | -------------- | ----------------------------------------------- |
-| apikey    | String | The apikey     | Required for authentication inside all requests |
-| playbook  | String | Playbook name  | Required                                        |
+| Parameter | Type   | Description    | Notes                                            |
+| --------- | ------ | -------------- | ------------------------------------------------ |
+| apikey    | String | The apikey.    | Required for authentication inside all requests. |
+| playbook  | String | Playbook name. | Required.                                        |
 
 ### Output Parameters
 
-| Parameter | Type   | Description         | Notes              |
-| --------- | ------ | ------------------- | ------------------ |
-| message   | String | Status Message      | Success or Failure |
+| Parameter | Type   | Description     | Notes               |
+| --------- | ------ | --------------- | ------------------- |
+| message   | String | Status Message. | Success or Failure. |
 
 
 ### Playbook Get Request
@@ -158,16 +158,16 @@ curl -X GET \
 
 ### Query Parameters
 
-| Parameter | Type   | Description | Notes                                           |
-| --------- | ------ | ----------- | ----------------------------------------------- |
-| apikey    | String | The apikey  | Required for authentication inside all requests |
+| Parameter | Type   | Description | Notes                                            |
+| --------- | ------ | ----------- | ------------------------------------------------ |
+| apikey    | String | The apikey. | Required for authentication inside all requests. |
 
 ### Output Parameters
 Response is the list of Playbook-Response Segment
 
 #### Playbook-Response Segment
-| Parameter | Type         | Description                        | Notes |
-| --------- | ------------ | ---------------------------------- | ----- |
-| name      | String       | Name of the playbook               |       |
-| groups    | List[String] | List of the groups in the playbook |       |
+| Parameter | Type         | Description                         | Notes |
+| --------- | ------------ | ----------------------------------- | ----- |
+| name      | String       | Name of the playbook.               |       |
+| groups    | List[String] | List of the groups in the playbook. |       |
 
