@@ -4,7 +4,7 @@ title: Realtime Emotion Recognition API
 sidebar_label: Realtime Emotion Recognition API
 ---
 
-Realtime emotion recognition api Extracts basic emotions from the audio file in realtime
+Realtime emotion recognition api Extracts basic emotions from the audio file in realtime.
 
 ### Grpc Call
 
@@ -86,20 +86,20 @@ for response in responses:
 
 Metadata params are set once for an api call :
 
-| Parameter    | Type   | Description                               | Notes                                           |
-| ------------ | ------ | ----------------------------------------- | ----------------------------------------------- |
-| apikey       | String | Apikey obtained from developer portsl     | Required for authentication inside all requests |
-| encoding     | String | Encoding of audio file like MP3, WAV etc. |                                                 |
-| sampleRate   | Number | Sample rate of the audio file.            |                                                 |
-| languageCode | String | Language spoken in the audio file.        | [default to &#39;en-US&#39;]                    |
+| Parameter    | Type   | Description                               | Notes                                            |
+| ------------ | ------ | ----------------------------------------- | ------------------------------------------------ |
+| apikey       | String | Apikey obtained from developer portal.    | Required for authentication inside all requests. |
+| encoding     | String | Encoding of audio file like MP3, WAV etc. |                                                  |
+| sampleRate   | Number | Sample rate of the audio file.            |                                                  |
+| languageCode | String | Language spoken in the audio file.        | [default to &#39;en-US&#39;]                     |
 
 ### Segment Parameters
 
-| Parameter | Type   | Description                             | Notes    |
-| --------- | ------ | --------------------------------------- | -------- |
-| content   | String | base64 encoding of the audio segment.   |          |
-| offset    | Number | Segment offset from start of the audio. |          |
-| duration  | Number | Duration of chunk                       | optional |
+| Parameter | Type   | Description                             | Notes     |
+| --------- | ------ | --------------------------------------- | --------- |
+| content   | String | base64 encoding of the audio segment.   |           |
+| offset    | Number | Segment offset from start of the audio. |           |
+| duration  | Number | Duration of chunk.                      | Optional. |
 
 ### Output Response Stream
 

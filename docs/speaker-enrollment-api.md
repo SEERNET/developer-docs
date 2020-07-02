@@ -7,7 +7,7 @@ sidebar_label: Speaker Enrollment API
 <h3> Speaker Enrollment API for Text Independent Speaker Identification (REST Api)</h3>
 
 Speaker Enrollment process is *text independent*. This implies that there are no restrictions on what the speaker says in the audio and hence no specific passphrases are required during the process. Speaker Enrollment API enrolls user for [TI Speaker Identification Api](./speaker-identification-api.html),  [Realtime Speaker Identification Api](./realtime-speaker-identification-api.html),
-[Speaker Diarization Api](./speaker-diarization-api.html)
+[Speaker Diarization Api](./speaker-diarization-api.html).
 
 
 ### POST Request
@@ -68,34 +68,34 @@ curl -X POST \
 
 ### Body Parameters
 
-| Parameter    | Type   | Description                               | Notes                        |
-| ------------ | ------ | ----------------------------------------- | ---------------------------- |
-| encoding     | String | Encoding of audio file like MP3, WAV etc. |                              |
-| sampleRate   | Number | Sample rate of the audio file.            |                              |
-| languageCode | String | Language spoken in the audio file.        | [default to &#39;en-US&#39;] |
-| content      | String | base64 encoding of the audio file.        |                              |
-| speakerId    | String | speaker id to be registered               | acceptable format: `[a-zA-Z0-9_]+` |
+| Parameter    | Type   | Description                               | Notes                              |
+| ------------ | ------ | ----------------------------------------- | ---------------------------------- |
+| encoding     | String | Encoding of audio file like MP3, WAV etc. |                                    |
+| sampleRate   | Number | Sample rate of the audio file.            |                                    |
+| languageCode | String | Language spoken in the audio file.        | [default to &#39;en-US&#39;]       |
+| content      | String | base64 encoding of the audio file.        |                                    |
+| speakerId    | String | speaker id to be registered.              | acceptable format: `[a-zA-Z0-9_]+` |
 
 ### Query Parameters
 
-| Parameter | Type   | Description | Notes                                           |
-| --------- | ------ | ----------- | ----------------------------------------------- |
-| apikey   | String | The apikey  | Required for authentication inside all requests |
+| Parameter | Type   | Description | Notes                                            |
+| --------- | ------ | ----------- | ------------------------------------------------ |
+| apikey    | String | The apikey. | Required for authentication inside all requests. |
 
 ### Output Parameters (Sync)
 
-| Parameter             | Type   | Description                             | Notes                              |
-| --------------------- | ------ | --------------------------------------- | ---------------------------------- |
-| message               | String | Status of enrollment Success            | Success:  enrollment is successfull|
-| speaker_id            | String | Registered speaker id                   |                                    |
-| enroll_quality        | String | Quality of the enrollment               | values: poor, average, good, high  |
-| enrollment_complete   | Bool   | Status of the enrollment                | true if total speech exceeds 12sec |
-| total_speech_duration | Number | Total Speech Duration of the enrollment |                                    |
-| total_enroll_duration | Number | Total Duration of the enrollment        |                                    |
+| Parameter             | Type   | Description                              | Notes                                  |
+| --------------------- | ------ | ---------------------------------------- | -------------------------------------- |
+| message               | String | Status of enrollment Success.            | Success:  enrollment is successfull.   |
+| speaker_id            | String | Registered speaker id.                   |                                        |
+| enroll_quality        | String | Quality of the enrollment.               | values: poor, average, good, high.     |
+| enrollment_complete   | Bool   | Status of the enrollment.                | `True` if total speech exceeds 12sec.  |
+| total_speech_duration | Number | Total Speech Duration of the enrollment. |                                        |
+| total_enroll_duration | Number | Total Duration of the enrollment.        |                                        |
 
 ### Speaker Enrollment Delete API (REST Api)
 
-This API deletes speaker enrollment for the user
+This API deletes speaker enrollment for the user.
 
 ### POST Request
 
@@ -126,21 +126,21 @@ curl -X POST \
 
 ### Body Parameters
 
-| Parameter | Type   | Description                 | Notes |
-| --------- | ------ | --------------------------- | ----- |
-| speakerId | String | speaker id to be registered |       |
+| Parameter | Type   | Description                  | Notes |
+| --------- | ------ | ---------------------------- | ----- |
+| speakerId | String | speaker id to be registered. |       |
 
 ### Query Parameters
 
-| Parameter | Type   | Description | Notes                                           |
-| --------- | ------ | ----------- | ----------------------------------------------- |
-| apikey   | String | The apikey  | Required for authentication inside all requests |
+| Parameter | Type   | Description | Notes                                            |
+| --------- | ------ | ----------- | ------------------------------------------------ |
+| apikey    | String | The apikey. | Required for authentication inside all requests. |
 
 ### Output Parameters (Sync)
 
-| Parameter | Type   | Description    | Notes              |
-| --------- | ------ | -------------- | ------------------ |
-| message   | String | Request status | Success or Failure |
+| Parameter | Type   | Description     | Notes               |
+| --------- | ------ | --------------- | ------------------- |
+| message   | String | Request status. | Success or Failure. |
 
 
 ### Get Speaker Enrollment Status Api
@@ -178,15 +178,15 @@ curl -X GET \
 
 ### Query Parameters
 
-| Parameter | Type   | Description                             | Notes                                           |
-| --------- | ------ | --------------------------------------- | ----------------------------------------------- |
-| apikey    | String | The apikey                              | Required for authentication inside all requests |
-| speakerId | String | speaker id whose details to be fetched  |                                                 |
+| Parameter | Type   | Description                              | Notes                                            |
+| --------- | ------ | ---------------------------------------- | ------------------------------------------------ |
+| apikey    | String | The apikey.                              | Required for authentication inside all requests. |
+| speakerId | String | speaker id whose details to be fetched.  |                                                  |
 
 
 ### Get All Enrolled Speakers Api
 
-This API lists all the completely enrolled speakers for a developer along with other data
+This API lists all the completely enrolled speakers for a developer along with other data.
 
 ### GET Request
 
@@ -224,7 +224,7 @@ curl -X GET \
 
 ### Query Parameters
 
-| Parameter      | Type   | Description | Notes                                                                       |
-| -------------- | ------ | ----------- | --------------------------------------------------------------------------- |
-| apikey         | String | The apikey  | Required for authentication inside all requests                             |
-| getAllSpeakers | Bool   | true/false  | Set to `true` for fetching incomplete enrolled speakers too. Default to `false` |
+| Parameter      | Type   | Description       | Notes                                                                            |
+| -------------- | ------ | ----------------- | -------------------------------------------------------------------------------- |
+| apikey         | String | The apikey.       | Required for authentication inside all requests.                                 |
+| getAllSpeakers | Bool   | `True` or `False` | Set to `True` for fetching incomplete enrolled speakers too. Default to `False`. |

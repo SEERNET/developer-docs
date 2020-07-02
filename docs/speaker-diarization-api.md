@@ -4,8 +4,7 @@ title: Speaker Diarization API
 sidebar_label: Speaker Diarization API
 ---
 
-Speaker diarization api tries to figure out "Who Speaks When".
-Splits audio clip into segments corresponding to a unique speaker
+Speaker Diarization API partitions audio stream into homogenous segments according to the speaker identity. It solves the problem of "Who Speaks When". This API splits audio clip into speech segments and tags them with speaker's id accordingly. This api also supports speaker identification.
 
 ### POST Request
 
@@ -120,58 +119,58 @@ print(response.text)
 
 | Parameter    | Type   | Description                                              | Notes                        |
 | ------------ | ------ | -------------------------------------------------------- | ---------------------------- |
-| encoding     | String | Encoding of audio file like MP3, WAV etc.                | Required                     |
+| encoding     | String | Encoding of audio file like MP3, WAV etc.                | Required.                    |
 | sampleRate   | Number | Sample rate of the audio file.                           |                              |
 | languageCode | String | Language spoken in the audio file.                       | Required. [default to &#39;en-US&#39;] |
-| separateSpeakerPerChannel | Boolean | Set to True if the input audio is multi-channel and each channel has a separate speaker | Optional. [default to False] |
-| speakerCount | Number | Number of speakers in the file (-1 for unknown speakers) | Optional. [default to -1]         |
-| audioType    | String | Type of the audio based on number of speakers            | Optional. [default to callcenter]. Permitted values: "callcenter", "meeting", "earningscalls", "interview", "media-broadcast" |
-| speakerIds   | List[String] | Optional set of speakers to be identified from the call | Optional. [default to []]    |
-| doVad        | Bool   | Apply voice activity detection                           | Optional. [default to False]      |
-| content      | String | base64 encoding of the audio file.                       | Semi-Optional                     |
-| url          | String | Publicly facing url                                      | Semi-Optional                     |
-| source       | String | The source for the audio file: webex, zoom, gotomeeting, phone | Optional                    |
+| separateSpeakerPerChannel | Boolean | Set to True if the input audio is multi-channel and each channel has a separate speaker. | Optional. [default to `False`] |
+| speakerCount | Number | Number of speakers in the file(-1 for unknown speakers). | Optional. [default to -1]         |
+| audioType    | String | Type of the audio based on number of speakers.           | Optional. [default to callcenter]. Permitted values: `callcenter`, `meeting`, `earnings_calls`, `interview`, `press_conference`. |
+| speakerIds   | List[String] | Optional set of speakers to be identified from the call.  | Optional. [default to []]  |
+| doVad        | Bool   | Apply voice activity detection.                          | Optional. [default to `False`]    |
+| content      | String | base64 encoding of the audio file.                       | Semi-Optional.                    |
+| url          | String | Publicly facing url.                                     | Semi-Optional.                    |
+| source       | String | The source for the audio file: webex, zoom, gotomeeting, phone. | Optional.                  |
 
 > **NOTES:** 
 >  * We recommend using callcenter when there are 2-3 speakers expected to be identified and meeting when 4-6 speakers are expected.
->  * Exactly one of url and content should be passed. In case both values are passed, error is thrown
->  * doVad: This parameters is required if you want silence & noise segments removed from the diarization output. We suggest you to set it to True
+>  * Exactly one of url and content should be passed. In case both values are passed, error is thrown.
+>  * doVad: This parameters is required if you want silence & noise segments removed from the diarization output. We suggest you to set it to True.
 >  * source: Adding source information enables an enhanced model which is built specifically for those audio sources. 
 
 
 ### Query Parameters
 
-| Parameter  | Type   | Description                                                            | Notes                                           |
-| ---------- | ------ | ---------------------------------------------------------------------- | ----------------------------------------------- |
-| apikey     | String | The apikey                                                             | Required for authentication inside all requests |
-| webhook    | String | The webhook url at which the responses will be sent                    | Required for async requests                     |
-| request_id | String | An optional unique id to link async response with the original request | Optional                                        |
+| Parameter  | Type   | Description                                                             | Notes                                            |
+| ---------- | ------ | ----------------------------------------------------------------------- | ------------------------------------------------ |
+| apikey     | String | The apikey.                                                             | Required for authentication inside all requests. |
+| webhook    | String | The webhook url at which the responses will be sent.                    | Required for async requests.                     |
+| request_id | String | An optional unique id to link async response with the original request. | Optional.                                        |
 
 ### Output Parameters (Async)
 
-| Parameter  | Type   | Description                     | Notes                                                              |
-| ---------- | ------ | ------------------------------- | ------------------------------------------------------------------ |
-| request_id | String | The request id                  | This defaults to the originally sent id or is generated by the api |
-| api        | String | The api method which was called |                                                                    |
+| Parameter  | Type   | Description                      | Notes                                                               |
+| ---------- | ------ | -------------------------------- | ------------------------------------------------------------------- |
+| request_id | String | The request id.                  | This defaults to the originally sent id or is generated by the api. |
+| api        | String | The api method which was called. |                                                                     |
 
 ### Output Parameters (Webhook)
 
-| Parameter  | Type            | Description                          | Notes                                                              |
-| ---------- | --------------- | ------------------------------------ | ------------------------------------------------------------------ |
-| request_id | String          | The request id                       | This defaults to the originally sent id or is generated by the api |
-| response   | Diarized-Object | The actual output of the diarization | The Diarized-Object is defined below                               |
+| Parameter  | Type            | Description                           | Notes                                                               |
+| ---------- | --------------- | ------------------------------------- | ------------------------------------------------------------------- |
+| request_id | String          | The request id.                       | This defaults to the originally sent id or is generated by the api. |
+| response   | Diarized-Object | The actual output of the diarization. | The Diarized-Object is defined below.                               |
 
 #### Diarized-Object
 
-| Parameter    | Type                   | Description                     | Notes                                                                           |
-| ------------ | ---------------------- | ------------------------------- | ------------------------------------------------------------------------------- |
-| num_speakers | Number                 | The number of speakers detected | The number of speaker will be detected only when the request set speakers to -1 |
-| segments     | List[Diarized-Segment] | List of diarized segments       | The Diarized-Segment is defined below                                           |
+| Parameter    | Type                   | Description                      | Notes           -                                                                |
+| ------------ | ---------------------- | -------------------------------- | -------------------------------------------------------------------------------- |
+| num_speakers | Number                 | The number of speakers detected. | The number of speaker will be detected only when the request set speakers to -1. |
+| segments     | List[Diarized-Segment] | List of diarized segments.       | The Diarized-Segment is defined below.                                           |
 
 #### Diarized-Segment
 
-| Parameter  | Type   | Description                                        | Notes |
-| ---------- | ------ | -------------------------------------------------- | ----- |
-| speaker_id | String | The speaker id for the corresponding audio segment |       |
-| start      | Number | Start time of the audio segment in seconds         |       |
-| end        | Number | End time of the audio segment in seconds           |       |
+| Parameter  | Type   | Description                                         | Notes |
+| ---------- | ------ | --------------------------------------------------- | ----- |
+| speaker_id | String | The speaker id for the corresponding audio segment. |       |
+| start      | Number | Start time of the audio segment in seconds.         |       |
+| end        | Number | End time of the audio segment in seconds.           |       |

@@ -32,7 +32,7 @@ For realtime processing we've created realtime api's based on grpc which accepts
 
 ## Audio Encoding
 
-DeepAffects supports various audio types for ease of integration. As a rule of thumb, we support all the audiotypes which are inherently supported by [ffmpeg](https://trac.ffmpeg.org/wiki/audio%20types)
+DeepAffects supports various audio types for ease of integration. As a rule of thumb, we support all the audiotypes which are inherently supported by [ffmpeg](https://trac.ffmpeg.org/wiki/audio%20types).
 
 A subset of the supported formats is specified as follows:
 
