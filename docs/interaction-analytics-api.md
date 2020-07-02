@@ -4,7 +4,7 @@ title: Interaction Analytics API
 sidebar_label: Interaction Analytics API
 ---
 
-DeepAffects Interaction Analytics API extracts comprehensive interaction based metrics from your audio data
+Interaction Analytics API is a high level API, that provides all the functionality, such as speaker diarization, speech-to-text, speaker recognition, emotion recognition, summary, intent detection, keywords & conversation metrics, within the one single API call. It simplifies your integration.
 
 ### POST Request
 
