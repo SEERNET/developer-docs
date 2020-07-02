@@ -4,7 +4,7 @@ title: Playbook Group API
 sidebar_label: Playbook Group API
 ---
 
-APIs to add, fetch and delete Playbook Groups
+APIs to add, fetch and delete Playbook Groups.
 
 
 ### Playbook Group Add Request
@@ -51,26 +51,26 @@ curl -X POST \
 
 ### Body Parameters
 
-| Parameter  | Type         | Description                         | Notes                            |
-| ---------- | ------------ | ----------------------------------- | -------------------------------- |
-| group      | String       | Name of the group                   | Required                         |
-| group_type | String       | Type of the group                   | Required. "intent" or "keyword"  |
-| hints      | List[String] | Hints for group                     | Required                         |
-| questions  | List[String] | Questions for group                 | Required if group_type is intent |
-| stopwords  | List[String] | Stopwords for group                 |                                  |
-| comply     | Bool         | flag to enable or disable the group | Default is false                 |
+| Parameter  | Type         | Description                          | Notes                                              |
+| ---------- | ------------ | ------------------------------------ | -------------------------------------------------- |
+| group      | String       | Name of the group.                   | Required.                                          |
+| group_type | String       | Type of the group.                   | Required. Permitted values: `intent` or `keyword`. |
+| hints      | List[String] | Hints for group.                     | Required.                                          |
+| questions  | List[String] | Questions for group.                 | Required if `group_type` is `intent`.              |
+| stopwords  | List[String] | Stopwords for group.                 |                                                    |
+| comply     | Bool         | flag to enable or disable the group. | Default is false.                                  |
 
 ### Query Parameters
 
-| Parameter | Type   | Description | Notes                                           |
-| --------- | ------ | ----------- | ----------------------------------------------- |
-| apikey    | String | The apikey  | Required for authentication inside all requests |
+| Parameter | Type   | Description | Notes                                            |
+| --------- | ------ | ----------- | ------------------------------------------------ |
+| apikey    | String | The apikey. | Required for authentication inside all requests. |
 
 ### Output Parameters
 
-| Parameter | Type   | Description         | Notes              |
-| --------- | ------ | ------------------- | ------------------ |
-| message   | String | Status Message      | Success or Failure |
+| Parameter | Type   | Description     | Notes               |
+| --------- | ------ | --------------- | ------------------- |
+| message   | String | Status Message. | Success or Failure. |
 
 
 ### Playbook Group Delete Request
@@ -108,16 +108,16 @@ curl -X DELETE \
 
 ### Query Parameters
 
-| Parameter | Type   | Description | Notes                                           |
-| --------- | ------ | ----------- | ----------------------------------------------- |
-| apikey    | String | The apikey  | Required for authentication inside all requests |
-| group     | String | Group name  | Required                                        |
+| Parameter | Type   | Description | Notes                                            |
+| --------- | ------ | ----------- | ------------------------------------------------ |
+| apikey    | String | The apikey. | Required for authentication inside all requests. |
+| group     | String | Group name. | Required.                                        |
 
 ### Output Parameters
 
-| Parameter | Type   | Description         | Notes              |
-| --------- | ------ | ------------------- | ------------------ |
-| message   | String | Status Message      | Success or Failure |
+| Parameter | Type   | Description     | Notes               |
+| --------- | ------ | --------------- | ------------------- |
+| message   | String | Status Message. | Success or Failure. |
 
 
 ### Playbook Group Get Request
@@ -162,18 +162,18 @@ curl -X GET \
 
 ### Query Parameters
 
-| Parameter | Type   | Description | Notes                                           |
-| --------- | ------ | ----------- | ----------------------------------------------- |
-| apikey    | String | The apikey  | Required for authentication inside all requests |
+| Parameter | Type   | Description | Notes                                            |
+| --------- | ------ | ----------- | ------------------------------------------------ |
+| apikey    | String | The apikey. | Required for authentication inside all requests. |
 
 ### Output Parameters
 Response is the list of Group-Response Segment
 
 #### Group-Response Segment
-| Parameter  | Type         | Description         | Notes |
-| ---------- | ------------ | ------------------- | ----- |
-| name       | String       | Name of the group   |       |
-| group_type | String       | Type of the group   |       |
-| stopwords  | List[String] | List of stopwords   |       |
-| comply     | Bool         | Enabled or disabled |       |
-| hints      | List[String] | List of hints       |       |
+| Parameter  | Type         | Description          | Notes |
+| ---------- | ------------ | -------------------- | ----- |
+| name       | String       | Name of the group.   |       |
+| group_type | String       | Type of the group.   |       |
+| stopwords  | List[String] | List of stopwords.   |       |
+| comply     | Bool         | Enabled or disabled. |       |
+| hints      | List[String] | List of hints .      |       |

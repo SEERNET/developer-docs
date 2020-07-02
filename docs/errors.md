@@ -12,7 +12,7 @@ Our API returns standard HTTP success or error status codes. For errors, we will
 | ----------- | --------------------- | ------------------------------------------- |
 | 200         | OK                    | The request was successful.                 |
 | 202         | OK                    | The async request was successfully accepted |
-| 400         | Bad request           | Bad request                                 |
+| 400         | Bad request           | Bad request.                                |
 | 401         | Unauthorized          | <API_KEY> is invalid.                       |
 | 402         | Over quota            | Over plan quota on this endpoint.           |
 | 404         | Not found             | The resource does not exist.                |
