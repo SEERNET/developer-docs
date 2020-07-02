@@ -84,14 +84,14 @@ curl -X POST \
 
 ### Output Parameters (Sync)
 
-| Parameter             | Type   | Description                              | Notes                                |
-| --------------------- | ------ | ---------------------------------------- | ------------------------------------ |
-| message               | String | Status of enrollment Success.            | Success:  enrollment is successfull. |
-| speaker_id            | String | Registered speaker id.                   |                                      |
-| enroll_quality        | String | Quality of the enrollment.               | values: poor, average, good, high.   |
-| enrollment_complete   | Bool   | Status of the enrollment.                | true if total speech exceeds 12sec.  |
-| total_speech_duration | Number | Total Speech Duration of the enrollment. |                                      |
-| total_enroll_duration | Number | Total Duration of the enrollment.        |                                      |
+| Parameter             | Type   | Description                              | Notes                                  |
+| --------------------- | ------ | ---------------------------------------- | -------------------------------------- |
+| message               | String | Status of enrollment Success.            | Success:  enrollment is successfull.   |
+| speaker_id            | String | Registered speaker id.                   |                                        |
+| enroll_quality        | String | Quality of the enrollment.               | values: poor, average, good, high.     |
+| enrollment_complete   | Bool   | Status of the enrollment.                | `True` if total speech exceeds 12sec.  |
+| total_speech_duration | Number | Total Speech Duration of the enrollment. |                                        |
+| total_enroll_duration | Number | Total Duration of the enrollment.        |                                        |
 
 ### Speaker Enrollment Delete API (REST Api)
 
@@ -224,7 +224,7 @@ curl -X GET \
 
 ### Query Parameters
 
-| Parameter      | Type   | Description | Notes                                                                            |
-| -------------- | ------ | ----------- | -------------------------------------------------------------------------------- |
-| apikey         | String | The apikey. | Required for authentication inside all requests.                                 |
-| getAllSpeakers | Bool   | true/false. | Set to `true` for fetching incomplete enrolled speakers too. Default to `false`. |
+| Parameter      | Type   | Description       | Notes                                                                            |
+| -------------- | ------ | ----------------- | -------------------------------------------------------------------------------- |
+| apikey         | String | The apikey.       | Required for authentication inside all requests.                                 |
+| getAllSpeakers | Bool   | `True` or `False` | Set to `True` for fetching incomplete enrolled speakers too. Default to `False`. |

@@ -122,11 +122,11 @@ print(response.text)
 | encoding     | String | Encoding of audio file like MP3, WAV etc.                | Required.                    |
 | sampleRate   | Number | Sample rate of the audio file.                           |                              |
 | languageCode | String | Language spoken in the audio file.                       | Required. [default to &#39;en-US&#39;] |
-| separateSpeakerPerChannel | Boolean | Set to True if the input audio is multi-channel and each channel has a separate speaker. | Optional. [default to False] |
+| separateSpeakerPerChannel | Boolean | Set to True if the input audio is multi-channel and each channel has a separate speaker. | Optional. [default to `False`] |
 | speakerCount | Number | Number of speakers in the file(-1 for unknown speakers). | Optional. [default to -1]         |
 | audioType    | String | Type of the audio based on number of speakers.           | Optional. [default to callcenter]. Permitted values: `callcenter`, `meeting`, `earnings_calls`, `interview`, `press_conference`. |
 | speakerIds   | List[String] | Optional set of speakers to be identified from the call.  | Optional. [default to []]  |
-| doVad        | Bool   | Apply voice activity detection.                          | Optional. [default to False]      |
+| doVad        | Bool   | Apply voice activity detection.                          | Optional. [default to `False`]    |
 | content      | String | base64 encoding of the audio file.                       | Semi-Optional.                    |
 | url          | String | Publicly facing url.                                     | Semi-Optional.                    |
 | source       | String | The source for the audio file: webex, zoom, gotomeeting, phone. | Optional.                  |

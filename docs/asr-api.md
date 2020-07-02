@@ -166,13 +166,13 @@ print(response.text)
 | content      | String | base64 encoding of the audio file.                              | Semi-Optional.               |
 | url          | String | Publicly facing url.                                            | Semi-Optional.               |
 | audioType    | String | Type of the audio based on number of speakers.                  | Optional. [default to callcenter]. Permitted values: `callcenter`, `meeting`, `earnings_calls`, `interview`, `press_conference`. |
-| source       | String | The source for the audio file: webex, zoom, gotomeeting, phone. | Optional. The value will be used if `enableSpeakerDiarization` is set to `True`.                     |
-| speakerCount | Number | Number of speakers in the file (-1 for unknown speakers).       | Optional. [default to -1]. The value will be used if `enableSpeakerDiarization` is set to `True`.    |
-| speakerIds   | List[String] | Optional set of speakers to be identified.                | Optional. [default to []]. The value will be used if `enableSpeakerDiarization` is set to `True`.    |
-| doVad        | Bool         | Apply voice activity detection.                           | Optional. [default to False]. The value will be used if `enableSpeakerDiarization` is set to `True`. |
-| enablePunctuation         | Boolean | Enables DeepAffects [Smart Punctuation API](text-punctuation-api.md).                      | Optional. [default to true]                        |
-| enableSpeakerDiarization  | Boolean | Tags each word corresponding to the speaker.                                               | Optional. [default to False]                       |
-| separateSpeakerPerChannel | Boolean | Set to `True` if the input audio is multi-channel and each channel has a separate speaker. | Optional. [default to False] The value will be used if `enableSpeakerDiarization` is set to `True`. |
+| source       | String | The source for the audio file: webex, zoom, gotomeeting, phone. | Optional. The value will be used if `enableSpeakerDiarization` is set to `True`.                       |
+| speakerCount | Number | Number of speakers in the file (-1 for unknown speakers).       | Optional. [default to -1]. The value will be used if `enableSpeakerDiarization` is set to `True`.      |
+| speakerIds   | List[String] | Optional set of speakers to be identified.                | Optional. [default to []]. The value will be used if `enableSpeakerDiarization` is set to `True`.      |
+| doVad        | Bool         | Apply voice activity detection.                           | Optional. [default to `False`]. The value will be used if `enableSpeakerDiarization` is set to `True`. |
+| enablePunctuation         | Boolean | Enables DeepAffects [Smart Punctuation API](text-punctuation-api.md).                      | Optional. [default to `True`]                      |
+| enableSpeakerDiarization  | Boolean | Tags each word corresponding to the speaker.                                               | Optional. [default to `False`]                     |
+| separateSpeakerPerChannel | Boolean | Set to `True` if the input audio is multi-channel and each channel has a separate speaker. | Optional. [default to `False`] The value will be used if `enableSpeakerDiarization` is set to `True`. |
 
 > **NOTES:** 
 >  * We recommend using callcenter when there are 2-3 speakers expected to be identified and meeting when 4-6 speakers are expected.
