@@ -4,7 +4,7 @@ title: Text Emotion Recognition API
 sidebar_label: Text Emotion Recognition API
 ---
 
-Text emotion api extracts basic emotions from the text input
+Text Emotion API extracts emotions from the paragraph of text.
 
 ### POST Request
 
@@ -103,15 +103,15 @@ apiInstance.syncRecogniseTextEmotion(body, callback);
 
 ### Query Parameters
 
-| Parameter | Type   | Description | Notes                                           |
-| --------- | ------ | ----------- | ----------------------------------------------- |
-| apikey   | String | The apikey  | Required for authentication inside all requests |
+| Parameter | Type   | Description | Notes                                            |
+| --------- | ------ | ----------- | ------------------------------------------------ |
+| apikey    | String | The apikey  | Required for authentication inside all requests. |
 
 ### Output Parameters
 
 Output is the list of emotion scores. The parameters in emotion scores are as follows:
 
-| Parameter | Type   | Description                     | Notes |
-| --------- | ------ | ------------------------------- | ----- |
-| version   | String | API Version.                    |       |
-| response  | Object | Object with emotion and score. |       |
+| Parameter | Type   | Description                         | Notes |
+| --------- | ------ | ----------------------------------- | ----- |
+| version   | String | API Version.                        |       |
+| response  | Object | Object with emotion and confidence. | Possible values: `surprise`, `joy`, `trust`, `sadness`, `fear`, `anger`, `disgust` and `neutral`. |
