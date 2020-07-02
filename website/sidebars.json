@@ -7,21 +7,17 @@
       "errors",
       "concepts"
     ],
-    "Jobs": [
-      "job-status-api"
-    ],
     "Generic Audio Analysis": [
+      "interaction-analytics-api",
       "speaker-diarization-api",
       "speech-to-text-api",
-      "interaction-analytics-api",
       "speaker-enrollment-api",
       "speaker-identification-api",
       "realtime-speaker-identification-api",
       "voice-activity-detection-api",
       "emotion-recognition-api",
       "realtime-emotion-recognition-api",
-      "audio-denoising-api",
-      "paralinguistic-feature-extraction-api"
+      "audio-denoising-api"
     ],
     "Generic Video Analysis": [
       "chapter-detection-api"
@@ -31,6 +27,9 @@
       "text-punctuation-api",
       "text-playbook-group-api",
       "text-playbook-api"
+    ],
+    "Jobs": [
+      "job-status-api"
     ]
   }
 }
