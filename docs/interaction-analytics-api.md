@@ -6,6 +6,12 @@ sidebar_label: Interaction Analytics API
 
 Interaction Analytics API is a high level API, that provides all the functionality, such as speaker diarization, speech-to-text, speaker recognition, emotion recognition, summary, intent detection, keywords & conversation metrics, within the one single API call. It simplifies your integration.
 
+* Abstractive summary - Upto 256 words summary.
+* Semantic Keywords - product, competitors, topics & more.
+* Intent Recognition - Action Items, Decisions, Budget, Authority, Timeline & more.
+* Speaker level conversation Metric - Talk time, Interruptions, Pace, Tone & more.
+
+
 ### POST Request
 
 `POST https://proxy.api.deepaffects.com/audio/generic/api/v1/async/analytics/interaction`
