@@ -4,7 +4,7 @@ title: Speaker Diarization API
 sidebar_label: Speaker Diarization API
 ---
 
-Speaker Diarization API partitions audio stream into homogenous segments according to the speaker identity. It solves the problem of "Who Speaks When". This API splits audio clip into speech segments and tags them with speaker's id accordingly.
+Speaker Diarization API partitions audio stream into homogenous segments according to the speaker identity. It solves the problem of "Who Speaks When". This API splits audio clip into speech segments and tags them with speaker's id accordingly. This api also supports speaker identification.
 
 ### POST Request
 

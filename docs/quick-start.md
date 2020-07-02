@@ -24,7 +24,7 @@ Currently, deepaffects provides 2 audio based products:
 
 For your convenience, DeepAffects has provided native language bindings in Python and NodeJs! You can get started with the help of sample code provided.
 
-Don't worry If the programming language you want to use DeepAffects with is not listed, the DeepAffects suite of APIs can also be used directly through RESTful API calls With help of api endpoints and necessary params provided with the api details.
+Don't worry if the programming language you want to use DeepAffects with, is not listed. DeepAffects suite of APIs can also be used directly through RESTful API calls with the help of API endpoints and necessary params provided with the API details.
 
 ### Installation
 
