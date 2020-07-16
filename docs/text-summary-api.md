@@ -156,10 +156,10 @@ print(response.text)
 
 
 ### Summary-Data
-| Parameter | Type   | Description                   | Notes |
-| --------- | ------ | ----------------------------- | ----- |
-| speakerId | String | Speaker id for the text blob. |       |
-| text      | String | Text blob for summary.        |       |
+| Parameter | Type   | Description                   | Notes                                                                                       |
+| --------- | ------ | ----------------------------- | ------------------------------------------------------------------------------------------- |
+| speakerId | String | Speaker id for the text blob. | Required if summaryType is: `speaker_wise_extractive`, `speaker_wise_abstractive` or `all`. |
+| text      | String | Text blob for summary.        |                                                                                             |
 
 ### Query Parameters
 
