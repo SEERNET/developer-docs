@@ -151,7 +151,7 @@ print(response.text)
 
 | Parameter   | Type               | Description                     | Notes                   |
 | ----------- | ------------------ | ------------------------------- | ----------------------- |
-| summaryType | String             | Permitted values: `speaker_wise_extractive`, `extractive`, `speaker_wise_abstractive`, `abstractive`. | Default is `extractive` |
+| summaryType | String             | Permitted values: `speaker_wise_extractive`, `extractive`, `speaker_wise_abstractive`, `abstractive`, `all`. | Default is `extractive`. Pass `all` to compute all type of summaries. |
 | summaryData | List[Summary-Data] | List of speakerId, text object. |                         |
 
 
