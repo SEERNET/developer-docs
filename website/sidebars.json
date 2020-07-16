@@ -25,6 +25,7 @@
     ],
     "Generic Text Analysis": [
       "text-emotion-recognition-api",
+      "text-summary-api",
       "text-punctuation-api",
       "text-playbook-group-api",
       "text-playbook-api"
