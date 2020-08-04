@@ -20,15 +20,15 @@
       "realtime-emotion-recognition-api",
       "audio-denoising-api"
     ],
-    "Generic Video Analysis": [
-      "chapter-detection-api"
-    ],
     "Generic Text Analysis": [
-      "text-emotion-recognition-api",
       "text-summary-api",
+      "text-emotion-recognition-api",
       "text-punctuation-api",
       "text-playbook-group-api",
       "text-playbook-api"
+    ],
+    "Generic Video Analysis": [
+      "chapter-detection-api"
     ],
     "Jobs": [
       "job-status-api"

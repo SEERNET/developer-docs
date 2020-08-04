@@ -27,3 +27,14 @@ Use `callcenter` if audio stream has 2-3 speakers. For 4-6 speakers use `meeting
 ## What audio formats are supported?
 
 DeepAffects supports various audio types for ease of integration. As a rule of thumb, we support all the audiotypes which are inherently supported by [ffmpeg](https://trac.ffmpeg.org/wiki/audio%20types). A more exhaustive list can be fetched via command `ffmpeg -formats`.
+
+
+## What are webhooks and how to use them?
+
+Webhooks are the user-defined HTTP callbacks. To know more about webhooks visit https://simonfredsted.com/1583.
+
+To link up your requests to webhooks you can pass a `webhook` parameter when making these calls, containing a custom defined webhook identifier. We’ll pass this identifier back to you with the webhook request.
+
+For testing you can create a temporary webhook using [webhook.site](https://webhook.site) or [ngrok](https://ngrok.com)
+
+For obvious reasons, DO NOT use LOCALHOST, 127.0.0.1 for webhook.
