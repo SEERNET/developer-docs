@@ -28,6 +28,9 @@ curl -X POST \
 
 # contents of data.json
 {"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US"}
+
+# in case of using a url, (urls supported only for async)
+{"url": "https://publicly-facing-url.flac", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US"}
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -38,14 +41,17 @@ curl -X POST \
 <!--Sync-->
 
 ```json
-{
-    "segments":
-        [{
+[
+    {
         "emotion": "joy",
-        "start": 0,
-        "end": 1
-    }]
-}
+        "start": 0.0,
+        "end": 3.0
+    },{
+        "emotion": "neutral",
+        "start": 3.0,
+        "end": 6.0
+    }
+]
 ```
 
 <!--Async-->
@@ -60,14 +66,17 @@ curl -X POST \
 ```json
 {
 "request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
-"response": {
-    "segments":
-        [{
-        "emotion": "joy",
-        "start": 0,
-        "end": 1
-    }]
-}
+"response": [
+        {
+            "emotion": "joy",
+            "start": 0.0,
+            "end": 3.0
+        },{
+            "emotion": "neutral",
+            "start": 3.0,
+            "end": 6.0
+        }
+    ]
 }
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -80,7 +89,7 @@ curl -X POST \
 | sampleRate   | Number | Sample rate of the audio file.            |                              |
 | languageCode | String | Language spoken in the audio file.        | [default to &#39;en-US&#39;] |
 | content      | String | base64 encoding of the audio file.        | Semi-Optional.               |
-| url          | String | Publicly facing url.                      | Semi-Optional.               |
+| url          | String | Publicly facing url.                      | Semi-Optional. Supported for async only.              |
 
 > Exactly one of url and content should be passed. In case both values are passed, error is thrown.
 
