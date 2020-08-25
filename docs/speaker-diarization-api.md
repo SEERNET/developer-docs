@@ -20,33 +20,35 @@ curl -X POST \
 "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/diarize?apikey=<API_KEY>&webhook=<WEBHOOK_URL>" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json
-{"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US", "speakerCount": 2, "audioType": "callcenter", "speakerIds":["speaker1"]}
+{"content": "bytesEncodedAudioString", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US", "speakerCount": -1, "audioType": "callcenter", "speakerIds":["speaker1"]}
 ```
 <!--Javascript-->
 
 ```javascript
-var DeepAffects = require("deep-affects");
-var defaultClient = DeepAffects.ApiClient.instance;
+var request = require("request");
 
-// Configure API key authorization: UserSecurity
-var UserSecurity = defaultClient.authentications["UserSecurity"];
-UserSecurity.apiKey = "<API_KEY>";
+var options = { method: 'POST',
+  url: 'https://proxy.api.deepaffects.com/audio/generic/api/v2/async/diarize',
+  qs:
+   { apikey: '<API_KEY>',
+     webhook: '<WEBHOOK_URL>'},
+  headers:
+   {  'Content-Type': 'application/json' },
+  body:
+   { encoding: 'Wave',
+     languageCode: 'en-US',
+     url: 'https://publicly-facing-url.wav',
+     sampleRate: 8000,
+     doVad: true,
+     speakerCount: -1,
+     audioType: "callcenter" },
+  json: true };
 
-var apiInstance = new DeepAffects.DiarizeApiV2();
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
 
-var body = DeepAffects.DiarizeAudio.fromFile("/path/to/file"); // DiarizeAudio | Audio object that needs to be diarized.
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log("API called successfully. Returned data: " + data);
-  }
-};
-
-webhook = "https://your/webhook/";
-// async request
-apiInstance.asyncDiarizeAudio(body, webhook, callback);
+  console.log(body);
+});
 ```
 <!--Python-->
 
@@ -61,8 +63,9 @@ querystring = {"apikey":"<API_KEY>", "webhook":"<WEBHOOK_URL>"}
 payload = {
     "encoding": "Wave",
     "languageCode": "en-US",
-    "speakers": -1,
-    "doVad": True
+    "speakerCount": -1,
+    "doVad": True,
+    "audioType": "callcenter"
 }
 
 # The api accepts data either as a url or as base64 encoded content

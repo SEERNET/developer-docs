@@ -41,12 +41,12 @@ var request = require("request");
 
 var options = { method: 'POST',
   url: 'https://proxy.api.deepaffects.com/text/generic/api/v1/async/punctuate',
-  qs: 
+  qs:
    { apikey: '<API_KEY>',
      webhook: '<WEBHOOK_URL>' },
-  headers: 
+  headers:
    { 'Content-Type': 'application/json' },
-  body: 
+  body:
    { texts: ["so its more fluid than it is and you know its not the best kind of feedback right"]},
   json: true };
 
@@ -66,7 +66,7 @@ url = "https://proxy.api.deepaffects.com/text/generic/api/v1/async/punctuate"
 
 querystring = {"apikey":"<API_KEY>", "webhook":"<WEBHOOK_URL>"}
 
-{"texts": ["so its more fluid than it is and you know its not the best kind of feedback right"]}
+payload = {"texts": ["so its more fluid than it is and you know its not the best kind of feedback right"]}
 
 headers = {
     'Content-Type': "application/json",

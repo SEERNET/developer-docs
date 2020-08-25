@@ -1,5 +1,5 @@
 ---
-id: text-summary-api (#text-summary-api)
+id: text-summary-api
 title: Conversational Summarization API
 sidebar_label: Conversational Summarization API
 ---
@@ -39,12 +39,12 @@ var request = require("request");
 
 var options = { method: 'POST',
   url: 'https://proxy.api.deepaffects.com/text/generic/api/v1/async/summary',
-  qs: 
+  qs:
    { apikey: '<API_KEY>',
      webhook: '<WEBHOOK_URL>' },
-  headers: 
+  headers:
    { 'Content-Type': 'application/json' },
-  body: 
+  body:
    {summaryType: "abstractive", summaryData: [{speakerId:"spk", text:"text blob for speaker"}]},
   json: true };
 
@@ -64,7 +64,7 @@ url = "https://proxy.api.deepaffects.com/text/generic/api/v1/async/summary"
 
 querystring = {"apikey":"<API_KEY>", "webhook":"<WEBHOOK_URL>"}
 
-{"summaryType": "abstractive", "summaryData": [{"speakerId":"spk", "text":"text blob for speaker"}]}
+payload = {"summaryType": "abstractive", "summaryData": [{"speakerId":"spk", "text":"text blob for speaker"}]}
 
 headers = {
     'Content-Type': "application/json",

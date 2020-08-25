@@ -29,53 +29,41 @@ curl -X POST \
 <!--Python-->
 
 ```python
-from __future__ import print_statement
-import deepaffects
-from deepaffects.rest import ApiException
-from pprint import pprint
+import requests
+import base64
 
-# Configure API key authorization: UserSecurity
-deepaffects.configuration.api_key['apikey'] = '<API_KEY>'
-
-# create an instance of the API class
-api_instance = deepaffects.EmotionApi()
-var body = {
-  "content": "YOUR_TEXT" # Text that needs to be featurized
+url = "https://proxy.api.deepaffects.com/text/generic/api/v1/sync/text_recognise_emotion"
+querystring = {"apikey":"<API_KEY>"}
+payload = {"content": "YOUR_TEXT"}
+headers = {
+    'Content-Type': "application/json",
 }
 
-try:
-    # Find emotion in text
-    api_response = api_instance.sync_text_recognise_emotion(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling EmotionApi->sync_recognise_emotion: %s\n" % e)
+response = requests.post(url, json=payload, headers=headers, params=querystring)
+print(response.text)
 ```
 
 <!--Javascript-->
 
 ```javascript
-var DeepAffects = require("deep-affects");
-var defaultClient = DeepAffects.ApiClient.instance;
+var request = require("request");
 
-// Configure API key authorization: UserSecurity
-var UserSecurity = defaultClient.authentications["UserSecurity"];
-UserSecurity.apiKey = "YOUR API KEY";
+var options = { method: 'POST',
+  url: 'https://proxy.api.deepaffects.com/text/generic/api/v1/sync/text_recognise_emotion',
+  qs:
+   { apikey: '<API_KEY>'},
+  headers:
+   { 'cache-control': 'no-cache',
+     'Content-Type': 'application/json' },
+  body:
+   { content: 'YOUR_TEXT'},
+  json: true };
 
-var apiInstance = new DeepAffects.EmotionApi();
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
 
-var body = {
-  content: "YOUR_TEXT"
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log("API called successfully. Returned data: " + data);
-  }
-};
-// sync request
-apiInstance.syncRecogniseTextEmotion(body, callback);
+  console.log(body);
+});
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->

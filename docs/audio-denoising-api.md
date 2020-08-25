@@ -59,28 +59,27 @@ print(response.text)
 <!--Javascript-->
 
 ```javascript
-var DeepAffects = require("deep-affects");
-var defaultClient = DeepAffects.ApiClient.instance;
+var request = require("request");
 
-// Configure API key authorization: UserSecurity
-var UserSecurity = defaultClient.authentications["UserSecurity"];
-UserSecurity.apiKey = "<API_KEY>";
+var options = { method: 'POST',
+  url: 'https://proxy.api.deepaffects.com/audio/generic/api/v2/async/denoise',
+  qs:
+   { apikey: '<API_KEY>',
+     webhook: '<WEBHOOK_URL>'},
+  headers:
+   {  'Content-Type': 'application/json' },
+  body:
+   { encoding: 'Wave',
+     languageCode: 'en-US',
+     url: 'https://publicly-facing-url.wav',
+     sampleRate: 8000},
+  json: true };
 
-var apiInstance = new DeepAffects.DenoiseApi();
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
 
-var body = DeepAffects.Audio.fromFile("/path/to/file"); // {Audio} Audio object
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log("API called successfully. Returned data: " + data);
-  }
-};
-
-webhook = "http://your/webhook/";
-// async request
-apiInstance.asyncDenoiseAudio(body, webhook, callback);
+  console.log(body);
+});
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
