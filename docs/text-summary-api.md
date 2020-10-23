@@ -30,7 +30,7 @@ curl -X POST \
 "https://proxy.api.deepaffects.com/text/generic/api/v1/async/summary?apikey=<API_KEY>&webhook=<WEBHOOK_URL>" -H 'content-type: application/json' -d @data.json
 
 # contents of data.json
-{"summaryType": "abstractive", "summaryData": [{"speakerId":"spk", "text":"text blob for speaker"}]}
+{"summaryType": "abstractive",  "model": "iamus", "summaryData": [{"speakerId":"spk", "text":"text blob for speaker"}]}
 ```
 <!--Javascript-->
 
@@ -45,7 +45,7 @@ var options = { method: 'POST',
   headers:
    { 'Content-Type': 'application/json' },
   body:
-   {summaryType: "abstractive", summaryData: [{speakerId:"spk", text:"text blob for speaker"}]},
+   {summaryType: "abstractive", model: "iamus", summaryData: [{speakerId:"spk", text:"text blob for speaker"}]},
   json: true };
 
 request(options, function (error, response, body) {
@@ -64,7 +64,7 @@ url = "https://proxy.api.deepaffects.com/text/generic/api/v1/async/summary"
 
 querystring = {"apikey":"<API_KEY>", "webhook":"<WEBHOOK_URL>"}
 
-payload = {"summaryType": "abstractive", "summaryData": [{"speakerId":"spk", "text":"text blob for speaker"}]}
+payload = {"summaryType": "abstractive", "model": "iamus", "summaryData": [{"speakerId":"spk", "text":"text blob for speaker"}]}
 
 headers = {
     'Content-Type': "application/json",
@@ -153,15 +153,65 @@ print(response.text)
 
 ```
 
+<!--all-->
+```json
+{
+  "request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62", 
+  "response": {
+    "abstractive": {
+      "long": [
+        {
+          "end": 1.0, 
+          "start": 0.0, 
+          "text": "Long summary line 1",
+          "score": 0.8
+        }, 
+        {
+          "end": 7.0, 
+          "start": 5.0, 
+          "text": "Long summary line 2",
+          "score": 0.9
+        },
+        ...
+      ], 
+      "short": [
+        {
+          "end": 7.0, 
+          "start": 0.0, 
+          "text": "Short summary line 1",
+          "score": 0.8
+        }
+      ]
+    },
+    "extractive": [
+      {
+        "end": 1.0, 
+        "start": 0.0, 
+        "text": "Summary line 1",
+        "score": 0.8
+      }, 
+      {
+        "end": 7.0, 
+        "start": 5.0, 
+        "text": "Summary line 2",
+        "score": 0.9
+      },
+      ...
+    ]
+  }
+}
+
+```
+
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Body Parameters
 
 | Parameter   | Type               | Description                     | Notes                   |
 | ----------- | ------------------ | ------------------------------- | ----------------------- |
-| summaryType | String             | Permitted values: `extractive`, `abstractive`, `all`. | Default is `extractive`. Pass `all` to compute all type of summaries. |
+| summaryType | String             | Permitted values: `extractive`, `abstractive`, `all`. | Default is `extractive`. Pass `all` to compute both `extractive` and `abstractive` type of summaries. |
 | summaryData | List[Summary-Data] | List of speakerId, text object. |                         |
-| model       | String             | Permitted values: `mopsus`, `iamus`, `cassandra` | Optional, Default is `mopsus` |
+| model       | String             | The model for abstractive summary. Permitted values: `mopsus`, `iamus`, `cassandra` | Optional, default is `mopsus` |
 
 
 ### Summary-Data
