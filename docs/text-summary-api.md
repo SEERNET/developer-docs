@@ -93,56 +93,64 @@ print(response.text)
 ### Webhook Output`(depends on summaryType)`
 
 <!--DOCUSAURUS_CODE_TABS-->
-<!--speaker_wise_extractive-->
-```json
-{
-    "request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
-    "response": {
-        "speaker_wise_extractive": [
-          {
-            "speaker_id": "spk",
-            "value": "Extractive summary corresponding to speaker spk."
-          }
-        ]
-    }
-}
-```
+
 <!--extractive-->
 ```json
 {
-    "request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
-    "response": {
-        "extractive": "Overall extractive summary."
-    }
-}
-```
-
-<!--speaker_wise_abstractive-->
-```json
-{
-    "request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
-    "response": {
-        "speaker_wise_abstractive": [
-          {
-            "speaker_id": "spk",
-            "value": "Abstractive summary corresponding to speaker spk."
-          }
-        ]
-    }
+  "request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62", 
+  "response": {
+    "extractive": [
+      {
+        "end": 1.0, 
+        "start": 0.0, 
+        "text": "Summary line 1",
+        "score": 0.8
+      }, 
+      {
+        "end": 7.0, 
+        "start": 5.0, 
+        "text": "Summary line 2",
+        "score": 0.9
+      },
+      ...
+    ]
+  }
 }
 ```
 
 <!--abstractive-->
 ```json
 {
-    "request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62",
-    "response": {
-        "abstractive": {
-          "long": "Long abstractive summary of the data.",
-          "short": "Short abstractive summary of the data."
+  "request_id": "8bdd983a-c6bd-4159-982d-6a2471406d62", 
+  "response": {
+    "abstractive": {
+      "long": [
+        {
+          "end": 1.0, 
+          "start": 0.0, 
+          "text": "Long summary line 1",
+          "score": 0.8
+        }, 
+        {
+          "end": 7.0, 
+          "start": 5.0, 
+          "text": "Long summary line 2",
+          "score": 0.9
+        },
+        ...
+      ], 
+      "short": [
+        {
+          "end": 7.0, 
+          "start": 0.0, 
+          "text": "Short summary line 1",
+          "score": 0.8
         }
+      ]
     }
+  }
 }
+
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -151,63 +159,69 @@ print(response.text)
 
 | Parameter   | Type               | Description                     | Notes                   |
 | ----------- | ------------------ | ------------------------------- | ----------------------- |
-| summaryType | String             | Permitted values: `speaker_wise_extractive`, `extractive`, `speaker_wise_abstractive`, `abstractive`, `all`. | Default is `extractive`. Pass `all` to compute all type of summaries. |
+| summaryType | String             | Permitted values: `extractive`, `abstractive`, `all`. | Default is `extractive`. Pass `all` to compute all type of summaries. |
 | summaryData | List[Summary-Data] | List of speakerId, text object. |                         |
+| model       | String             | Permitted values: `mopsus`, `iamus`, `cassandra` | Optional, Default is `mopsus` |
 
 
 ### Summary-Data
 | Parameter | Type   | Description                   | Notes                                                                                       |
 | --------- | ------ | ----------------------------- | ------------------------------------------------------------------------------------------- |
-| speakerId | String | Speaker id for the text blob. | Required if summaryType is: `speaker_wise_extractive`, `speaker_wise_abstractive` or `all`. |
-| text      | String | Text blob for summary.        |                                                                                             |
+| speakerId | String | Speaker id for the text blob  | Optional, abstractive summary uses speakerId to reference in the output |
+| text      | String | Text blob for summary         | Required                             |
+| start     | Number | start time of the segment     | Optional                             |
+| end       | Number | start time of the segment     | Optional                             |
 
 ### Query Parameters
 
-| Parameter  | Type   | Description                                                             | Notes                                            |
-| ---------- | ------ | ----------------------------------------------------------------------- | ------------------------------------------------ |
+| Parameter  | Type   | Description                      | Notes    |
+| ---------- | ------ | -------------------------------- | ---------|
 | apikey     | String | The apikey.                                                             | Required for authentication inside all requests. |
 | webhook    | String | The webhook url at which the responses will be sent.                    | Required for async requests.                     |
-| request_id | String | An optional unique id to link async response with the original request. | Optional.                                        |
+| request_id | String | An optional unique id to link async response with the original request. | Optional. |
 
 ### Output Parameters (Async)
 
-| Parameter  | Type   | Description                      | Notes                                                               |
-| ---------- | ------ | -------------------------------- | ------------------------------------------------------------------- |
+| Parameter  | Type   | Description                      | Notes    |
+| ---------- | ------ | -------------------------------- | -------- |
 | request_id | String | The request id.                  | This defaults to the originally sent id or is generated by the api. |
-| api        | String | The api method which was called. |                                                                     |
+| api        | String | The api method which was called. |          |
 
-
-### Output Parameters (Webhook): `speaker_wise_extractive`
-
-| Parameter  | Type   | Description                                                      | Notes                                                               |
-| ---------- | ------ | ---------------------------------------------------------------- | ------------------------------------------------------------------- |
-| request_id | String | The request id.                                                  | This defaults to the originally sent id or is generated by the api. |
-| response   | Object | key `speaker_wise_extractive`, value: List of `SpeakerId-Value`. | `SpeakerId-Value` is defined below.                                 |
 
 ### Output Parameters (Webhook): `extractive`
 
-| Parameter  | Type   | Description                                                    | Notes                                                               |
-| ---------- | ------ | -------------------------------------------------------------- | ------------------------------------------------------------------- |
+| Parameter  | Type   | Description                                                    | Notes         |
+| ---------- | ------ | -------------------------------------------------------------- | ------------- |
 | request_id | String | The request id.                                                | This defaults to the originally sent id or is generated by the api. |
-| response   | Object | key `extractive`, value: string containing extractive summary. |                                                                     |
-
-### Output Parameters (Webhook): `speaker_wise_abstractive`
-
-| Parameter  | Type   | Description                                                       | Notes                                                               |
-| ---------- | ------ | ----------------------------------------------------------------- | ------------------------------------------------------------------- |
-| request_id | String | The request id.                                                   | This defaults to the originally sent id or is generated by the api. |
-| response   | Object | key `speaker_wise_abstractive`, value: List of `SpeakerId-Value`. |`SpeakerId-Value` is defined below.                                  |
+| response   | Object | key `extractive`, value: List of Summary-Timings Segment. |                     |
 
 ### Output Parameters (Webhook): `abstractive`
 
-| Parameter  | Type   | Description                                                      | Notes                                                               |
-| ---------- | ------ | ---------------------------------------------------------------- | ------------------------------------------------------------------- |
+| Parameter  | Type   | Description                                                      | Notes       |
+| ---------- | ------ | ---------------------------------------------------------------- | ------------|
 | request_id | String | The request id.                                                  | This defaults to the originally sent id or is generated by the api. |
-| response   | Object | key `abstractive`, value: string containing abstractive summary. |                                                                     |
+| response   | Object | key `abstractive`, value: Abstractive-Summary Object. |                         |
 
-#### SpeakerId-Value Segment
 
+### Abstractive-Summary Object
 | Parameter  | Type   | Description                                | Notes |
 | ---------- | ------ | ------------------------------------------ | ----- |
-| speaker_id | String | The speaker id for the corresponding text. |       |
-| value      | String | Summary for that speaker                   |       |
+| long       | Object | List of Summary-Timings Segment. | the long abstractive summary      |
+| short      | Object | List of Summary-Timings Segment. |  the short abstractive summary, typically 1-2 lines  |
+
+
+### Summary-Timings Segment
+
+| Parameter  | Type   | Description                                   | Notes |
+| ---------- | ------ | --------------------------------------------- | ----- |
+| start      | Number | Start time of the summary segment in seconds. | Conditional on input payload       |
+| end        | Number | End time of the summary segment in seconds.   | Conditional on input payload       |
+| text       | String | Text of the summary segment.                  |       |
+| score      | Number | confidence score for the summary segment      |       |
+
+> **NOTE:** 
+> 
+> * In case of extractive summary, the start and end times refer to the exact time of the segment.
+> * In case of abstractive summary, the start and end time refer to the time of text blob which is abstracted.
+> * The start, end times are returned if they're part of the input payload
+
