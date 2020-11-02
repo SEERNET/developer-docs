@@ -293,7 +293,7 @@ print(response.text)
 | end           | Number | End time of the audio segment in seconds.              |       |
 | text          | String | The transcription output corresponding to the segment. |       |
 | confidence    | Number | The confidence score for the transcribed segment.      |       |
-| emotion       | String | Emotion corresponding to the segment.                  | Will be computed only if specified via metrics. |
+| emotion       | String | Emotion corresponding to the segment. Possible values: `surprise`, `joy`, `trust`, `sadness`, `fear`, `anger`, `disgust` and `neutral`. | Will be computed only if specified via metrics. |
 | emotion_score | Number | The confidence score for the emotion.                  | Will be computed only if emotion is computed.   |
 | intent        | String | Intent corresponding to the segment: Current intent list: `budget`, `authority`, `timing`, `action`, `need`, `decision`. | Will be computed only if specified via metrics. |
 
