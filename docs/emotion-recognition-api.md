@@ -33,6 +33,72 @@ curl -X POST \
 {"url": "https://publicly-facing-url.flac", "sampleRate": 8000, "encoding": "FLAC", "languageCode": "en-US"}
 ```
 
+<!--Python-->
+
+```python
+import requests
+import base64
+
+async_url = "https://proxy.api.deepaffects.com/audio/generic/api/v2/async/recognise_emotion" # async api url
+sync_url = "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/recognise_emotion" # sync api url
+
+querystring = {"apikey":"<API_KEY>", "webhook":"<WEBHOOK_URL>"}
+
+payload = {
+    "encoding": "Wave",
+    "languageCode": "en-US"
+}
+
+# The api accepts data either as a url or as base64 encoded content
+# (urls supported only for async)
+# passing payload as url:
+payload["url"] = "https://publicly-facing-url.wav"
+# alternatively, passing payload as content:
+with open(audio_file_name, 'rb') as fin:
+    audio_content = fin.read()
+payload["content"] = base64.b64encode(audio_content).decode('utf-8')
+
+headers = {
+    'Content-Type': "application/json",
+}
+
+# Async Request
+response = requests.post(async_url, json=payload, headers=headers, params=querystring)
+
+# alternatively use sync request for payload upto 1 minute
+response = requests.post(sync_url, json=payload, headers=headers, params=querystring)
+
+print(response.text)
+```
+
+<!--Javascript-->
+
+```javascript
+var request = require("request");
+
+// you can also use sync url for the sync request
+var options = { method: 'POST',
+  url: 'https://proxy.api.deepaffects.com/audio/generic/api/v2/async/recognise_emotion',
+  qs: 
+   { apikey: '<API_KEY>',
+     webhook: '<WEBHOOK_URL>' },
+  headers: 
+   { 'cache-control': 'no-cache',
+     'Content-Type': 'application/json' },
+  body: 
+   { url: 'https://publicly-facing-url.flac',
+     encoding: 'FLAC',
+     languageCode: 'en-US',
+     sampleRate: 8000,
+     metrics: ['all'] },
+  json: true };
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
+```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Output
@@ -108,7 +174,8 @@ Output is the list of emotion scores. The parameters in emotion scores are as fo
 
 | Parameter | Type   | Description                                     | Notes |
 | --------- | ------ | ----------------------------------------------- | ----- |
-| emotion   | String | Type of emotion like Happy, Sad, Surprised etc. |       |
+| emotion   | String | Type of emotion. | Possible emotion values: `anger`, `excited`, `frustration`, `happy`, `sad` and `neutral` |
+      |
 | start     | Float  | Start of the audio segment.                     |       |
 | end       | Float  | end of the audio segment.                       |       |
 
